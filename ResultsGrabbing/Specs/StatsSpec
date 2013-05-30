@@ -1,0 +1,32 @@
+Statystyki
+
+Ra=CurrATP(player)-CurrATP(oponent) 
+koncowki ogolne (dla wszystkich graczy z bazy), wygrane vs:
+
+Ra
+Ra && wiek
+
+CurrentATP && Ra
+CurrATP && Ra && wiek
+Ra && MaxATP/CurrATP && CurATP/MinATP
+
+dla danego gracza:
+
+Ra
+Ra && wiek
+
+CurrentATP && Ra
+CurrATP && Ra && wiek
+Ra && MaxATP/CurrATP && CurATP/MinATP
+
+dla pary graczy:
+
+Ra
+
+Niech istniej¹ równie¿ statystyki z uwzglêdnieniem czasu, jaki up³yn¹³ miêdzy max a min ATP:
+
+wygrane vs Ra && RRa, gdzie
+
+RRa = (Tc - TmaxA)/(Tc-TminA+1)
+Tc- TmaxA - czas od danego wydarzenia do osi¹gniêcia lub utracenia maxymalnego ATP (dni)
+Tc- TminA - czas od danego wydarzenia do osi¹gniêcia lub utraty minimalnego ATP

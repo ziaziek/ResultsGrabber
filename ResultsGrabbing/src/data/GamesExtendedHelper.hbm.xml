@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-05-27 21:03:25 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <joined-subclass name="data.GamesExtendedHelper" extends="data.Games" table="GAMESEXTENDEDHELPER" lazy="false">
+        <key>
+            <column name="ID" />
+        </key>
+        <property name="playerName" type="java.lang.String" access="field">
+            <column name="PLAYERNAME" />
+        </property>
+        <property name="oponentName" type="java.lang.String">
+            <column name="OPONENTNAME" />
+        </property>
+    </joined-subclass>
+</hibernate-mapping>

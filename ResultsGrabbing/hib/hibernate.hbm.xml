@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="data">
+ <class entity-name="Matches" name="Matches" table="Matches">
+  <id column="id" name="id" type="int"/>
+  <property column="date" generated="never" lazy="false" name="Date" type="calendar_date"/>
+  <property column="city" generated="never" lazy="false" name="City" type="string"/>
+  <property column="country" generated="never" lazy="false"
+   name="Country" type="string"/>
+ </class>
+ <class entity-name="src.data.Players" name="src.data.Players" table="players">
+  <id column="id" name="id" type="int"/>
+  <property column="first_name" generated="never" lazy="false"
+   name="FirstName" type="string"/>
+  <property column="last_name" generated="never" lazy="false"
+   name="LastName" type="string"/>
+  <property column="birthday" generated="never" lazy="false"
+   name="Birthday" type="calendar_date"/>
+  <property column="country" generated="never" lazy="false"
+   name="Country" type="string"/>
+ </class>
+ <class name="Games" table="Games">
+  <id column="id" name="id" type="int"/>
+  <property column="id_matches" generated="never" lazy="false"
+   name="IdMatches" type="integer"/>
+  <property column="id_players" generated="never" lazy="false"
+   name="IdPlayers" type="integer"/>
+  <property column="id_oponents" generated="never" lazy="false"
+   name="IdOponents" type="integer"/>
+  <property column="age" generated="never" lazy="false" name="Age" type="integer"/>
+  <property column="oponent_rank" generated="never" lazy="false"
+   name="OponentRank" type="integer"/>
+  <property column="avg_pont_diff" generated="never" lazy="false"
+   name="AvgPointDiff" type="double"/>
+  <property column="result" generated="never" lazy="false" name="result" type="GamesResults"/>
+ </class>
+ <class name="PlayerGamesTime" table="PlayerGamesTime">
+  <id column="id" name="id" type="int"/>
+  <property column="id_players" generated="never" lazy="false"
+   name="IdPlayers" type="integer"/>
+  <property column="id_games" generated="never" lazy="false"
+   name="IdGames" type="integer"/>
+  <property column="max_rank_so_far" generated="never" lazy="false"
+   name="MaxRankSoFar" type="integer"/>
+  <property column="min_rank_so_far" generated="never" lazy="false"
+   name="MinRankSoFar" type="integer"/>
+  <property column="current_rank" generated="never" lazy="false"
+   name="CurrentRank" type="integer"/>
+ </class>
+</hibernate-mapping>

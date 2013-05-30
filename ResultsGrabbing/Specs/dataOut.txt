@@ -1,0 +1,2070 @@
+Player:
+Rafael,Nadal,03-06-1986,Spain
+Match:
+22-04-2013,Spain,Barcelona,
+Game:
+26,Carlos Berlocq,WIN,3.0
+Game:
+26,Benoit Paire,WIN,5.5
+Game:
+26,Albert Ramos,WIN,4.5
+Game:
+26,Milos Raonic,WIN,4.0
+Game:
+26,Nicolas Almagro,WIN,2.5
+Match:
+14-04-2013,Monaco,ATPWorldTourMasters1000MonteCarlo,
+Game:
+26,Marinko Matosevic,WIN,4.5
+Game:
+26,Philipp Kohlschreiber,WIN,3.0
+Game:
+26,Grigor Dimitrov,WIN,0.6666666666666666
+Game:
+26,Jo-Wilfried Tsonga,WIN,5.0
+Game:
+26,Novak Djokovic,LOOSE,1.0
+Match:
+07-03-2013,CA,ATPWorldTourMasters1000IndianWells,
+Game:
+26,Ryan Harrison,WIN,5.5
+Game:
+26,Leonardo Mayer,WIN,0.0
+Game:
+26,Ernests Gulbis,WIN,0.6666666666666666
+Game:
+26,Roger Federer,WIN,3.0
+Game:
+26,Tomas Berdych,WIN,2.0
+Game:
+26,Juan Martin Del Potro,WIN,1.0
+Match:
+25-02-2013,Mexico,Acapulco,
+Game:
+26,Diego Sebastian Schwartzman,WIN,4.0
+Game:
+26,Martin Alund,WIN,4.0
+Game:
+26,Leonardo Mayer,WIN,3.5
+Game:
+26,Nicolas Almagro,WIN,2.0
+Game:
+26,David Ferrer,WIN,5.0
+Match:
+11-02-2013,Brazil,SaoPaulo,
+Game:
+26,Joao Souza,WIN,2.5
+Game:
+26,Carlos Berlocq,WIN,0.3333333333333333
+Game:
+26,Martin Alund,WIN,4.666666666666667
+Game:
+26,David Nalbandian,WIN,3.5
+Match:
+04-02-2013,Chile,VinadelMar,
+Game:
+26,Federico Delbonis,WIN,3.5
+Game:
+26,Daniel Gimeno-Traver,WIN,3.5
+Game:
+26,Jeremy Chardy,WIN,4.0
+Game:
+26,Horacio Zeballos,LOOSE,3.6666666666666665
+Match:
+25-06-2012,Great Britain,Wimbledon,
+Game:
+26,Thomaz Bellucci,WIN,4.666666666666667
+Game:
+26,Lukas Rosol,LOOSE,1.0
+Match:
+11-06-2012,Germany,Halle,
+Game:
+26,Lukas Lacko,WIN,3.5
+Game:
+26,Philipp Kohlschreiber,LOOSE,-2.5
+Match:
+27-05-2012,France,RolandGarros,
+Game:
+25,Simone Bolelli,WIN,4.333333333333333
+Game:
+25,Denis Istomin,WIN,4.666666666666667
+Game:
+25,Eduardo Schwank,WIN,3.3333333333333335
+Game:
+25,Juan Monaco,WIN,5.333333333333333
+Game:
+25,Nicolas Almagro,WIN,4.666666666666667
+Game:
+25,David Ferrer,WIN,4.333333333333333
+Game:
+25,Novak Djokovic,WIN,0.75
+Match:
+13-05-2012,Italy,ATPWorldTourMasters1000Rome,
+Game:
+25,Florian Mayer,WIN,3.5
+Game:
+25,Marcel Granollers,WIN,5.0
+Game:
+25,Tomas Berdych,WIN,2.0
+Game:
+25,David Ferrer,WIN,6.5
+Game:
+25,Novak Djokovic,WIN,2.5
+Match:
+06-05-2012,Spain,ATPWorldTourMasters1000Madrid,
+Game:
+25,Nikolay Davydenko,WIN,4.0
+Game:
+25,Fernando Verdasco,LOOSE,-0.6666666666666666
+Match:
+23-04-2012,Spain,Barcelona,
+Game:
+25,Guillermo Garcia-Lopez,WIN,4.5
+Game:
+25,Robert Farah,WIN,3.5
+Game:
+25,Janko Tipsarevic,WIN,4.0
+Game:
+25,Fernando Verdasco,WIN,4.0
+Game:
+25,David Ferrer,WIN,4.5
+Match:
+15-04-2012,Monaco,ATPWorldTourMasters1000MonteCarlo,
+Game:
+25,Jarkko Nieminen,WIN,2.5
+Game:
+25,Mikhail Kukushkin,WIN,5.0
+Game:
+25,Stanislas Wawrinka,WIN,2.0
+Game:
+25,Gilles Simon,WIN,2.5
+Game:
+25,Novak Djokovic,WIN,4.0
+Match:
+21-03-2012,FL,ATPWorldTourMasters1000Miami,
+Game:
+25,Santiago Giraldo,WIN,5.0
+Game:
+25,Radek Stepanek,WIN,4.0
+Game:
+25,Kei Nishikori,WIN,2.0
+Game:
+25,Jo-Wilfried Tsonga,WIN,1.3333333333333333
+Game:
+25,Andy Murray,LOOSE,0.0
+Match:
+08-03-2012,CA,ATPWorldTourMasters1000IndianWells,
+Game:
+25,Leonardo Mayer,WIN,4.0
+Game:
+25,Marcel Granollers,WIN,3.5
+Game:
+25,Alexandr Dolgopolov,WIN,3.5
+Game:
+25,David Nalbandian,WIN,0.6666666666666666
+Game:
+25,Roger Federer,LOOSE,-2.5
+Match:
+16-01-2012,Australia,AustralianOpen,
+Game:
+25,Alex Kuznetsov,WIN,4.0
+Game:
+25,Tommy Haas,WIN,2.3333333333333335
+Game:
+25,Lukas Lacko,WIN,3.3333333333333335
+Game:
+25,Feliciano Lopez,WIN,2.6666666666666665
+Game:
+25,Tomas Berdych,WIN,4.5
+Game:
+25,Roger Federer,WIN,4.75
+Game:
+25,Novak Djokovic,LOOSE,0.2
+Match:
+02-01-2012,Qatar,Doha,
+Game:
+25,Philipp Kohlschreiber,WIN,4.0
+Game:
+25,Denis Gremelmayr,WIN,4.0
+Game:
+25,Mikhail Youzhny,WIN,2.0
+Game:
+25,Gael Monfils,LOOSE,-2.5
+Match:
+02-12-2011,Spain,ESPvs.ARGDCFinal,
+Game:
+25,Juan Monaco,WIN,4.666666666666667
+Game:
+25,Juan Martin Del Potro,WIN,2.25
+Match:
+20-11-2011,Great Britain,BarclaysATPWorldTourFinals,
+Game:
+25,Mardy Fish,WIN,2.6666666666666665
+Game:
+25,Roger Federer,LOOSE,-4.5
+Game:
+25,Jo-Wilfried Tsonga,LOOSE,1.6666666666666667
+Match:
+09-10-2011,Shanghai,ATPWorldTourMasters1000Shanghai,
+Game:
+25,Guillermo Garcia-Lopez,WIN,3.5
+Game:
+25,Florian Mayer,LOOSE,1.5
+Match:
+03-10-2011,Japan,Tokyo,
+Game:
+25,Go Soeda,WIN,3.5
+Game:
+25,Milos Raonic,WIN,2.5
+Game:
+25,Santiago Giraldo,WIN,5.0
+Game:
+25,Mardy Fish,WIN,3.5
+Game:
+25,Andy Murray,LOOSE,-2.3333333333333335
+Match:
+16-09-2011,Spain,ESPvs.FRAWGSF,
+Game:
+25,Richard Gasquet,WIN,4.666666666666667
+Game:
+25,Jo-Wilfried Tsonga,WIN,4.0
+Match:
+29-08-2011,NY,USOpen,
+Game:
+25,Andrey Golubev,WIN,4.0
+Game:
+25,Nicolas Mahut,WIN,5.0
+Game:
+25,David Nalbandian,WIN,4.666666666666667
+Game:
+25,Gilles Muller,WIN,5.333333333333333
+Game:
+25,Andy Roddick,WIN,4.0
+Game:
+25,Andy Murray,WIN,1.75
+Game:
+25,Novak Djokovic,LOOSE,-1.0
+Match:
+14-08-2011,OH,ATPWorldTourMasters1000Cincinnati,
+Game:
+25,Julien Benneteau,WIN,2.0
+Game:
+25,Fernando Verdasco,WIN,6.666666666666667
+Game:
+25,Mardy Fish,LOOSE,-2.5
+Match:
+08-08-2011,Montreal,ATPWorldTourMasters1000Canada,
+Game:
+25,Ivan Dodig,LOOSE,5.666666666666667
+Match:
+20-06-2011,Great Britain,Wimbledon,
+Game:
+25,Michael Russell,WIN,3.3333333333333335
+Game:
+25,Ryan Sweeting,WIN,3.0
+Game:
+25,Gilles Muller,WIN,6.666666666666667
+Game:
+25,Juan Martin Del Potro,WIN,3.25
+Game:
+25,Mardy Fish,WIN,1.5
+Game:
+25,Andy Murray,WIN,2.0
+Game:
+25,Novak Djokovic,LOOSE,-1.25
+Match:
+06-06-2011,Great Britain,London/Queen'sClub,
+Game:
+25,Matthew Ebden,WIN,2.0
+Game:
+25,Radek Stepanek,WIN,2.0
+Game:
+25,Jo-Wilfried Tsonga,LOOSE,0.0
+Match:
+22-05-2011,France,RolandGarros,
+Game:
+24,John Isner,WIN,4.0
+Game:
+24,Pablo Andujar,WIN,4.0
+Game:
+24,Antonio Veic,WIN,4.666666666666667
+Game:
+24,Ivan Ljubicic,WIN,2.6666666666666665
+Game:
+24,Robin Soderling,WIN,4.666666666666667
+Game:
+24,Andy Murray,WIN,2.0
+Game:
+24,Roger Federer,WIN,3.0
+Match:
+08-05-2011,Italy,ATPWorldTourMasters1000Rome,
+Game:
+24,Paolo Lorenzi,WIN,4.666666666666667
+Game:
+24,Feliciano Lopez,WIN,3.0
+Game:
+24,Marin Cilic,WIN,4.0
+Game:
+24,Richard Gasquet,WIN,3.5
+Game:
+24,Novak Djokovic,LOOSE,-2.0
+Match:
+01-05-2011,Spain,ATPWorldTourMasters1000Madrid,
+Game:
+24,Marcos Baghdatis,WIN,4.0
+Game:
+24,Juan Martin Del Potro,WIN,0.0
+Game:
+24,Michael Llodra,WIN,4.0
+Game:
+24,Roger Federer,WIN,2.0
+Game:
+24,Novak Djokovic,LOOSE,-2.0
+Match:
+18-04-2011,Spain,Barcelona,
+Game:
+24,Daniel Gimeno-Traver,WIN,5.0
+Game:
+24,Santiago Giraldo,WIN,4.0
+Game:
+24,Gael Monfils,WIN,4.0
+Game:
+24,Ivan Dodig,WIN,3.5
+Game:
+24,David Ferrer,WIN,3.0
+Match:
+10-04-2011,Monaco,ATPWorldTourMasters1000MonteCarlo,
+Game:
+24,Jarkko Nieminen,WIN,4.0
+Game:
+24,Richard Gasquet,WIN,3.0
+Game:
+24,Ivan Ljubicic,WIN,4.0
+Game:
+24,Andy Murray,WIN,1.0
+Game:
+24,David Ferrer,WIN,2.0
+Match:
+23-03-2011,FL,ATPWorldTourMasters1000Miami,
+Game:
+24,Kei Nishikori,WIN,2.0
+Game:
+24,Feliciano Lopez,WIN,3.0
+Game:
+24,Alexandr Dolgopolov,WIN,4.5
+Game:
+24,Tomas Berdych,WIN,1.3333333333333333
+Game:
+24,Roger Federer,WIN,3.5
+Game:
+24,Novak Djokovic,LOOSE,1.6666666666666667
+Match:
+10-03-2011,CA,ATPWorldTourMasters1000IndianWells,
+Game:
+24,Rik De Voest,WIN,5.0
+Game:
+24,Ryan Sweeting,WIN,4.0
+Game:
+24,Somdev Devvarman,WIN,2.0
+Game:
+24,Ivo Karlovic,WIN,3.3333333333333335
+Game:
+24,Juan Martin Del Potro,WIN,2.0
+Game:
+24,Novak Djokovic,LOOSE,-1.6666666666666667
+Match:
+04-03-2011,Belgium,BELvs.ESPWG1stRD,
+Game:
+24,Ruben Bemelmans,WIN,3.3333333333333335
+Game:
+24,Olivier Rochus,WIN,3.0
+Match:
+17-01-2011,Australia,AustralianOpen,
+Game:
+24,Marcos Daniel,WIN,5.5
+Game:
+24,Ryan Sweeting,WIN,4.666666666666667
+Game:
+24,Bernard Tomic,WIN,3.0
+Game:
+24,Marin Cilic,WIN,3.0
+Game:
+24,David Ferrer,LOOSE,-3.0
+Match:
+03-01-2011,Qatar,Doha,
+Game:
+24,Karol Beck,WIN,4.5
+Game:
+24,Lukas Lacko,WIN,1.3333333333333333
+Game:
+24,Ernests Gulbis,WIN,5.0
+Game:
+24,Nikolay Davydenko,LOOSE,-3.5
+Match:
+21-11-2010,London,BarclaysATPWorldTourFinals,
+Game:
+24,Andy Roddick,WIN,2.0
+Game:
+24,Novak Djokovic,WIN,3.0
+Game:
+24,Tomas Berdych,WIN,6.0
+Game:
+24,Andy Murray,WIN,3.6666666666666665
+Game:
+24,Roger Federer,LOOSE,-1.6666666666666667
+Match:
+10-10-2010,China,ATPWorldTourMasters1000Shanghai,
+Game:
+24,Stanislas Wawrinka,WIN,2.0
+Game:
+24,Jurgen Melzer,LOOSE,-1.6666666666666667
+Match:
+04-10-2010,Japan,Tokyo,
+Game:
+24,Santiago Giraldo,WIN,2.0
+Game:
+24,Milos Raonic,WIN,2.0
+Game:
+24,Dmitry Tursunov,WIN,3.5
+Game:
+24,Viktor Troicki,WIN,4.0
+Game:
+24,Gael Monfils,WIN,3.5
+Match:
+27-09-2010,Thailand,Bangkok,
+Game:
+24,Ruben Bemelmans,WIN,3.5
+Game:
+24,Mikhail Kukushkin,WIN,3.5
+Game:
+24,Guillermo Garcia-Lopez,LOOSE,2.3333333333333335
+Match:
+30-08-2010,NY,USOpen,
+Game:
+24,Teymuraz Gabashvili,WIN,5.666666666666667
+Game:
+24,Denis Istomin,WIN,4.333333333333333
+Game:
+24,Gilles Simon,WIN,2.6666666666666665
+Game:
+24,Feliciano Lopez,WIN,2.3333333333333335
+Game:
+24,Fernando Verdasco,WIN,2.3333333333333335
+Game:
+24,Mikhail Youzhny,WIN,3.0
+Game:
+24,Novak Djokovic,WIN,1.5
+Match:
+15-08-2010,OH,ATPWorldTourMasters1000Cincinnati,
+Game:
+24,Taylor Dent,WIN,3.0
+Game:
+24,Julien Benneteau,WIN,3.0
+Game:
+24,Marcos Baghdatis,LOOSE,-0.6666666666666666
+Match:
+09-08-2010,Toronto,ATPWorldTourMasters1000Canada,
+Game:
+24,Stanislas Wawrinka,WIN,5.0
+Game:
+24,Kevin Anderson,WIN,5.5
+Game:
+24,Philipp Kohlschreiber,WIN,0.6666666666666666
+Game:
+24,Andy Murray,LOOSE,-2.5
+Match:
+21-06-2010,Great Britain,Wimbledon,
+Game:
+24,Kei Nishikori,WIN,2.6666666666666665
+Game:
+24,Robin Haase,WIN,1.6
+Game:
+24,Philipp Petzschner,WIN,2.6
+Game:
+24,Paul-Henri Mathieu,WIN,3.3333333333333335
+Game:
+24,Robin Soderling,WIN,3.0
+Game:
+24,Andy Murray,WIN,3.6666666666666665
+Game:
+24,Tomas Berdych,WIN,2.3333333333333335
+Match:
+07-06-2010,Great Britain,London/Queen'sClub,
+Game:
+24,Marcos Daniel,WIN,4.0
+Game:
+24,Denis Istomin,WIN,2.3333333333333335
+Game:
+24,Feliciano Lopez,LOOSE,2.0
+Match:
+24-05-2010,France,RolandGarros,
+Game:
+23,Gianni Mina,WIN,4.0
+Game:
+23,Horacio Zeballos,WIN,3.6666666666666665
+Game:
+23,Lleyton Hewitt,WIN,2.6666666666666665
+Game:
+23,Thomaz Bellucci,WIN,2.6666666666666665
+Game:
+23,Nicolas Almagro,WIN,5.333333333333333
+Game:
+23,Jurgen Melzer,WIN,4.666666666666667
+Game:
+23,Robin Soderling,WIN,2.6666666666666665
+Match:
+09-05-2010,Spain,ATPWorldTourMasters1000Madrid,
+Game:
+23,Alexandr Dolgopolov,WIN,2.5
+Game:
+23,John Isner,WIN,2.0
+Game:
+23,Gael Monfils,WIN,4.0
+Game:
+23,Nicolas Almagro,WIN,2.0
+Game:
+23,Roger Federer,WIN,4.5
+Match:
+25-04-2010,Italy,ATPWorldTourMasters1000Rome,
+Game:
+23,Philipp Kohlschreiber,WIN,4.0
+Game:
+23,Victor Hanescu,WIN,3.5
+Game:
+23,Stanislas Wawrinka,WIN,3.5
+Game:
+23,Ernests Gulbis,WIN,0.3333333333333333
+Game:
+23,David Ferrer,WIN,3.0
+Match:
+11-04-2010,Monaco,ATPWorldTourMasters1000MonteCarlo,
+Game:
+23,Thiemo de Bakker,WIN,5.5
+Game:
+23,Michael Berrer,WIN,5.5
+Game:
+23,Juan Carlos Ferrero,WIN,3.0
+Game:
+23,David Ferrer,WIN,3.5
+Game:
+23,Fernando Verdasco,WIN,5.5
+Match:
+24-03-2010,FL,ATPWorldTourMasters1000Miami,
+Game:
+23,Taylor Dent,WIN,2.5
+Game:
+23,David Nalbandian,WIN,4.666666666666667
+Game:
+23,David Ferrer,WIN,4.5
+Game:
+23,Jo-Wilfried Tsonga,WIN,3.5
+Game:
+23,Andy Roddick,LOOSE,-1.3333333333333333
+Match:
+11-03-2010,CA,ATPWorldTourMasters1000IndianWells,
+Game:
+23,Rainer Schuettler,WIN,2.0
+Game:
+23,Mario Ancic,WIN,4.0
+Game:
+23,John Isner,WIN,0.6666666666666666
+Game:
+23,Tomas Berdych,WIN,4.5
+Game:
+23,Ivan Ljubicic,LOOSE,2.3333333333333335
+Match:
+18-01-2010,Australia,AustralianOpen,
+Game:
+23,Peter Luczak,WIN,4.666666666666667
+Game:
+23,Lukas Lacko,WIN,4.0
+Game:
+23,Philipp Kohlschreiber,WIN,1.0
+Game:
+23,Ivo Karlovic,WIN,1.0
+Game:
+23,Andy Murray,LOOSE,1.0
+Match:
+04-01-2010,Qatar,Doha,
+Game:
+23,Simone Bolelli,WIN,3.0
+Game:
+23,Potito Starace,WIN,4.0
+Game:
+23,Steve Darcis,WIN,3.5
+Game:
+23,Viktor Troicki,WIN,4.0
+Game:
+23,Nikolay Davydenko,LOOSE,3.3333333333333335
+Match:
+04-12-2009,Spain,ESPvs.CZEDCFinal,
+Game:
+23,Tomas Berdych,WIN,4.0
+Game:
+23,Jan Hajek,WIN,2.5
+Match:
+22-11-2009,London,BarclaysATPWorldTourFinals,
+Game:
+23,Robin Soderling,LOOSE,-2.0
+Game:
+23,Nikolay Davydenko,LOOSE,0.5
+Game:
+23,Novak Djokovic,LOOSE,1.5
+Match:
+08-11-2009,France,ATPWorldTourMasters1000Paris,
+Game:
+23,Nicolas Almagro,WIN,2.0
+Game:
+23,Tommy Robredo,WIN,0.6666666666666666
+Game:
+23,Jo-Wilfried Tsonga,WIN,2.0
+Game:
+23,Novak Djokovic,LOOSE,-3.5
+Match:
+11-10-2009,China,ATPWorldTourMasters1000Shanghai,
+Game:
+23,James Blake,WIN,4.0
+Game:
+23,Tommy Robredo,WIN,3.5
+Game:
+23,Ivan Ljubicic,WIN,1.5
+Game:
+23,Feliciano Lopez,WIN,4.0
+Game:
+23,Nikolay Davydenko,LOOSE,1.5
+Match:
+05-10-2009,China,Beijing,
+Game:
+23,Marcos Baghdatis,WIN,0.3333333333333333
+Game:
+23,James Blake,WIN,3.6666666666666665
+Game:
+23,Marat Safin,WIN,4.0
+Game:
+23,Marin Cilic,LOOSE,-4.0
+Match:
+31-08-2009,NY,USOpen,
+Game:
+23,Richard Gasquet,WIN,3.6666666666666665
+Game:
+23,Nicolas Kiefer,WIN,2.0
+Game:
+23,Nicolas Almagro,WIN,2.0
+Game:
+23,Gael Monfils,WIN,4.25
+Game:
+23,Fernando Gonzalez,WIN,6.666666666666667
+Game:
+23,Juan Martin Del Potro,LOOSE,-4.0
+Match:
+16-08-2009,OH,ATPWorldTourMasters1000Cincinnati,
+Game:
+23,Andreas Seppi,WIN,7.0
+Game:
+23,Paul-Henri Mathieu,WIN,3.0
+Game:
+23,Tomas Berdych,WIN,2.0
+Game:
+23,Novak Djokovic,LOOSE,-3.5
+Match:
+10-08-2009,Montrￃﾩal,ATPWorldTourMasters1000Canada,
+Game:
+23,David Ferrer,WIN,4.0
+Game:
+23,Philipp Petzschner,WIN,3.5
+Game:
+23,Juan Martin Del Potro,LOOSE,0.5
+Match:
+25-05-2009,France,RolandGarros,
+Game:
+22,Marcos Daniel,WIN,2.3333333333333335
+Game:
+22,Teymuraz Gabashvili,WIN,3.6666666666666665
+Game:
+22,Lleyton Hewitt,WIN,4.333333333333333
+Game:
+22,Robin Soderling,LOOSE,1.75
+Match:
+10-05-2009,Spain,ATPWorldTourMasters1000Madrid,
+Game:
+22,Jurgen Melzer,WIN,4.0
+Game:
+22,Philipp Kohlschreiber,WIN,0.0
+Game:
+22,Fernando Verdasco,WIN,2.0
+Game:
+22,Novak Djokovic,WIN,3.6666666666666665
+Game:
+22,Roger Federer,LOOSE,-2.0
+Match:
+27-04-2009,Italy,ATPWorldTourMasters1000Rome,
+Game:
+22,Andreas Seppi,WIN,3.5
+Game:
+22,Robin Soderling,WIN,5.5
+Game:
+22,Fernando Verdasco,WIN,3.0
+Game:
+22,Fernando Gonzalez,WIN,3.0
+Game:
+22,Novak Djokovic,WIN,5.5
+Match:
+20-04-2009,Spain,Barcelona,
+Game:
+22,Frederico Gil,WIN,4.0
+Game:
+22,Christophe Rochus,WIN,5.0
+Game:
+22,David Nalbandian,WIN,0.0
+Game:
+22,Nikolay Davydenko,WIN,3.5
+Game:
+22,David Ferrer,WIN,3.0
+Match:
+12-04-2009,Monaco,ATPWorldTourMasters1000MonteCarlo,
+Game:
+22,Juan Ignacio Chela,WIN,3.5
+Game:
+22,Nicolas Lapentti,WIN,4.5
+Game:
+22,Ivan Ljubicic,WIN,3.0
+Game:
+22,Andy Murray,WIN,5.5
+Game:
+22,Novak Djokovic,WIN,1.3333333333333333
+Match:
+25-03-2009,FL,ATPWorldTourMasters1000Miami,
+Game:
+22,Teymuraz Gabashvili,WIN,4.0
+Game:
+22,Frederico Gil,WIN,2.5
+Game:
+22,Stanislas Wawrinka,WIN,7.0
+Game:
+22,Juan Martin Del Potro,LOOSE,2.3333333333333335
+Match:
+12-03-2009,CA,ATPWorldTourMasters1000IndianWells,
+Game:
+22,Michael Berrer,WIN,4.5
+Game:
+22,Dmitry Tursunov,WIN,3.0
+Game:
+22,David Nalbandian,WIN,3.3333333333333335
+Game:
+22,Juan Martin Del Potro,WIN,3.0
+Game:
+22,Andy Roddick,WIN,4.5
+Game:
+22,Andy Murray,WIN,4.5
+Match:
+06-03-2009,Spain,ESPvs.SRBWG1stRD,
+Game:
+22,Janko Tipsarevic,WIN,5.0
+Game:
+22,Novak Djokovic,WIN,3.0
+Match:
+09-02-2009,The Netherlands,Rotterdam,
+Game:
+22,Simone Bolelli,WIN,1.3333333333333333
+Game:
+22,Grigor Dimitrov,WIN,1.0
+Game:
+22,Jo-Wilfried Tsonga,WIN,3.3333333333333335
+Game:
+22,Gael Monfils,WIN,2.0
+Game:
+22,Andy Murray,LOOSE,-2.3333333333333335
+Match:
+19-01-2009,Australia,AustralianOpen,
+Game:
+22,Christophe Rochus,WIN,4.666666666666667
+Game:
+22,Roko Karanusic,WIN,3.6666666666666665
+Game:
+22,Tommy Haas,WIN,3.3333333333333335
+Game:
+22,Fernando Gonzalez,WIN,3.0
+Game:
+22,Gilles Simon,WIN,2.6666666666666665
+Game:
+22,Fernando Verdasco,WIN,4.6
+Game:
+22,Roger Federer,WIN,1.4
+Match:
+05-01-2009,Qatar,Doha,
+Game:
+22,Fabrice Santoro,WIN,5.5
+Game:
+22,Karol Beck,WIN,4.5
+Game:
+22,Gael Monfils,LOOSE,-2.0
+Match:
+26-10-2008,France,ATPMastersSeriesParis,
+Game:
+22,Florent Serra,WIN,3.0
+Game:
+22,Gael Monfils,WIN,3.5
+Game:
+22,Nikolay Davydenko,LOOSE,1.0
+Match:
+12-10-2008,Spain,ATPMastersSeriesMadrid,
+Game:
+22,Ernests Gulbis,WIN,0.6666666666666666
+Game:
+22,Richard Gasquet,WIN,3.0
+Game:
+22,Feliciano Lopez,WIN,2.0
+Game:
+22,Gilles Simon,LOOSE,2.3333333333333335
+Match:
+19-09-2008,Spain,ESPvs.USAWGSF,
+Game:
+22,Sam Querrey,WIN,3.25
+Game:
+22,Andy Roddick,WIN,3.3333333333333335
+Match:
+25-08-2008,NY,USOpen,
+Game:
+22,Bjorn Phau,WIN,5.666666666666667
+Game:
+22,Ryler DeHeart,WIN,3.6666666666666665
+Game:
+22,Viktor Troicki,WIN,3.6666666666666665
+Game:
+22,Sam Querrey,WIN,3.0
+Game:
+22,Mardy Fish,WIN,2.0
+Game:
+22,Andy Murray,LOOSE,0.5
+Match:
+11-08-2008,China,BeijingOlympics,
+Game:
+22,Potito Starace,WIN,1.6666666666666667
+Game:
+22,Lleyton Hewitt,WIN,4.5
+Game:
+22,Igor Andreev,WIN,3.0
+Game:
+22,Jurgen Melzer,WIN,4.0
+Game:
+22,Novak Djokovic,WIN,-0.3333333333333333
+Game:
+22,Fernando Gonzalez,WIN,4.333333333333333
+Match:
+28-07-2008,OH,ATPMastersSeriesCincinnati,
+Game:
+22,Florent Serra,WIN,5.5
+Game:
+22,Tommy Haas,WIN,4.5
+Game:
+22,Nicolas Lapentti,WIN,6.0
+Game:
+22,Novak Djokovic,LOOSE,-3.5
+Match:
+21-07-2008,Toronto,ATPMastersSeriesCanada,
+Game:
+22,Jesse Levine,WIN,3.0
+Game:
+22,Igor Andreev,WIN,5.5
+Game:
+22,Richard Gasquet,WIN,5.0
+Game:
+22,Andy Murray,WIN,5.0
+Game:
+22,Nicolas Kiefer,WIN,3.5
+Match:
+23-06-2008,Great Britain,Wimbledon,
+Game:
+22,Andreas Beck,WIN,3.6666666666666665
+Game:
+22,Ernests Gulbis,WIN,3.0
+Game:
+22,Nicolas Kiefer,WIN,4.666666666666667
+Game:
+22,Mikhail Youzhny,WIN,3.6666666666666665
+Game:
+22,Andy Murray,WIN,3.0
+Game:
+22,Rainer Schuettler,WIN,4.666666666666667
+Game:
+22,Roger Federer,WIN,3.6
+Match:
+09-06-2008,Great Britain,London/Queen'sClub,
+Game:
+22,Jonas Bjorkman,WIN,4.0
+Game:
+22,Kei Nishikori,WIN,0.6666666666666666
+Game:
+22,Ivo Karlovic,WIN,6.666666666666667
+Game:
+22,Andy Roddick,WIN,2.0
+Game:
+22,Novak Djokovic,WIN,4.5
+Match:
+25-05-2008,France,RolandGarros,
+Game:
+21,Thomaz Bellucci,WIN,3.3333333333333335
+Game:
+21,Nicolas Devilder,WIN,4.333333333333333
+Game:
+21,Jarkko Nieminen,WIN,4.333333333333333
+Game:
+21,Fernando Verdasco,WIN,5.0
+Game:
+21,Nicolas Almagro,WIN,5.0
+Game:
+21,Novak Djokovic,WIN,4.333333333333333
+Game:
+21,Roger Federer,WIN,4.666666666666667
+Match:
+11-05-2008,Germany,ATPMastersSeriesHamburg,
+Game:
+21,Potito Starace,WIN,4.5
+Game:
+21,Andy Murray,WIN,3.5
+Game:
+21,Carlos Moya,WIN,4.0
+Game:
+21,Novak Djokovic,WIN,0.6666666666666666
+Game:
+21,Roger Federer,WIN,3.6666666666666665
+Match:
+05-05-2008,Italy,ATPMastersSeriesRome,
+Game:
+21,Juan Carlos Ferrero,LOOSE,-3.5
+Match:
+28-04-2008,Spain,Barcelona,
+Game:
+21,Potito Starace,WIN,3.0
+Game:
+21,Feliciano Lopez,WIN,2.5
+Game:
+21,Juan Ignacio Chela,WIN,3.0
+Game:
+21,Denis Gremelmayr,WIN,5.5
+Game:
+21,David Ferrer,WIN,2.6666666666666665
+Match:
+20-04-2008,Monaco,ATPMastersSeriesMonteCarlo,
+Game:
+21,Mario Ancic,WIN,4.5
+Game:
+21,Juan Carlos Ferrero,WIN,3.5
+Game:
+21,David Ferrer,WIN,3.5
+Game:
+21,Nikolay Davydenko,WIN,3.5
+Game:
+21,Roger Federer,WIN,2.0
+Match:
+11-04-2008,Germany,GERv.ESPWGQF,
+Game:
+21,Nicolas Kiefer,WIN,5.333333333333333
+Match:
+27-03-2008,FL,ATPMastersSeriesMiami,
+Game:
+21,Benjamin Becker,WIN,3.0
+Game:
+21,Nicolas Kiefer,WIN,3.0
+Game:
+21,Paul-Henri Mathieu,WIN,2.0
+Game:
+21,James Blake,WIN,1.6666666666666667
+Game:
+21,Tomas Berdych,WIN,5.5
+Game:
+21,Nikolay Davydenko,LOOSE,-3.0
+Match:
+13-03-2008,CA,ATPMastersSeriesIndianWells,
+Game:
+21,Santiago Giraldo,WIN,3.0
+Game:
+21,Donald Young,WIN,4.0
+Game:
+21,Jo-Wilfried Tsonga,WIN,5.0
+Game:
+21,James Blake,WIN,0.6666666666666666
+Game:
+21,Novak Djokovic,LOOSE,-3.5
+Match:
+03-03-2008,U.A.E.,Dubai,
+Game:
+21,Philipp Kohlschreiber,WIN,1.3333333333333333
+Game:
+21,Mikhail Ledovskikh,WIN,4.0
+Game:
+21,Andy Roddick,LOOSE,1.0
+Match:
+18-02-2008,The Netherlands,Rotterdam,
+Game:
+21,Dmitry Tursunov,WIN,2.0
+Game:
+21,Andreas Seppi,LOOSE,-0.6666666666666666
+Match:
+14-01-2008,Australia,AustralianOpen,
+Game:
+21,Viktor Troicki,WIN,4.666666666666667
+Game:
+21,Florent Serra,WIN,4.666666666666667
+Game:
+21,Gilles Simon,WIN,3.0
+Game:
+21,Paul-Henri Mathieu,WIN,2.5
+Game:
+21,Jarkko Nieminen,WIN,3.3333333333333335
+Game:
+21,Jo-Wilfried Tsonga,LOOSE,-3.6666666666666665
+Match:
+31-12-2007,India,Chennai,
+Game:
+21,Mathieu Montcourt,WIN,3.0
+Game:
+21,Rajeev Ram,WIN,4.5
+Game:
+21,Guillermo Garcia-Lopez,WIN,3.5
+Game:
+21,Carlos Moya,WIN,6.666666666666667
+Game:
+21,Mikhail Youzhny,LOOSE,-5.5
+Match:
+12-11-2007,China,TennisMastersCup,
+Game:
+21,Richard Gasquet,WIN,0.6666666666666666
+Game:
+21,David Ferrer,LOOSE,-1.0
+Game:
+21,Novak Djokovic,WIN,2.0
+Game:
+21,Roger Federer,LOOSE,-3.5
+Match:
+28-10-2007,France,ATPMastersSeriesParis,
+Game:
+21,Filippo Volandri,WIN,4.0
+Game:
+21,Stanislas Wawrinka,WIN,2.5
+Game:
+21,Mikhail Youzhny,WIN,3.0
+Game:
+21,Marcos Baghdatis,WIN,1.0
+Game:
+21,David Nalbandian,LOOSE,-4.0
+Match:
+15-10-2007,Spain,ATPMastersSeriesMadrid,
+Game:
+21,Marcos Baghdatis,WIN,2.0
+Game:
+21,Andy Murray,WIN,4.5
+Game:
+21,David Nalbandian,LOOSE,-4.5
+Match:
+27-08-2007,NY,USOpen,
+Game:
+21,Alun Jones,WIN,1.5
+Game:
+21,Janko Tipsarevic,WIN,3.3333333333333335
+Game:
+21,Jo-Wilfried Tsonga,WIN,5.333333333333333
+Game:
+21,David Ferrer,LOOSE,1.75
+Match:
+13-08-2007,OH,ATPMastersSeriesCincinnati,
+Game:
+21,Juan Monaco,LOOSE,3.5
+Match:
+05-08-2007,Montreal,ATPMastersSeriesCanada,
+Game:
+21,Marat Safin,WIN,6.5
+Game:
+21,Paul-Henri Mathieu,WIN,1.3333333333333333
+Game:
+21,Frank Dancevic,WIN,1.6666666666666667
+Game:
+21,Novak Djokovic,LOOSE,-2.5
+Match:
+16-07-2007,Germany,Stuttgart,
+Game:
+21,Alexander Waske,WIN,5.0
+Game:
+21,Philipp Kohlschreiber,WIN,3.0
+Game:
+21,Juan Monaco,WIN,4.0
+Game:
+21,Feliciano Lopez,WIN,3.5
+Game:
+21,Stanislas Wawrinka,WIN,2.0
+Match:
+25-06-2007,Great Britain,Wimbledon,
+Game:
+21,Mardy Fish,WIN,4.333333333333333
+Game:
+21,Werner Eschauer,WIN,3.6666666666666665
+Game:
+21,Robin Soderling,WIN,2.0
+Game:
+21,Mikhail Youzhny,WIN,1.6
+Game:
+21,Tomas Berdych,WIN,4.333333333333333
+Game:
+21,Novak Djokovic,WIN,2.0
+Game:
+21,Roger Federer,LOOSE,2.8
+Match:
+11-06-2007,Great Britain,London/Queen'sClub,
+Game:
+21,Juan Martin Del Potro,WIN,2.0
+Game:
+21,Max Mirnyi,WIN,5.0
+Game:
+21,Nicolas Mahut,LOOSE,2.0
+Match:
+28-05-2007,France,RolandGarros,
+Game:
+20,Juan Martin Del Potro,WIN,3.0
+Game:
+20,Flavio Cipolla,WIN,3.6666666666666665
+Game:
+20,Albert Montanes,WIN,4.0
+Game:
+20,Lleyton Hewitt,WIN,5.0
+Game:
+20,Carlos Moya,WIN,3.6666666666666665
+Game:
+20,Novak Djokovic,WIN,2.6666666666666665
+Game:
+20,Roger Federer,WIN,1.5
+Match:
+14-05-2007,Germany,ATPMastersSeriesHamburg,
+Game:
+20,Oscar Hernandez,WIN,3.5
+Game:
+20,Igor Andreev,WIN,3.5
+Game:
+20,Fernando Gonzalez,WIN,2.0
+Game:
+20,Lleyton Hewitt,WIN,0.3333333333333333
+Game:
+20,Roger Federer,LOOSE,-2.0
+Match:
+07-05-2007,Italy,ATPMastersSeriesRome,
+Game:
+20,Daniele Bracciali,WIN,3.0
+Game:
+20,Mikhail Youzhny,WIN,4.0
+Game:
+20,Novak Djokovic,WIN,3.5
+Game:
+20,Nikolay Davydenko,WIN,5.0
+Game:
+20,Fernando Gonzalez,WIN,4.0
+Match:
+23-04-2007,Spain,Barcelona,
+Game:
+20,Kristof Vliegen,WIN,4.5
+Game:
+20,Thomas Johansson,WIN,3.5
+Game:
+20,Potito Starace,WIN,3.0
+Game:
+20,David Ferrer,WIN,3.5
+Game:
+20,Guillermo Canas,WIN,2.5
+Match:
+15-04-2007,Monaco,ATPMastersSeriesMonteCarlo,
+Game:
+20,Juan Ignacio Chela,WIN,4.0
+Game:
+20,Kristof Vliegen,WIN,5.0
+Game:
+20,Philipp Kohlschreiber,WIN,3.5
+Game:
+20,Tomas Berdych,WIN,4.0
+Game:
+20,Roger Federer,WIN,2.0
+Match:
+19-03-2007,FL,ATPMastersSeriesMiami,
+Game:
+20,Ricardo Mello,WIN,5.5
+Game:
+20,Olivier Rochus,WIN,0.0
+Game:
+20,Juan Martin Del Potro,WIN,4.0
+Game:
+20,Novak Djokovic,LOOSE,-2.5
+Match:
+05-03-2007,CA,ATPMastersSeriesIndianWells,
+Game:
+20,Arnaud Clement,WIN,5.0
+Game:
+20,Fernando Verdasco,WIN,2.0
+Game:
+20,Juan Carlos Ferrero,WIN,5.0
+Game:
+20,Juan Ignacio Chela,WIN,2.0
+Game:
+20,Andy Roddick,WIN,2.5
+Game:
+20,Novak Djokovic,WIN,3.0
+Match:
+26-02-2007,U.A.E.,Dubai,
+Game:
+20,Marcos Baghdatis,WIN,1.3333333333333333
+Game:
+20,Igor Andreev,WIN,2.6666666666666665
+Game:
+20,Mikhail Youzhny,LOOSE,1.5
+Match:
+15-01-2007,Australia,AustralianOpen,
+Game:
+20,Robert Kendrick,WIN,4.666666666666667
+Game:
+20,Philipp Kohlschreiber,WIN,1.75
+Game:
+20,Stanislas Wawrinka,WIN,4.0
+Game:
+20,Andy Murray,WIN,2.8
+Game:
+20,Fernando Gonzalez,LOOSE,-3.0
+Match:
+08-01-2007,Australia,Sydney,
+Game:
+20,Chris Guccione,LOOSE,5.0
+Match:
+01-01-2007,India,Chennai,
+Game:
+20,Rainer Schuettler,WIN,3.0
+Game:
+20,Karan Rastogi,WIN,3.5
+Game:
+20,Davide Sanguinetti,WIN,3.5
+Game:
+20,Xavier Malisse,LOOSE,2.0
+Match:
+13-11-2006,China,TennisMastersCup,
+Game:
+20,James Blake,LOOSE,2.0
+Game:
+20,Tommy Robredo,WIN,5.5
+Game:
+20,Nikolay Davydenko,WIN,0.6666666666666666
+Game:
+20,Roger Federer,LOOSE,-2.0
+Match:
+16-10-2006,Spain,ATPMastersSeriesMadrid,
+Game:
+20,Mardy Fish,WIN,3.0
+Game:
+20,Tommy Haas,WIN,2.5
+Game:
+20,Tomas Berdych,LOOSE,1.5
+Match:
+09-10-2006,Sweden,Stockholm,
+Game:
+20,Raemon Sluiter,WIN,3.0
+Game:
+20,Joachim Johansson,LOOSE,2.0
+Match:
+22-09-2006,Spain,ESPv.ITAWGPO,
+Game:
+20,Andreas Seppi,WIN,3.6666666666666665
+Game:
+20,Filippo Volandri,WIN,1.25
+Match:
+28-08-2006,NY,USOpen,
+Game:
+20,Mark Philippoussis,WIN,2.0
+Game:
+20,Luis Horna,WIN,1.5
+Game:
+20,Wesley Moodie,WIN,5.333333333333333
+Game:
+20,Jiri Novak,WIN,4.666666666666667
+Game:
+20,Mikhail Youzhny,LOOSE,0.0
+Match:
+14-08-2006,OH,ATPMastersSeriesCincinnati,
+Game:
+20,Sam Querrey,WIN,4.333333333333333
+Game:
+20,Hyung-Taik Lee,WIN,2.5
+Game:
+20,Tommy Haas,WIN,5.0
+Game:
+20,Juan Carlos Ferrero,LOOSE,6.0
+Match:
+07-08-2006,Toronto,ATPMastersSeriesCanada,
+Game:
+20,Nicolas Massu,WIN,3.5
+Game:
+20,Hyung-Taik Lee,WIN,2.5
+Game:
+20,Tomas Berdych,LOOSE,-2.0
+Match:
+26-06-2006,England,Wimbledon,
+Game:
+20,Alex Bogdanovic,WIN,3.6666666666666665
+Game:
+20,Robert Kendrick,WIN,2.8
+Game:
+20,Andre Agassi,WIN,4.333333333333333
+Game:
+20,Irakli Labadze,WIN,4.333333333333333
+Game:
+20,Jarkko Nieminen,WIN,2.3333333333333335
+Game:
+20,Marcos Baghdatis,WIN,3.3333333333333335
+Game:
+20,Roger Federer,LOOSE,1.0
+Match:
+12-06-2006,England,London/Queen'sClub,
+Game:
+20,Mardy Fish,WIN,6.0
+Game:
+20,Fernando Verdasco,WIN,3.3333333333333335
+Game:
+20,Lleyton Hewitt,LOOSE,3.0
+Match:
+29-05-2006,France,RolandGarros,
+Game:
+19,Robin Soderling,WIN,3.6666666666666665
+Game:
+19,Kevin Kim,WIN,3.6666666666666665
+Game:
+19,Paul-Henri Mathieu,WIN,1.0
+Game:
+19,Lleyton Hewitt,WIN,2.0
+Game:
+19,Novak Djokovic,WIN,4.0
+Game:
+19,Ivan Ljubicic,WIN,4.333333333333333
+Game:
+19,Roger Federer,WIN,2.25
+Match:
+08-05-2006,Italy,ATPMastersSeriesRome,
+Game:
+19,Carlos Moya,WIN,1.6666666666666667
+Game:
+19,Filippo Volandri,WIN,4.5
+Game:
+19,Tim Henman,WIN,4.0
+Game:
+19,Fernando Gonzalez,WIN,2.5
+Game:
+19,Gael Monfils,WIN,4.0
+Game:
+19,Roger Federer,WIN,3.6
+Match:
+24-04-2006,Spain,Barcelona,
+Game:
+19,Feliciano Lopez,WIN,3.0
+Game:
+19,Ivan Navarro,WIN,3.0
+Game:
+19,Jarkko Nieminen,WIN,1.0
+Game:
+19,Nicolas Almagro,WIN,5.0
+Game:
+19,Tommy Robredo,WIN,3.3333333333333335
+Match:
+17-04-2006,Monaco,ATPMastersSeriesMonteCarlo,
+Game:
+19,Arnaud Clement,WIN,2.0
+Game:
+19,Jean-Rene Lisnard,WIN,3.5
+Game:
+19,Kristof Vliegen,WIN,3.0
+Game:
+19,Guillermo Coria,WIN,4.5
+Game:
+19,Gaston Gaudio,WIN,2.6666666666666665
+Game:
+19,Roger Federer,WIN,5.0
+Match:
+20-03-2006,FL,ATPMastersSeriesMiami,
+Game:
+19,Carlos Moya,LOOSE,-2.0
+Match:
+06-03-2006,CA,ATPMastersSeriesIndianWells,
+Game:
+19,Jan Hernych,WIN,2.0
+Game:
+19,Mardy Fish,WIN,3.5
+Game:
+19,Sebastien Grosjean,WIN,3.0
+Game:
+19,Marcos Baghdatis,WIN,4.0
+Game:
+19,James Blake,LOOSE,-2.5
+Match:
+27-02-2006,U.A.E.,Dubai,
+Game:
+19,Paul-Henri Mathieu,WIN,5.0
+Game:
+19,Younes El Aynaoui,WIN,0.0
+Game:
+19,Tim Henman,WIN,6.0
+Game:
+19,Rainer Schuettler,WIN,3.0
+Game:
+19,Roger Federer,WIN,0.0
+Match:
+13-02-2006,France,Marseille,
+Game:
+19,Olivier Rochus,WIN,1.3333333333333333
+Game:
+19,Gilles Simon,WIN,2.0
+Game:
+19,Paul-Henri Mathieu,WIN,2.0
+Game:
+19,Arnaud Clement,LOOSE,-0.3333333333333333
+Match:
+17-10-2005,Spain,ATPMastersSeriesMadrid,
+Game:
+19,Victor Hanescu,WIN,5.0
+Game:
+19,Tommy Robredo,WIN,3.0
+Game:
+19,Radek Stepanek,WIN,4.5
+Game:
+19,Robby Ginepri,WIN,4.5
+Game:
+19,Ivan Ljubicic,WIN,1.0
+Match:
+23-09-2005,Torre Del Greco,ITAvs.ESPWGPO,
+Game:
+19,Daniele Bracciali,WIN,4.0
+Game:
+19,Andreas Seppi,WIN,2.25
+Match:
+12-09-2005,China,Beijing,
+Game:
+19,Jimmy Wang,WIN,3.0
+Game:
+19,Justin Gimelstob,WIN,0.6666666666666666
+Game:
+19,Peter Wessels,WIN,5.5
+Game:
+19,Juan Carlos Ferrero,WIN,2.0
+Game:
+19,Guillermo Coria,WIN,2.3333333333333335
+Match:
+29-08-2005,NY,USOpen,
+Game:
+19,Bobby Reynolds,WIN,2.6666666666666665
+Game:
+19,Scoville Jenkins,WIN,2.0
+Game:
+19,James Blake,LOOSE,-2.0
+Match:
+15-08-2005,Ohio,ATPMastersSeriesCincinnati,
+Game:
+19,Tomas Berdych,LOOSE,3.0
+Match:
+08-08-2005,Montreal,ATPMastersSeriesCanada,
+Game:
+19,Carlos Moya,WIN,4.0
+Game:
+19,Ricardo Mello,WIN,4.5
+Game:
+19,Sebastien Grosjean,WIN,2.0
+Game:
+19,Mariano Puerta,WIN,4.0
+Game:
+19,Paul-Henri Mathieu,WIN,2.0
+Game:
+19,Andre Agassi,WIN,1.6666666666666667
+Match:
+18-07-2005,Germany,Stuttgart,
+Game:
+19,Hugo Armando,WIN,4.5
+Game:
+19,Fernando Verdasco,WIN,3.5
+Game:
+19,Tomas Zib,WIN,4.5
+Game:
+19,Jarkko Nieminen,WIN,3.0
+Game:
+19,Gaston Gaudio,WIN,2.6666666666666665
+Match:
+04-07-2005,Sweden,Bastad,
+Game:
+19,Juan Monaco,WIN,5.0
+Game:
+19,Alberto Martin,WIN,3.0
+Game:
+19,Juan Carlos Ferrero,WIN,3.0
+Game:
+19,Tommy Robredo,WIN,3.0
+Game:
+19,Tomas Berdych,WIN,0.6666666666666666
+Match:
+20-06-2005,England,Wimbledon,
+Game:
+19,Vincent Spadea,WIN,3.6666666666666665
+Game:
+19,Gilles Muller,LOOSE,-1.25
+Match:
+06-06-2005,Germany,Halle,
+Game:
+19,Alexander Waske,LOOSE,-1.0
+Match:
+23-05-2005,France,RolandGarros,
+Game:
+18,Lars Burgsmuller,WIN,5.666666666666667
+Game:
+18,Xavier Malisse,WIN,3.3333333333333335
+Game:
+18,Richard Gasquet,WIN,3.0
+Game:
+18,Sebastien Grosjean,WIN,2.0
+Game:
+18,David Ferrer,WIN,4.0
+Game:
+18,Roger Federer,WIN,1.5
+Game:
+18,Mariano Puerta,WIN,4.0
+Match:
+02-05-2005,Italy,ATPMastersSeriesRome,
+Game:
+18,Mikhail Youzhny,WIN,5.0
+Game:
+18,Victor Hanescu,WIN,5.0
+Game:
+18,Guillermo Canas,WIN,4.0
+Game:
+18,Radek Stepanek,WIN,2.6666666666666665
+Game:
+18,David Ferrer,WIN,0.6666666666666666
+Game:
+18,Guillermo Coria,WIN,1.4
+Match:
+18-04-2005,Spain,Barcelona,
+Game:
+18,Gilles Muller,WIN,5.0
+Game:
+18,Dominik Hrbaty,WIN,4.5
+Game:
+18,Agustin Calleri,WIN,3.5
+Game:
+18,Radek Stepanek,WIN,3.0
+Game:
+18,Juan Carlos Ferrero,WIN,5.0
+Match:
+11-04-2005,Monaco,ATPMastersSeriesMonteCarlo,
+Game:
+18,Gael Monfils,WIN,3.5
+Game:
+18,Xavier Malisse,WIN,4.5
+Game:
+18,Olivier Rochus,WIN,4.5
+Game:
+18,Gaston Gaudio,WIN,4.5
+Game:
+18,Richard Gasquet,WIN,3.6666666666666665
+Game:
+18,Guillermo Coria,WIN,1.0
+Match:
+04-04-2005,Spain,Valencia,
+Game:
+18,Juan Carlos Ferrero,WIN,4.5
+Game:
+18,Guillermo Garcia-Lopez,WIN,3.5
+Game:
+18,Igor Andreev,LOOSE,-3.0
+Match:
+21-03-2005,FL,ATPMastersSeriesMiami,
+Game:
+18,Rainer Schuettler,WIN,4.5
+Game:
+18,Fernando Verdasco,WIN,4.0
+Game:
+18,Ivan Ljubicic,WIN,3.6666666666666665
+Game:
+18,Thomas Johansson,WIN,3.0
+Game:
+18,David Ferrer,WIN,2.5
+Game:
+18,Roger Federer,LOOSE,1.8
+Match:
+21-02-2005,Mexico,Acapulco,
+Game:
+18,Alex Calatrava,WIN,2.0
+Game:
+18,Santiago Ventura,WIN,5.5
+Game:
+18,Guillermo Canas,WIN,2.5
+Game:
+18,Mariano Puerta,WIN,3.5
+Game:
+18,Albert Montanes,WIN,5.5
+Match:
+14-02-2005,Brazil,CostaDoSauipe,
+Game:
+18,Jose Acasuso,WIN,5.0
+Game:
+18,Alex Calatrava,WIN,3.0
+Game:
+18,Agustin Calleri,WIN,4.0
+Game:
+18,Ricardo Mello,WIN,0.6666666666666666
+Game:
+18,Alberto Martin,WIN,5.666666666666667
+Match:
+07-02-2005,Argentina,BuenosAires,
+Game:
+18,Agustin Calleri,WIN,5.0
+Game:
+18,Potito Starace,WIN,4.0
+Game:
+18,Gaston Gaudio,LOOSE,-1.6666666666666667
+Match:
+17-01-2005,Australia,AustralianOpen,
+Game:
+18,Julien Benneteau,WIN,4.0
+Game:
+18,Mikhail Youzhny,WIN,1.2
+Game:
+18,Bobby Reynolds,WIN,4.333333333333333
+Game:
+18,Lleyton Hewitt,LOOSE,1.6
+Match:
+10-01-2005,New Zealand,Auckland,
+Game:
+18,Dominik Hrbaty,LOOSE,3.0
+Match:
+03-01-2005,Qatar,Doha,
+Game:
+18,Mikhail Youzhny,WIN,5.0
+Game:
+18,Fernando Verdasco,WIN,3.0
+Game:
+18,Ivan Ljubicic,LOOSE,0.0
+Match:
+03-12-2004,Seville,ESPv.USADCFinal,
+Game:
+18,Andy Roddick,WIN,5.25
+Match:
+25-10-2004,Switzerland,Basel,
+Game:
+18,Rainer Schuettler,LOOSE,-2.5
+Match:
+18-10-2004,Spain,ATPMastersSeriesMadrid,
+Game:
+18,Davide Sanguinetti,WIN,4.5
+Game:
+18,Vincent Spadea,LOOSE,-1.0
+Match:
+04-10-2004,France,Lyon,
+Game:
+18,Julien Benneteau,LOOSE,-4.5
+Match:
+27-09-2004,Italy,Palermo,
+Game:
+18,Nicolas Almagro,WIN,3.5
+Game:
+18,Olivier Mutis,LOOSE,-3.0
+Match:
+24-09-2004,Alicante,ESPv.FRAWGSF,
+Game:
+18,Arnaud Clement,WIN,3.6666666666666665
+Match:
+30-08-2004,NY,USOpen,
+Game:
+18,Ivo Heuberger,WIN,1.2
+Game:
+18,Andy Roddick,LOOSE,-3.6666666666666665
+Match:
+09-08-2004,Poland,Sopot,
+Game:
+18,Victor Hanescu,WIN,2.0
+Game:
+18,Arnaud Di Pasquale,WIN,3.0
+Game:
+18,Franco Squillari,WIN,2.5
+Game:
+18,Felix Mantilla,WIN,3.5
+Game:
+18,Jose Acasuso,WIN,2.5
+Match:
+02-08-2004,Ohio,ATPMastersSeriesCincinnati,
+Game:
+18,Juan Ignacio Chela,LOOSE,2.0
+Match:
+26-07-2004,Toronto,ATPMastersSeriesCanada,
+Game:
+18,Lleyton Hewitt,LOOSE,-0.3333333333333333
+Match:
+12-07-2004,Germany,Stuttgart,
+Game:
+18,Martin Vassallo Arguello,WIN,4.5
+Game:
+18,Juan Ignacio Chela,WIN,3.5
+Game:
+18,David Ferrer,LOOSE,0.6666666666666666
+Match:
+05-07-2004,Sweden,Bastad,
+Game:
+18,Jiri Vanek,WIN,1.0
+Game:
+18,Santiago Ventura,WIN,4.5
+Game:
+18,Gaston Gaudio,LOOSE,-3.5
+Match:
+12-04-2004,Portugal,Estoril,
+Game:
+17,Goran Ivanisevic,WIN,3.5
+Game:
+17,Richard Gasquet,WIN,1.0
+Game:
+17,Irakli Labadze,LOOSE,0.0
+Match:
+22-03-2004,FL,ATPMastersSeriesMiami,
+Game:
+17,Goran Ivanisevic,WIN,6.0
+Game:
+17,Roger Federer,WIN,3.0
+Game:
+17,Fernando Gonzalez,LOOSE,1.3333333333333333
+Match:
+08-03-2004,California,ATPMastersSeriesIndianWells,
+Game:
+17,Lars Burgsmuller,WIN,3.5
+Game:
+17,Nicolas Massu,WIN,2.0
+Game:
+17,Agustin Calleri,LOOSE,2.3333333333333335
+Match:
+01-03-2004,U.A.E.,Dubai,
+Game:
+17,Max Mirnyi,WIN,5.0
+Game:
+17,Olivier Rochus,WIN,2.5
+Game:
+17,Mikhail Youzhny,LOOSE,-1.3333333333333333
+Match:
+09-02-2004,Italy,Milan,
+Game:
+17,Ivo Karlovic,WIN,4.333333333333333
+Game:
+17,Mario Ancic,LOOSE,-3.0
+Match:
+06-02-2004,Czechoslovakia,CZEv.ESPWG1stRD,
+Game:
+17,Jiri Novak,LOOSE,3.0
+Game:
+17,Radek Stepanek,WIN,5.666666666666667
+Match:
+19-01-2004,Australia,AustralianOpen,
+Game:
+17,Michal Tabara,WIN,4.333333333333333
+Game:
+17,Thierry Ascione,WIN,1.5
+Game:
+17,Lleyton Hewitt,LOOSE,2.6666666666666665
+Match:
+12-01-2004,New Zealand,Auckland,
+Game:
+17,Sjeng Schalken,WIN,4.5
+Game:
+17,Mario Ancic,WIN,7.0
+Game:
+17,Gregory Carraz,WIN,2.0
+Game:
+17,Jiri Novak,WIN,4.0
+Game:
+17,Dominik Hrbaty,LOOSE,-1.3333333333333333
+Match:
+05-01-2004,India,Chennai,
+Game:
+17,Thierry Ascione,LOOSE,2.0
+Match:
+20-10-2003,Switzerland,Basel,
+Game:
+17,Feliciano Lopez,LOOSE,2.0
+Match:
+13-10-2003,Spain,ATPMastersSeriesMadrid,
+Game:
+17,Alex Corretja,LOOSE,-1.0
+Match:
+06-10-2003,France,Lyon,
+Game:
+17,Dominik Hrbaty,LOOSE,-2.5
+Match:
+15-09-2003,France,St.JeanDeLuz,
+Game:
+17,Rodolphe Cadart,WIN,4.5
+Game:
+17,Richard Gasquet,LOOSE,2.0
+Match:
+25-08-2003,NY,USOpen,
+Game:
+17,Fernando Vicente,WIN,2.6666666666666665
+Game:
+17,Younes El Aynaoui,LOOSE,3.0
+Match:
+28-07-2003,Spain,Segovia,
+Game:
+17,Robin Vik,WIN,1.6666666666666667
+Game:
+17,Massimo Dell'Acqua,WIN,2.5
+Game:
+17,Gilles Muller,WIN,0.3333333333333333
+Game:
+17,Paul Baccanello,WIN,4.5
+Game:
+17,Tomas Zib,WIN,5.5
+Match:
+21-07-2003,Croatia,Umag,
+Game:
+17,Adrian Voinea,WIN,2.0
+Game:
+17,Mariano Puerta,WIN,3.0
+Game:
+17,Magnus Norman,WIN,2.5
+Game:
+17,Carlos Moya,LOOSE,-2.0
+Match:
+14-07-2003,Germany,Stuttgart,
+Game:
+17,Philipp Petzschner,WIN,3.5
+Game:
+17,Fernando Gonzalez,LOOSE,-1.6666666666666667
+Match:
+07-07-2003,Sweden,Bastad,
+Game:
+17,Younes El Aynaoui,WIN,1.3333333333333333
+Game:
+17,Albert Portas,WIN,4.0
+Game:
+17,Nicolas Lapentti,LOOSE,2.0
+Match:
+23-06-2003,England,Wimbledon,
+Game:
+17,Mario Ancic,WIN,1.25
+Game:
+17,Lee Childs,WIN,3.0
+Game:
+17,Paradorn Srichaphan,LOOSE,-2.6666666666666665
+Match:
+12-05-2003,Germany,ATPMastersSeriesHamburg,
+Game:
+16,Paul-Henri Mathieu,WIN,2.0
+Game:
+16,Carlos Moya,WIN,2.0
+Game:
+16,Gaston Gaudio,LOOSE,-4.0
+Match:
+28-04-2003,France,AixEnProvence,
+Game:
+16,Michael Llodra,WIN,4.5
+Game:
+16,Julien Varlet,WIN,1.6666666666666667
+Game:
+16,Scott Draper,WIN,3.0
+Game:
+16,Ruben Ramirez Hidalgo,WIN,3.0
+Game:
+16,Mariano Puerta,LOOSE,2.3333333333333335
+Match:
+21-04-2003,Spain,Barcelona,
+Game:
+16,Juan Antonio Marin,WIN,6.0
+Game:
+16,Alex Corretja,LOOSE,-2.0
+Match:
+14-04-2003,Monaco,ATPMastersSeriesMonteCarlo,
+Game:
+16,Karol Kucera,WIN,4.5
+Game:
+16,Albert Costa,WIN,2.5
+Game:
+16,Guillermo Coria,LOOSE,1.0
+Match:
+24-03-2003,Italy,Barletta,
+Game:
+16,Ruben Ramirez Hidalgo,WIN,5.0
+Game:
+16,Martin Vassallo Arguello,WIN,3.6666666666666665
+Game:
+16,Albert Montanes,WIN,5.0
+Game:
+16,Tomas Behrend,WIN,1.3333333333333333
+Game:
+16,Albert Portas,WIN,5.5
+Match:
+17-03-2003,Italy,Cagliari,
+Game:
+16,Alex Calatrava,WIN,3.0
+Game:
+16,Kristian Pless,WIN,1.3333333333333333
+Game:
+16,Juan Antonio Marin,WIN,5.5
+Game:
+16,Julien Boutter,WIN,0.6666666666666666
+Game:
+16,Filippo Volandri,LOOSE,-1.6666666666666667
+Match:
+03-03-2003,Besancon,Besancon,
+Game:
+16,Kristof Vliegen,LOOSE,-2.0
+Match:
+24-02-2003,France,Cherbourg,
+Game:
+16,Rik De Voest,WIN,1.6666666666666667
+Game:
+16,Julien Varlet,WIN,6.0
+Game:
+16,Slimane Saoudi,WIN,2.0
+Game:
+16,Gilles Elseneer,WIN,3.6666666666666665
+Game:
+16,Sergio Roitman,LOOSE,-1.0
+Match:
+03-02-2003,Yugoslavia,Belgrade,
+Game:
+16,Dmitry Vlasov,WIN,2.5
+Game:
+16,Amir Hadad,WIN,4.5
+Game:
+16,Markus Hantschk,LOOSE,-3.0
+Match:
+27-01-2003,Germany,Hamburg,
+Game:
+16,Maximilian Abel,WIN,2.0
+Game:
+16,Irakli Labadze,WIN,3.5
+Game:
+16,Fernando Verdasco,WIN,3.0
+Game:
+16,Andrei Stoliarov,WIN,4.5
+Game:
+16,Mario Ancic,LOOSE,-3.5
+Match:
+25-11-2002,Gran Canaria,SpainF20,
+Game:
+16,Roberto Menendez,WIN,1.6666666666666667
+Game:
+16,Andreas Kauntz,WIN,3.0
+Game:
+16,Stephane Robert,WIN,3.0
+Game:
+16,Tomas Tenconi,WIN,3.0
+Game:
+16,Florian Mayer,WIN,4.5
+Match:
+18-11-2002,Gran Canaria,SpainF19,
+Game:
+16,Ferran Ventura-Martell,WIN,3.5
+Game:
+16,Timo Nieminen,WIN,3.5
+Game:
+16,German Puentes,WIN,6.0
+Game:
+16,Oscar Hernandez,WIN,3.5
+Game:
+16,Marc Fornell-Mestres,WIN,3.5
+Match:
+07-10-2002,Spain,Barcelona,
+Game:
+16,Marcelo Charpentier,WIN,2.5
+Game:
+16,Alex Calatrava,WIN,3.0
+Game:
+16,Albert Montanes,WIN,5.0
+Game:
+16,Albert Portas,LOOSE,-4.5
+Match:
+30-09-2002,Spain,Seville,
+Game:
+16,Gorka Fraile,WIN,1.6666666666666667
+Game:
+16,Juan Balcells,LOOSE,-2.0
+Match:
+23-09-2002,Barcelona,SpainF16,
+Game:
+16,Kentaro Masuda,WIN,3.0
+Game:
+16,Marcos Conde-Jackson,WIN,6.0
+Game:
+16,Carlos Salamanca,WIN,2.5
+Game:
+16,Juan-Luis Rascon-Lope,WIN,3.5
+Game:
+16,Guillermo Garcia-Lopez,WIN,5.0
+Match:
+16-09-2002,Barcelona,SpainF15,
+Game:
+16,Kentaro Masuda,WIN,5.666666666666667
+Game:
+16,German Puentes,WIN,2.3333333333333335
+Game:
+16,Philipp Kohlschreiber,WIN,4.333333333333333
+Game:
+16,Gabriel Trujillo-Soler,WIN,4.0
+Game:
+16,Marc Fornell-Mestres,WIN,2.5
+Match:
+26-08-2002,Santander,SpainF12,
+Game:
+16,Agustin Tarantino,WIN,4.0
+Game:
+16,Miguel Angel Lopez Jaen,WIN,3.5
+Game:
+16,Marc Fornell-Mestres,LOOSE,-1.3333333333333333
+Match:
+19-08-2002,Irun,SpainF11,
+Game:
+16,Jordane Doble,WIN,4.5
+Game:
+16,Ivan Esquerdo,WIN,5.5
+Game:
+16,Solon Peppas,LOOSE,3.0
+Match:
+12-08-2002,Vigo,SpainF10,
+Game:
+16,Pedro Leao,WIN,5.0
+Game:
+16,Marc Fornell-Mestres,WIN,3.5
+Game:
+16,Solon Peppas,WIN,0.3333333333333333
+Game:
+16,Lamine Ouahab,WIN,4.0
+Game:
+16,Antonio Pastorino,WIN,2.3333333333333335
+Match:
+22-07-2002,Gandia,SpainF7,
+Game:
+16,Gabriel Frias,WIN,3.5
+Game:
+16,Ezequiel Velez,WIN,4.5
+Game:
+16,Miguel Angel Lopez Jaen,WIN,1.0
+Game:
+16,Mounir El Aarej,LOOSE,0.0
+Match:
+08-07-2002,Alicante,SpainF5,
+Game:
+16,Jose Checa-Calvo,WIN,3.0
+Game:
+16,Santiago Ventura,WIN,3.5
+Game:
+16,Gabriel Trujillo-Soler,WIN,2.5
+Game:
+16,Oscar Hernandez,WIN,3.0
+Game:
+16,Marc Fornell-Mestres,WIN,0.6666666666666666
+Match:
+29-04-2002,Spain,Mallorca,
+Game:
+15,Ramon Delgado,WIN,2.0
+Game:
+15,Olivier Rochus,LOOSE,-4.0
+Match:
+17-09-2001,Spain,Seville,
+Game:
+15,Israel Matos Gil,WIN,2.0
+Game:
+15,Stefano Galvani,LOOSE,-1.6666666666666667
+Match:
+10-09-2001,Madrid,SpainF10,
+Game:
+15,Guillermo Platel,LOOSE,-0.6666666666666666

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2013-05-27 21:03:25 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+ <class name="data.Players" table="PLAYERS">
+  <id name="id" type="int">
+   <column name="ID"/>
+   <generator class="identity"/>
+  </id>
+  <property generated="never" lazy="false" name="FirstName" type="java.lang.String">
+   <column name="FIRSTNAME"/>
+  </property>
+  <property generated="never" lazy="false" name="LastName" type="java.lang.String">
+   <column name="LASTNAME"/>
+  </property>
+  <property generated="never" lazy="false" name="Birthday" type="java.util.Calendar">
+   <column name="BIRTHDAY"/>
+  </property>
+  <property generated="never" lazy="false" name="Country" type="java.lang.String">
+   <column name="COUNTRY"/>
+  </property>
+ </class>
+</hibernate-mapping>

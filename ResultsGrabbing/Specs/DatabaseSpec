@@ -1,0 +1,15 @@
+DatabaseSpec.
+
+Tabele danych podstawowych:
+
+Players:
+id, first_name, surname, birthdate, country
+
+Games:
+id, players_id, year, month, day, age, oponent_id, oponent_ATP, avg_point_diff
+
+PlayerGamesTime
+id, players_id, games_id, maxATPsofar, minATPsofar, currATP
+
+
+

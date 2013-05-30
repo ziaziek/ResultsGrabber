@@ -1,0 +1,20 @@
+Projekt ma na celu zebranie danych statystycznych o graczach APT, zapis danych w bazie danych, ewentualn¹ prezentacjê lub listing.
+
+W dalszym rozwoju projekt bêdzie konfigurowalny, czyli bêdzie mo¿na definiowaæ adres ¿¹daniaoraz dane zapytania, oraz strukturê danych do zaimportowania.
+
+Przyk³adowy adres dla Novaka Djokovica:
+http://www.atpworldtour.com/Tennis/Players/Top-Players/Novak-Djokovic.aspx?t=pa&y=0&m=s&e=0#
+Pod tym adresem otrzymujemy ca³¹ historiê do chwili obecnej, i tak bêdziemy chcieli na pocz¹tku zrobiæ.
+
+Dla Rafaela Nadala to samo:
+http://www.atpworldtour.com/Tennis/Players/Top-Players/Rafael-Nadal.aspx?t=pa&y=0&m=s&e=0#
+
+Do parsowania dokumentów HTML u¿ywamy pakietu Jsoup.
+
+Parametry wejœciowe:
+Gracz 1
+lub 
+Gracz 1 vs Gracz 2
+wyjœcie:
+statystyki wszystkie, ogólne + ka¿dego z graczy + gracz1 vs gracz2
+
