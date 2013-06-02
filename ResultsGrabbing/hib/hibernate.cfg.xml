@@ -11,5 +11,6 @@
   <property name="hibernate.generate_statistics">true</property>
   <property name="hibernate.transaction.auto_close_session">true</property>
   <property name="hibernate.default_entity_mode">dynamic-map</property>
+  <mapping package="data"/>
  </session-factory>
 </hibernate-configuration>

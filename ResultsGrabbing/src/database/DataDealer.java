@@ -6,16 +6,23 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import data.Players;
+
 import errors.DataDealerReadException;
 import errors.DataDealerWriteException;
 
 public class DataDealer {
 
 	Session session;
-	protected String configLocation = "E:\\Users\\Przemek\\Documents\\workspace-sts-3.2.0.RELEASE\\ResultsGrabbing\\hib\\hibernate.cfg.xml";
+	public Session getSession() {
+		return session;
+	}
+
+	protected String configLocation = "E:\\Przemek\\GitRepo\\ResultsGrabbing\\hib\\hibernate.cfg.xml";
+	protected String configPersistentPackage = "data";
 	
 	public DataDealer(){
-		SessionFactory factory = new Configuration().configure(new File(configLocation)).buildSessionFactory();
+		SessionFactory factory = new Configuration().configure(new File(configLocation)).addClass(Players.class).buildSessionFactory();
 		session = factory.openSession();
 
 	}
@@ -41,5 +48,13 @@ public class DataDealer {
 		}
 		throw new DataDealerReadException();
 		
+	}
+	
+	public void close(){
+		if(session!=null){
+			session.flush();
+			session.close();
+			session=null;
+		}
 	}
 }
