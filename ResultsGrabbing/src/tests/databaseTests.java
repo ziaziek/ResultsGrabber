@@ -15,6 +15,7 @@ import org.hibernate.cfg.Configuration;
 
 import data.Players;
 import database.DataDealer;
+import errors.DataDealerReadException;
 import errors.DataDealerWriteException;
 
 public class databaseTests {
@@ -88,21 +89,41 @@ public class databaseTests {
 	
 	@Test
 	public void DataDealerWorkingTest(){
-		int id = 1000;
+		int id = 25;
 		DataDealer dealer = new DataDealer();
 		Players p = new Players();
-		p.setId(id);
-		assertTrue(!dealer.alreadyExists(Players.class, id));
+		//assertTrue(!dealer.alreadyExists(Players.class, id));
 		try {
 			p.setCountry("Spain");
 			p.setFirstName("AAA");
 			p.setLastName("BBBBB");
+			Calendar c = Calendar.getInstance();
+			c.set(2000, 0, 1);
+			p.setBirthday(c);
 			assertEquals(0, dealer.Write(p));
+			id++;
 			assertTrue(dealer.alreadyExists(Players.class, id));
+			
 		} catch (DataDealerWriteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		try {
+				p = (Players) dealer.readData(Players.class, id);
+				assertEquals(id, p.getId());
+				assertEquals("Spain", p.getCountry());
+			} catch (DataDealerReadException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+	}
+	
+	@Test
+	public void existstest(){
+		DataDealer dealer = new DataDealer();
+		int id=25;
+		assertTrue(dealer.alreadyExists(Players.class, id));
 	}
 
 }
