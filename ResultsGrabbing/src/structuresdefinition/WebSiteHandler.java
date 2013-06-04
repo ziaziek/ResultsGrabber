@@ -32,6 +32,24 @@ public class WebSiteHandler {
 	protected String classActivityInfo = null;
 	protected String classActivityTableAlt = null;
 	protected String idPlayerBioInfoList = null;
+	protected String ageIdentifier = "Age:";
+	protected String birthPlaceIdentifier = "Birthplace:";
+	
+	public String getAgeIdentifier() {
+		return ageIdentifier;
+	}
+
+	public void setAgeIdentifier(String ageIdentifier) {
+		this.ageIdentifier = ageIdentifier;
+	}
+
+	public String getBirthPlaceIdentifier() {
+		return birthPlaceIdentifier;
+	}
+
+	public void setBirthPlaceIdentifier(String birthPlaceIdentifier) {
+		this.birthPlaceIdentifier = birthPlaceIdentifier;
+	}
 
 	public String getIdPlayerBioInfoList() {
 		return idPlayerBioInfoList;
@@ -121,14 +139,23 @@ public class WebSiteHandler {
 		String[] titInfo = doc.title().split(" ");
 		p.setFirstName(titInfo[titInfo.length - 2]);
 		p.setLastName(titInfo[titInfo.length - 1]);
-		String[] bioInfo = info.getElementsByTag("li").get(3).text().split(" ");
-		p.setCountry(bioInfo[bioInfo.length - 1]);
-		String[] ageInfo = info.getElementsByTag("li").get(1).text().split(" ");
-		p.setBirthday(retrieveDateOfString(ageInfo[ageInfo.length - 1].replace(
-				"(", "").replace(")", "")));
-		
+		Elements bioInfoElements = info.getElementsByTag("li");
+		for (Element el : bioInfoElements) {
+			if (el.text().contains(ageIdentifier)) {
+				String[] ageInfo = el.text().split(" ");
+				p.setBirthday(retrieveDateOfString(ageInfo[ageInfo.length - 1]
+						.replace("(", "").replace(")", "")));
+			}
+			if (el.text().contains(birthPlaceIdentifier)) {
+				String[] bioInfo = el.text().split(" ");
+				p.setCountry(bioInfo[bioInfo.length - 1]);
+
+			}
+
+		}
 		return p;
 	}
+		
 
 	protected List<ISample> parseResults(Elements gamesElements,
 			Matches whatMatch, Players thePlayer) { // gamesElements is a

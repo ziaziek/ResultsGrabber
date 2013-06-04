@@ -44,15 +44,15 @@ public class GrabberTests {
 
 	@AfterClass
 	public static void tearDown() throws Exception {
-		Files.deleteIfExists(Paths.get(fn));
+		//Files.deleteIfExists(Paths.get(fn));
 	}
 
 	@Test
-	@Ignore
 	public void downloadTest() {
 		try {
-			g.download(new URL(fnIn));
+			g.download(new URL("http://www.atpworldtour.com/Tennis/Players/Top-Players/Roger-Federer.aspx?t=pa&y=0&m=s&e=0#"));
 			assertNotNull(g.Data);
+			g.writeData(store);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

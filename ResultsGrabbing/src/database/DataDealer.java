@@ -66,18 +66,16 @@ public class DataDealer {
 			Transaction tx = session.beginTransaction();
 			if (!(obj instanceof List)) {
 				session.saveOrUpdate(obj);
-				tx.commit();
 			} else {
 				int counter = 0;
 				for (Object o : (List) obj) {
-					session.save(o);
+					session.saveOrUpdate(o);
 					if(counter % flushCounter == 0){
 						session.flush();
 					}
 				}
-				tx.commit();
 			}
-
+			tx.commit();
 			return 0;
 		}
 		throw new DataDealerWriteException();

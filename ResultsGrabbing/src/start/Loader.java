@@ -15,13 +15,15 @@ import org.apache.log4j.Logger;
 
 import data.Players;
 import data.impl.FileStorage;
+import database.DataDealer;
+import errors.DataDealerWriteException;
 
 import logging.LogPc;
 
 public class Loader {
 
-	private Logger log = LogPc.Pclog;
-	private final String playersMarker = "Players:";
+	protected Logger log = LogPc.Pclog;
+	private final String playersMarker = "Player:";
 	private final String matchesMarker = "Match:";
 	private String dirName;
 	
@@ -29,9 +31,16 @@ public class Loader {
 		dirName = fn;
 	}
 	
-	protected void loadPlayers(){
+	
+	public void load(){
+		//TODO: implement entire mechanism for loading
+		
+	}
+	
+	protected int loadPlayers(){
 		File f0 = new File(dirName);
 		List<Players> playersList = new ArrayList<Players>();
+		int retInt=0;
 		if(f0.isDirectory()){
 			for(File f: f0.listFiles()){
 				List<String> fContents = new ArrayList<String>();
@@ -41,8 +50,15 @@ public class Loader {
 						log.error(e.getLocalizedMessage(), e);
 					}
 			}
+			DataDealer d = new DataDealer();
+			try {
+				d.Write(playersList);
+				retInt++;
+			} catch (DataDealerWriteException e) {
+				log.error(e.getLocalizedMessage(), e);
+			}
 		}
-		
+		return retInt;
 	}
 	
 	protected Players extractPlayers(List<String> t) {
