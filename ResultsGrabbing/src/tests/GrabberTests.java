@@ -31,7 +31,7 @@ public class GrabberTests {
 	private IDataStorage store;
 	private IData data;
 	static String fn = "e:\\abc.txt";
-	static String fnIn = "file:///e:\\dataIn.txt";
+	static String fnIn = "file:///e:\\abc.txt";
 	private Grabber g;
 
 	@Before
@@ -85,8 +85,7 @@ public class GrabberTests {
 	@Test
 	public void GrabberProcesDownloadTest() {
 		try {
-			g.download(new URL(fnIn));
-			g.processDownload();
+			g.processDownload(new URL(fnIn));
 			assertTrue(g.samplesList.size()>0);
 			assertNotNull(g.samplesList.get(0));
 			Matches m = (Matches)g.samplesList.get(0);
