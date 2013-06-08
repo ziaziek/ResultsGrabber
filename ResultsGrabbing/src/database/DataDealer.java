@@ -1,6 +1,7 @@
 package database;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -18,6 +19,16 @@ import errors.DataDealerWriteException;
 public class DataDealer {
 
 	Session session;
+
+	List<IDataDealerListener> listeners = new ArrayList<IDataDealerListener>();
+	
+	public List<IDataDealerListener> getListeners() {
+		return listeners;
+	}
+
+	public void setListeners(List<IDataDealerListener> listeners) {
+		this.listeners = listeners;
+	}
 
 	public Session getSession() {
 		return session;
@@ -63,13 +74,17 @@ public class DataDealer {
 
 	public int Write(Object obj) throws DataDealerWriteException {
 		if (session != null && session.isOpen()) {
-			Transaction tx = session.beginTransaction();
+			try {
+				Transaction tx = session.beginTransaction();
 			if (!(obj instanceof List)) {
 				session.saveOrUpdate(obj);
+				notifyListeners(1);
 			} else {
 				int counter = 0;
 				for (Object o : (List) obj) {
 					session.saveOrUpdate(o);
+					counter++;
+					notifyListeners(counter);
 					if(counter % flushCounter == 0){
 						session.flush();
 					}
@@ -77,6 +92,9 @@ public class DataDealer {
 			}
 			tx.commit();
 			return 0;
+			} catch(org.hibernate.JDBCException ex){
+				throw new DataDealerWriteException();
+			}
 		}
 		throw new DataDealerWriteException();
 	}
@@ -90,12 +108,18 @@ public class DataDealer {
 
 	}
 
-
 	public void close() {
 		if (session != null) {
 			session.flush();
 			session.close();
 			session = null;
 		}
+	}
+	
+	protected void notifyListeners(int x){
+		for(IDataDealerListener l: listeners){
+			l.changeNumberOfProcessed(x);
+		}
+		
 	}
 }

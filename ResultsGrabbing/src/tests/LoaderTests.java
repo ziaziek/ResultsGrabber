@@ -7,8 +7,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import processing.impl.DefaultInfoServiceFactory;
+
 import start.Loader;
 
+import data.Players;
 import database.DataDealer;
 
 public class LoaderTests {
@@ -21,8 +24,9 @@ public class LoaderTests {
 			// TODO Auto-generated constructor stub
 		}
 		
-		public int loadPlayers(){
-			return super.loadPlayers();
+		
+		public int getNumberOfItemsToProcess(){
+			return super.numberOfItemsToProcess;
 		}
 	}
 	
@@ -42,7 +46,8 @@ public class LoaderTests {
 	@Test
 	public void playersLoadingTest(){
 		LoaderStub l = new LoaderStub("E:\\GrabberFiles\\PlayersFiles");
-		assertEquals(100,l.loadPlayers());
+		l.setRetrievalServiceFactory(new DefaultInfoServiceFactory());
+		assertTrue(l.load(new Class<?>[] {Players.class})>0);
 	}
 
 }
