@@ -11,6 +11,7 @@ import processing.impl.DefaultInfoServiceFactory;
 
 import start.Loader;
 
+import data.Matches;
 import data.Players;
 import database.DataDealer;
 
@@ -31,10 +32,12 @@ public class LoaderTests {
 	}
 	
 	DataDealer d = null;
-	
+	LoaderStub l = null;
 	@Before
 	public void setUp() throws Exception {
 		d = new DataDealer();
+		l = new LoaderStub("E:\\GrabberFiles\\PlayersFiles");
+		l.setRetrievalServiceFactory(new DefaultInfoServiceFactory());
 	}
 
 	@After
@@ -44,10 +47,13 @@ public class LoaderTests {
 
 	
 	@Test
-	public void playersLoadingTest(){
-		LoaderStub l = new LoaderStub("E:\\GrabberFiles\\PlayersFiles");
-		l.setRetrievalServiceFactory(new DefaultInfoServiceFactory());
+	public void playersLoadingTest(){ 	
 		assertTrue(l.load(new Class<?>[] {Players.class})>0);
 	}
 
+	@Test
+	public void matchesLoaderTest(){
+		
+		assertTrue(l.load(new Class<?>[] {Matches.class})>0);
+	}
 }

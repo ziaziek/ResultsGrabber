@@ -11,6 +11,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.internal.CriteriaImpl;
 
+import data.Matches;
 import data.Players;
 
 import errors.DataDealerReadException;
@@ -39,7 +40,7 @@ public class DataDealer {
 	/**
 	 * Determines how many objects are kept in session memory until they are flushed to the database.
 	 */
-	protected int flushCounter = 100;
+	protected int flushCounter = 1;
 	
 	public int getFlushCounter() {
 		return flushCounter;
@@ -56,7 +57,7 @@ public class DataDealer {
 
 	protected void createAndOpenSession() {
 		SessionFactory factory = new Configuration()
-				.configure(new File(configLocation)).addClass(Players.class)
+				.configure(new File(configLocation)).addClass(Players.class).addClass(Matches.class)
 				.buildSessionFactory();
 		session = factory.openSession();
 	}
@@ -74,31 +75,50 @@ public class DataDealer {
 
 	public int Write(Object obj) throws DataDealerWriteException {
 		if (session != null && session.isOpen()) {
-			try {
-				Transaction tx = session.beginTransaction();
+			Transaction tx = session.beginTransaction();
 			if (!(obj instanceof List)) {
-				session.saveOrUpdate(obj);
-				notifyListeners(1);
+				try {
+					session.saveOrUpdate(obj);
+					notifyListeners(1);
+				} catch (org.hibernate.JDBCException ex) {
+					throw new DataDealerWriteException();
+				}
 			} else {
 				int counter = 0;
 				for (Object o : (List) obj) {
-					session.saveOrUpdate(o);
-					counter++;
-					notifyListeners(counter);
-					if(counter % flushCounter == 0){
-						session.flush();
+					try {
+						session.saveOrUpdate(o);
+						counter++;
+						notifyListeners(counter);
+						System.out.println(counter);
+//						if (counter % flushCounter == 0) {
+//							session.flush();
+//						}
+					} catch (org.hibernate.JDBCException ex ) {
+						System.out.println("ERROR!");
 					}
+
 				}
 			}
-			tx.commit();
-			return 0;
-			} catch(org.hibernate.JDBCException ex){
-				throw new DataDealerWriteException();
+			if(tx!=null && tx.isActive()){
+				tx.commit();
 			}
+			
+			return 0;
 		}
 		throw new DataDealerWriteException();
 	}
 
+	
+	protected void commitWrite(Session session){
+		Transaction tx = session.beginTransaction();
+		try {
+			tx.commit();
+		} catch (org.hibernate.JDBCException ex){
+			tx = null;
+		}
+	}
+	
 	public Object readData(Class<?> cname, int id)
 			throws DataDealerReadException {
 		if (session != null && session.isOpen()) {

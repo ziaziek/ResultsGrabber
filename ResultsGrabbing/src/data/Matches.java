@@ -15,7 +15,7 @@ public class Matches implements java.io.Serializable , ISample{
 	private Calendar Date;
 	private String City;
 	private String Country;
-
+	
 	public Matches() {
 	}
 

@@ -41,27 +41,20 @@ public class PlayersInfoService extends BaseInfoService implements IInfoService 
 		this.dir = dir; 
 	}
 
-	protected Players extractPlayers(List<String> t) {
+	public static Players extractPlayers(List<String> t) {
 		int i = 0;
 		Players p = new Players();
 		for (String s : t) {
-			if (s.equals(playersMarker)) {
-				if (t.size() > i) {
-					String[] info = t.get(i + 1).split(",");		
+			if (s.equals(playersMarker) && t.size() > i) {
+					String[] info = t.get(i + 1).split(BaseInfoService.INFO_SEPARATOR);		
 					try {
 						p.setFirstName(info[0]);
 						p.setLastName(info[1]);
-						String[] dateArray = info[2].split("-");
-						Calendar c = Calendar.getInstance();
-						c.set(Integer.parseInt(dateArray[2]),
-								Integer.parseInt(dateArray[1]),
-								Integer.parseInt(dateArray[0]));
-						p.setBirthday(c);
+						p.setBirthday(convertDateStringToCalendar(info[2], BaseInfoService.DATE_SEPARATOR));
 						p.setCountry(info[3]);
 					} catch (Exception e) {
 						log.error(e.getLocalizedMessage(), e);
 					}
-				}
 			}
 			i++;
 		}

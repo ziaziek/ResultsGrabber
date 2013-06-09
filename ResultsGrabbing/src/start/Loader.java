@@ -39,7 +39,7 @@ public class Loader implements IDataDealerListener {
 	public int load(Class<?>[] classesToRun){
 		DataDealer d = new DataDealer();
 			d.getListeners().add(this);
-			for(int i=0; i<classes.length; i++){
+			for(int i=0; i<classesToRun.length; i++){
 				int nt = loadInfo(d, classesToRun[i]);
 				if(log.getLevel()== Level.INFO){
 					log.info("Loaded elements: " + nt);

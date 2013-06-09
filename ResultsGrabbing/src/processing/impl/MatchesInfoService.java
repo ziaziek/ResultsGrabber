@@ -1,7 +1,20 @@
 package processing.impl;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.log4j.Level;
+
+import data.Matches;
+import data.MatchesExt;
+import data.Players;
+import data.PlayersHelper;
+import database.DataDealer;
+import errors.DataDealerWriteException;
 
 import processing.interfaces.IInfoService;
 
@@ -10,12 +23,32 @@ public class MatchesInfoService extends BaseInfoService implements IInfoService 
 	/**
 	 * Function will get info about matches scanning through the files in the directory. 
 	 * First, it will need to discover the player's name and associate it with an id.\
-	 * It will aldo need to associate id's of the opponents.
+	 * It will also need to associate id's of the opponents.
 	 */
 	@Override
 	public List getInfoList() throws InfoServiceDirectoryException {
-		// TODO Auto-generated method stub
-		return null;
+		List<Matches> retList = new ArrayList<Matches>();
+		DataDealer d = new DataDealer();
+		if(dir==null){
+			throw new InfoServiceDirectoryException();
+		}
+		if(dir.isDirectory()){
+			for(File f : dir.listFiles()){
+				List<String> processedList;
+				try {
+					processedList = Files.readAllLines(f.toPath(), Charset.forName("utf-8"));
+					for(Matches m : extractMatchesInfo(processedList)){
+						if(!alreadyIn(retList, m)){
+							retList.add(m);
+						}
+					}
+					//int idp = PlayersHelper.findByName(d, currentPlayer.getFirstName(), currentPlayer.getLastName()).get(0).getId();
+				} catch (IOException e) {
+					log.error(e.getLocalizedMessage(), e);
+				}
+			}
+		}
+		return retList;
 	}
 
 	@Override
@@ -23,4 +56,54 @@ public class MatchesInfoService extends BaseInfoService implements IInfoService 
 		this.dir = dir;
 	}
 
+	
+	protected List<Matches> extractMatchesInfo(List<String> t){
+		List<Matches> list = new ArrayList<Matches>();
+		int i = 0;
+		for (String s : t) {
+			if (s.equals(matchesMarker) && t.size() > i) {
+				String[] matchInfo = t.get(i + 1).split(
+						BaseInfoService.INFO_SEPARATOR);
+				if (matchInfo.length == 3) {
+					Matches m = extractMatch(matchInfo);
+					if(!alreadyIn(list, m)){
+					list.add(m);	
+					}
+				} else {
+					if (log.getLevel() == Level.WARN) {
+						log.warn("Match information too short! Expected 3 parts but got "
+								+ matchInfo.length);
+					}
+				}
+			}
+			i++;
+		}
+		return list;
+	}
+
+	/**
+	 * Check whether this kind of object is already in the list, according to the foreign key constraints
+	 * @param mlist
+	 * @param m
+	 * @return
+	 */
+	private boolean alreadyIn(List<Matches> mlist, Matches m){
+		int i = 0;
+		if(mlist!=null){
+			while(i<mlist.size() && mlist.get(i).getDate().getTime().compareTo(m.getDate().getTime())!=0 && !mlist.get(i).getCity().equals(m.getCity())){
+			i++;
+		}
+			return i<mlist.size() && mlist.size()>0;
+		}
+		return false;
+		
+	}
+	private Matches extractMatch(String[] matchInfo) {
+		Matches m = new Matches();
+		m.setDate(BaseInfoService.convertDateStringToCalendar(
+				matchInfo[0], BaseInfoService.DATE_SEPARATOR));
+		m.setCountry(matchInfo[1]);
+		m.setCity(matchInfo[2]);
+		return m;
+	}
 }
