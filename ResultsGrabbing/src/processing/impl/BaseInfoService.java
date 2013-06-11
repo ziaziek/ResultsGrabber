@@ -1,11 +1,15 @@
 package processing.impl;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import logging.LogPc;
 
 import org.apache.log4j.Logger;
+
+import processing.interfaces.IInfoServiceEventListener;
 
 public class BaseInfoService {
 
@@ -21,6 +25,7 @@ public class BaseInfoService {
 	protected static final String playersMarker = "Player:";
 	protected static final String matchesMarker = "Match:";
 	protected static final String gamesMarker = "Game:";
+	protected List<IInfoServiceEventListener> listeners = new ArrayList<IInfoServiceEventListener>();
 	
 	public static Calendar convertDateStringToCalendar(String dateStr, String separator){
 		String[] dateArray = dateStr.split("-");

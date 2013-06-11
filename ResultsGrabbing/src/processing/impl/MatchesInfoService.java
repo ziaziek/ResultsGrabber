@@ -17,6 +17,8 @@ import database.DataDealer;
 import errors.DataDealerWriteException;
 
 import processing.interfaces.IInfoService;
+import processing.interfaces.IInfoServiceEventListener;
+import processing.interfaces.IMatchFoundEventListener;
 
 public class MatchesInfoService extends BaseInfoService implements IInfoService {
 
@@ -37,7 +39,7 @@ public class MatchesInfoService extends BaseInfoService implements IInfoService 
 				List<String> processedList;
 				try {
 					processedList = Files.readAllLines(f.toPath(), Charset.forName("utf-8"));
-					for(Matches m : extractMatchesInfo(processedList)){
+					for(Matches m : extractMatchesInfo(processedList, null)){
 						if(!alreadyIn(retList, m)){
 							retList.add(m);
 						}
@@ -48,6 +50,9 @@ public class MatchesInfoService extends BaseInfoService implements IInfoService 
 				}
 			}
 		}
+		for(IInfoServiceEventListener s: listeners){
+			s.onServiceEnded();
+		}
 		return retList;
 	}
 
@@ -56,16 +61,25 @@ public class MatchesInfoService extends BaseInfoService implements IInfoService 
 		this.dir = dir;
 	}
 
-	
-	protected List<Matches> extractMatchesInfo(List<String> t){
+	/**
+	 * Retrieve info about matches from a list of strings (usually retrieved from a single file)
+	 * @param t
+	 * @param matchFoundListener TODO
+	 * @return
+	 */
+	public static List<Matches> extractMatchesInfo(List<String> t, IMatchFoundEventListener matchFoundListener){
 		List<Matches> list = new ArrayList<Matches>();
 		int i = 0;
 		for (String s : t) {
 			if (s.equals(matchesMarker) && t.size() > i) {
+				
 				String[] matchInfo = t.get(i + 1).split(
 						BaseInfoService.INFO_SEPARATOR);
 				if (matchInfo.length == 3) {
 					Matches m = extractMatch(matchInfo);
+					if(matchFoundListener!=null){
+					matchFoundListener.setProcessedMatchAndItemNumber(m, i);
+				}
 					if(!alreadyIn(list, m)){
 					list.add(m);	
 					}
@@ -87,7 +101,7 @@ public class MatchesInfoService extends BaseInfoService implements IInfoService 
 	 * @param m
 	 * @return
 	 */
-	private boolean alreadyIn(List<Matches> mlist, Matches m){
+	private static boolean alreadyIn(List<Matches> mlist, Matches m){
 		int i = 0;
 		if(mlist!=null){
 			while(i<mlist.size() && mlist.get(i).getDate().getTime().compareTo(m.getDate().getTime())!=0 && !mlist.get(i).getCity().equals(m.getCity())){
@@ -98,7 +112,8 @@ public class MatchesInfoService extends BaseInfoService implements IInfoService 
 		return false;
 		
 	}
-	private Matches extractMatch(String[] matchInfo) {
+	
+	public static Matches extractMatch(String[] matchInfo) {
 		Matches m = new Matches();
 		m.setDate(BaseInfoService.convertDateStringToCalendar(
 				matchInfo[0], BaseInfoService.DATE_SEPARATOR));

@@ -2,7 +2,12 @@ package data;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+
+import org.hibernate.criterion.Expression;
+
+import database.DataDealer;
 
 public class MatchesExt extends Matches{
 
@@ -19,6 +24,12 @@ public class MatchesExt extends Matches{
 
 	public void setMatchGames(List<Games> matchGames) {
 		this.matchGames = matchGames;
+	}
+	
+	
+	public static List<Matches> findByUniqueConstraints(DataDealer d, Calendar cdate, String city){
+		return d.getSession().createCriteria(Matches.class).add(Expression.eq("match_date", cdate.getTime())
+				).add(Expression.eq("city", city)).list();
 	}
 	
 	public static String toString(Matches m){
