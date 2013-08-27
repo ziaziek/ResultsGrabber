@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.hibernate.metamodel.domain.Attribute;
 
 import data.Games;
 import data.GamesExtendedHelper;
@@ -36,13 +35,13 @@ public class GrabbedTextData implements IData {
 	}
 
 	@Override
-	public List<Attribute> getAttributes() {
+	public List<String> getAttributes() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Object getValues(Attribute attr) {
+	public Object getValues(String attr) {
 		StringBuilder str = new StringBuilder();
 		for (ISample s : samples) {
 			if (s instanceof Players) {

@@ -1,42 +1,21 @@
 package data.impl;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-import org.hibernate.metamodel.domain.Attribute;
-import org.hibernate.metamodel.domain.AttributeContainer;
 
 import data.interfaces.IData;
 import data.interfaces.IFilter;
 
 public class RawData implements IData {
 
-	Attribute name;
+	String name;
 	Object myData;
 	
 	public RawData(){
 		super();
-		name = new Attribute() {
-			
-			@Override
-			public boolean isSingular() {
-				// TODO Auto-generated method stub
-				return true;
-			}
-			
-			@Override
-			public String getName() {
-				return "text";
-			}
-			
-			@Override
-			public AttributeContainer getAttributeContainer() {
-				// TODO Auto-generated method stub
-				return null;
-			}
-		};
+		name = "text" ;
 	}
 	
 	@Override
@@ -46,12 +25,12 @@ public class RawData implements IData {
 	}
 
 	@Override
-	public List<Attribute> getAttributes() {		
+	public List<String> getAttributes() {		
 		return Arrays.asList(this.name);
 	}
 
 	@Override
-	public Object getValues(Attribute attr) {
+	public Object getValues(String attr) {
 		return myData;
 	}
 

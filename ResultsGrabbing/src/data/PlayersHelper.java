@@ -1,16 +1,10 @@
 package data;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
-
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.swing.text.DateFormatter;
 
 import org.hibernate.criterion.Expression;
-import org.hibernate.internal.CriteriaImpl.CriterionEntry;
 
 import database.DataDealer;
 
