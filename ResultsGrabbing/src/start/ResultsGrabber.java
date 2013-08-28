@@ -2,12 +2,9 @@ package start;
 
 import java.io.IOException;
 import java.net.URL;
-
 import logging.LogPc;
-
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
-
 import data.impl.FileStorage;
 import data.interfaces.IDataStorage;
 
@@ -15,7 +12,10 @@ public class ResultsGrabber {
 
 	private static Logger log = LogPc.Pclog;
 	public static int playersTimeOut = 1000; // time out between reading players
-												// data from the web
+	protected static String playersListFile = "C:/Users/ResultsGrabber/PlayersList.txt"; //to be set by the users
+        protected static  String dataOut = "C:/Users/ResultsGrabber/dataOut.txt"; //to be set by the users
+        protected static String playersResultsPrefix = "C:/Users/ResultsGrabber/Results/Player_";
+        // data from the web
 
 	/**
 	 * @param args
@@ -26,17 +26,17 @@ public class ResultsGrabber {
 		log.info("Starting...");
 		IDataStorage storage = new FileStorage();
 		IDataStorage storedNames = new FileStorage();
-		storage.setStringConnection("e:\\dataOut.txt");
-		storedNames.setStringConnection("e:\\GrabberFiles\\PlayersList.txt");
+		storage.setStringConnection(dataOut);
+		storedNames.setStringConnection(playersListFile);
 		Grabber g = new Grabber();
 
 		try {
 			int i = 0;
-			for (URL u : g.createURLList("e:\\GrabberFiles\\PlayersList.txt")) {
+			for (URL u : g.createURLList(playersListFile)) {
 				System.out.println("Processing " + u.toString());
 				log.info("Processing " + u.toString());
 				g.processDownload(u);
-				storage.setStringConnection("e:\\GrabberFiles\\PlayersResults"
+				storage.setStringConnection(playersResultsPrefix
 						+ i + ".txt");
 				storage.Connect();
 				g.writeData(storage);
