@@ -1,7 +1,7 @@
 package tests;
 
 import data.Matches;
-import data.NewHibernateUtil;
+import data.HibernateUtil;
 import static org.junit.Assert.*;
 
 import java.io.File;
@@ -30,7 +30,8 @@ public class databaseTests {
         
 	@Before
 	public void setUp() throws Exception {
-		factory = new Configuration().configure(new File("C:/hibernate.cfg.xml")).addClass(Players.class).buildSessionFactory();
+            factory = HibernateUtil.getSessionFactory();
+		//factory = new Configuration().configure(new File("C:/hibernate.cfg.xml")).addClass(Players.class).buildSessionFactory();
 		sess = factory.openSession();
 		if(sess!=null){
 			truncateAll = sess.createSQLQuery("select truncate_query()");
