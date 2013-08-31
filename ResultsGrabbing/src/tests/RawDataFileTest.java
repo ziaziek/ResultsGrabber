@@ -51,7 +51,7 @@ public class RawDataFileTest {
 	@Test
 	public void testWriteData(){
 		if(data!=null && store!=null){
-			String t = "Tekst próbny";
+			String t = "Tekst prÃ³bny";
 			data.Load(t);
 			System.out.println(data.getValues(null));
 			assertNotNull(data.getValues(null));

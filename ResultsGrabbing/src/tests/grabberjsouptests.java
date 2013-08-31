@@ -115,7 +115,7 @@ public class grabberjsouptests {
 		assertTrue(gret.size()>0);
 		assertTrue(gret.get(0) instanceof MatchesExt);
 		GamesExtendedHelper gameOne = (GamesExtendedHelper)(((MatchesExt)gret.get(0)).getMatchGames().get(0));
-		assertEquals("Carlos Berlocq", gameOne.getOponentName().split(" ")[0]);
+		assertEquals("Carlos Berlocq", gameOne.getOponentName().split(" ")[0]);
 		assertEquals(GamesResults.WIN, gameOne.getResult());
 		assertEquals(3, gameOne.getAvgPointDiff(), 0.01);
 	}

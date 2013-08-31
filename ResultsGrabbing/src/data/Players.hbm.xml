@@ -6,7 +6,6 @@
  <class name="data.Players" table="PLAYERS">
   <id name="id" type="int">
    <column name="ID"/>
-   <generator class="identity"/>
   </id>
   <property generated="never" lazy="false" name="FirstName" type="java.lang.String">
    <column name="FIRSTNAME"/>

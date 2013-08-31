@@ -7,7 +7,6 @@
   select-before-update="true" table="MATCHES">
   <id name="id" type="int">
    <column name="ID"/>
-   <generator class="identity"/>
   </id>
   <property generated="never" lazy="false" name="Date" type="java.util.Calendar">
    <column name="MATCH_DATE"/>

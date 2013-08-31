@@ -6,7 +6,6 @@
     <class name="data.PlayerGamesTime" table="PLAYERGAMESTIME">
         <id name="id" type="int">
             <column name="ID" />
-            <generator class="assigned" />
         </id>
         <property name="IdPlayers" type="java.lang.Integer">
             <column name="IDPLAYERS" />

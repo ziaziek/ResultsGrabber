@@ -43,7 +43,7 @@ public class Grabber {
 	
  // wyodrebnij dane z pomiedzy znacznikow
 	public void processDownload() throws  IOException{
-		String hloc = "e:\\dataIn.txt";
+		String hloc = "dataIn.txt";
 		if(handler==null){
 		handler = new WebSiteHandler(hloc);	
 		}

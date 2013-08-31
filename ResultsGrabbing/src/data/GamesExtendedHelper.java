@@ -38,11 +38,16 @@ public class GamesExtendedHelper extends Games {
 			for (String res : results) {
 				res = res.trim();
 				String[] points = res.split("-");
-				if (points.length == 2) {
+                                try {
+                                    if (points.length == 2) {
 					avgRes += parseDouble(points[0]) - parseDouble(points[1]);
 				} else {
 					avgRes += parseDouble(points[0]);
 				}
+                                } catch(NumberFormatException ex){
+                                    LogPc.Pclog.error(ex.getMessage(), ex);
+                                }
+				
 			}
 			avgRes = avgRes / results.length;
 		}
@@ -54,14 +59,10 @@ public class GamesExtendedHelper extends Games {
 
 	private static Double parseDouble(String dstr) {
 		Double r = 0.0;
-		try {
 			if (dstr.contains("(")) {
-				dstr = dstr.substring(0, dstr.indexOf("(") - 1);
+				dstr = dstr.substring(0, dstr.indexOf("("));
 			}
 			r = Double.parseDouble(dstr);
-		} catch (NumberFormatException ex) {
-			LogPc.Pclog.error(ex.getMessage(), ex);
-		}
 
 		return r;
 	}

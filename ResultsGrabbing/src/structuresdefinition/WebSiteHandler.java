@@ -24,6 +24,11 @@ import data.MatchesExt;
 import data.Players;
 import data.PlayersHelper;
 import data.interfaces.ISample;
+import java.io.BufferedWriter;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 
 public class WebSiteHandler {
 
@@ -95,6 +100,10 @@ public class WebSiteHandler {
 	public WebSiteHandler(URL url) {
 		try {
 			doc = Jsoup.parse(url, 3500);
+//                        BufferedWriter bf = Files.newBufferedWriter(Paths.get("dataIn.txt"), Charset.defaultCharset(), StandardOpenOption.CREATE);
+//                        bf.write(doc.body().html(), 0, doc.body().html().length());
+//                        
+//                        bf.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			LogPc.Pclog.warn(e.getMessage(), e);
@@ -137,8 +146,14 @@ public class WebSiteHandler {
 		Players p = new Players();
 		Element info = doc.getElementById(idPlayerBioInfoList);
 		String[] titInfo = doc.title().split(" ");
-		p.setFirstName(titInfo[titInfo.length - 2]);
-		p.setLastName(titInfo[titInfo.length - 1]);
+                if(titInfo.length>=2){
+                   p.setFirstName(titInfo[0]);
+		   p.setLastName(titInfo[1]); 
+                } else {
+                    LogPc.Pclog.warn("Player could not be saved. title:"+doc.title());
+                    return null;
+                }
+		
 		Elements bioInfoElements = info.getElementsByTag("li");
 		for (Element el : bioInfoElements) {
 			if (el.text().contains(ageIdentifier)) {
@@ -168,7 +183,7 @@ public class WebSiteHandler {
 																// bioTableHead
 																// row as a
 																// header, no
-																// useful
+														// useful
 																// information
 				// find td's within the row
 				Elements tds = e.getElementsByTag("td");

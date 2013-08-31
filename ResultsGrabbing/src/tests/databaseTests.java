@@ -1,5 +1,7 @@
 package tests;
 
+import data.Matches;
+import data.NewHibernateUtil;
 import static org.junit.Assert.*;
 
 import java.io.File;
@@ -23,10 +25,12 @@ public class databaseTests {
 	private Session sess;
 	private SessionFactory factory;
 	private Query truncateAll;
-	
+
+        
+        
 	@Before
 	public void setUp() throws Exception {
-		factory = new Configuration().configure(new File("E:\\Przemek\\GitRepo\\ResultsGrabbing\\hib\\hibernate.cfg.xml")).addClass(Players.class).buildSessionFactory();
+		factory = new Configuration().configure(new File("C:/hibernate.cfg.xml")).addClass(Players.class).buildSessionFactory();
 		sess = factory.openSession();
 		if(sess!=null){
 			truncateAll = sess.createSQLQuery("select truncate_query()");
@@ -54,10 +58,17 @@ public class databaseTests {
 		assertNotNull(sess);
 		List ret = sess.createSQLQuery("select * from players").list();
 		assertTrue(!ret.isEmpty());
+                assertTrue(ret.size()==1);
+                for(Object p : ret){
+                    if(p instanceof Players){
+                        System.out.println("Players");
+                    }
+                    System.out.println(p.getClass().getCanonicalName());
+                }
 		
 	}
 	
-	@Ignore
+	//@Ignore
 	@Test
 	public void insertSelectTest(){
 		Players p = new Players();
@@ -77,7 +88,7 @@ public class databaseTests {
 		assertEquals(p.getLastName(), p1.getLastName());
 		assertEquals(p.getBirthday(), p1.getBirthday());
 		}
-	
+	@Ignore
 	@Test
 	public void DataDealerTest(){
 		DataDealer dealer = new DataDealer();
@@ -86,7 +97,7 @@ public class databaseTests {
 		dealer.close();
 		assertTrue(!dealer.getSession().isOpen());
 	}
-	
+	@Ignore
 	@Test
 	public void DataDealerWorkingTest(){
 		int id = 25;
@@ -118,7 +129,7 @@ public class databaseTests {
 			}
 			
 	}
-	
+	@Ignore
 	@Test
 	public void existstest(){
 		DataDealer dealer = new DataDealer();
