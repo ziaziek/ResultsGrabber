@@ -11,12 +11,12 @@ import data.interfaces.ISample;
  */
 public class Players implements java.io.Serializable, ISample {
 
-	private int id;
+	private Integer id;
 	private String FirstName;
 	private String LastName;
 	private Calendar Birthday;
 	private String Country;
-
+        
 	public Players() {
 	}
 

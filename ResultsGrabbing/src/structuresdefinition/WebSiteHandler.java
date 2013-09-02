@@ -37,6 +37,15 @@ public class WebSiteHandler {
 	protected String classActivityInfo = null;
 	protected String classActivityTableAlt = null;
 	protected String idPlayerBioInfoList = null;
+        protected String playerBioInfoRank = null;
+
+    public String getPlayerBioInfoRank() {
+        return playerBioInfoRank;
+    }
+
+    public void setPlayerBioInfoRank(String playerBioInfoRank) {
+        this.playerBioInfoRank = playerBioInfoRank;
+    }
 	protected String ageIdentifier = "Age:";
 	protected String birthPlaceIdentifier = "Birthplace:";
 	
@@ -142,6 +151,8 @@ public class WebSiteHandler {
 		return retList;
 	}
 
+
+        
 	protected Players parsePlayerInfo() {
 		Players p = new Players();
 		Element info = doc.getElementById(idPlayerBioInfoList);
@@ -168,6 +179,7 @@ public class WebSiteHandler {
 			}
 
 		}
+                
 		return p;
 	}
 		
@@ -198,6 +210,7 @@ public class WebSiteHandler {
 					}
 					String result = tds.get(3).text();
 					GamesExtendedHelper g = new GamesExtendedHelper();
+                                        g.setOponentRank(Integer.parseInt(tds.get(2).text()));
 					g.setResult(GamesResults.translate(result));
 					g.setIdMatches(whatMatch.getId());
 					g.setAvgPointDiff(GamesExtendedHelper

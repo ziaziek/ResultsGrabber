@@ -1,5 +1,6 @@
 package start;
 
+import data.Games;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,12 +23,18 @@ import org.xml.sax.helpers.DefaultHandler;
 import structuresdefinition.WebSiteHandler;
 
 import data.Matches;
+import data.Players;
 import data.impl.FileStorage;
 import data.impl.GrabbedTextData;
 import data.impl.RawData;
 import data.interfaces.IData;
 import data.interfaces.IDataStorage;
 import data.interfaces.ISample;
+import database.DataDealer;
+import errors.DataDealerReadException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import org.hibernate.Query;
 
 public class Grabber {
 
@@ -52,6 +59,7 @@ public class Grabber {
 		handler.setClassActivityInfo("bioPlayActivityInfo");
 		handler.setClassActivityTableAlt("bioTableAlt");
 		handler.setIdPlayerBioInfoList("playerBioInfoList");
+                handler.setPlayerBioInfoRank("playerBioInfoRank");
 		samplesList = handler.run();
 		Data = new GrabbedTextData();
 		if(samplesList!=null && !samplesList.isEmpty()){
@@ -125,4 +133,45 @@ public class Grabber {
 		LogPc.Pclog.info("URL list size = "+ retList.size());
 		return retList;
 	}
+        
+         /**
+         * Updates information about the player's rank, basing on the information 
+         * from the gmes as an apponent at the given date
+         * @param IdPlayer - id of the player that rank at the given date should be updated
+         * @return the rank of the player at the given date
+         * @author Przemek
+         */
+    protected Integer updatePlayersRankInfo(Integer idPlayer, Calendar date) throws DataDealerReadException {
+        Integer rank = null;
+        DataDealer d = new DataDealer();
+        int dateTolerance = 7;
+        Players p = (Players)d.readData(Players.class , idPlayer);
+        List<Games> games = null;
+        Query qry = d.getSession().createQuery("from Games as g  join g.idmatches as m where g.idPlayers=:idp and m.Date between(1, :d2):d");
+        qry.setParameter(0, idPlayer);
+        qry.setParameter(1, date);
+        qry.setParameter(2, date);
+        int i = 0;
+        while(games==null || games.isEmpty()){
+            games = d.readQueryBasedData(qry);
+            i++;
+            Calendar dateFrom = Calendar.getInstance();
+            dateFrom.setTime(date.getTime());
+            Calendar dateTo = Calendar.getInstance();
+            dateTo.setTime(date.getTime());
+            dateFrom.add(Calendar.DAY_OF_MONTH, -i*dateTolerance);
+            dateTo.add(Calendar.DAY_OF_MONTH, i* dateTolerance);
+            qry.setParameter(1,dateFrom );
+            qry.setParameter(2, dateTo);
+        }
+                  
+        if(games.size()>0){
+            for(Games g : games){
+                //Calculate average rank
+                rank+=g.getOponentRank();
+            }
+            rank = rank/games.size();
+        }
+        return rank;
+    }
 }

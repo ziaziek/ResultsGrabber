@@ -1,5 +1,6 @@
 package database;
 
+import data.HibernateUtil;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +15,7 @@ import data.Players;
 
 import errors.DataDealerReadException;
 import errors.DataDealerWriteException;
+import org.hibernate.Query;
 
 public class DataDealer {
 
@@ -54,9 +56,7 @@ public class DataDealer {
 	}
 
 	protected void createAndOpenSession() {
-		SessionFactory factory = new Configuration()
-				.configure(new File(configLocation)).addClass(Players.class).addClass(Matches.class)
-				.buildSessionFactory();
+		SessionFactory factory = HibernateUtil.getSessionFactory();
 		session = factory.openSession();
 	}
 
@@ -126,6 +126,22 @@ public class DataDealer {
 
 	}
 
+        public List readConditionedData(Class<?> cname, String condition){
+            if(session!=null && session.isOpen()){
+                Query qry = session.createQuery("from "+ cname.getName()+" where "+ condition);
+                return qry.list();
+            }
+            return null;
+        }
+        
+        public List readQueryBasedData(Query qry){
+            if(session!=null && session.isOpen()){
+                return qry.list();
+            } else {
+                return null;
+            }
+        }
+        
 	public void close() {
 		if (session != null) {
 			session.flush();

@@ -53,7 +53,7 @@ public class databaseTests {
 			factory.close();
 		}
 	}
-@Ignore
+//@Ignore
 	@Test
 	public void connectionTest() {
 		assertNotNull(sess);
@@ -65,11 +65,10 @@ public class databaseTests {
                         System.out.println("Players");
                     }
                     System.out.println(p.getClass().getCanonicalName());
-                }
-		
+                }	
 	}
 	
-	//@Ignore
+	@Ignore
 	@Test
 	public void insertSelectTest(){
 		Players p = new Players();
@@ -111,9 +110,9 @@ public class databaseTests {
 			p.setLastName("BBBBB");
 			Calendar c = Calendar.getInstance();
 			c.set(2000, 0, 1);
+                        p.setId(id);
 			p.setBirthday(c);
 			assertEquals(0, dealer.Write(p));
-			id++;
 			assertTrue(dealer.alreadyExists(Players.class, id));
 			
 		} catch (DataDealerWriteException e) {
@@ -134,7 +133,7 @@ public class databaseTests {
 	@Test
 	public void existstest(){
 		DataDealer dealer = new DataDealer();
-		int id=25;
+		int id=0;
 		assertTrue(dealer.alreadyExists(Players.class, id));
 	}
 
