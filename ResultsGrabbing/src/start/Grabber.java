@@ -141,7 +141,7 @@ public class Grabber {
          * @return the rank of the player at the given date
          * @author Przemek
          */
-    protected Integer updatePlayersRankInfo(Integer idPlayer, Calendar date) throws DataDealerReadException {
+    protected Integer findPlayersRankInfo(Integer idPlayer, Calendar date) throws DataDealerReadException {
         Integer rank = null;
         DataDealer d = new DataDealer();
         int dateTolerance = 7;
@@ -149,20 +149,18 @@ public class Grabber {
         List<Games> games = null;
         Query qry = d.getSession().createQuery("from Games as g  join g.idmatches as m where g.idPlayers=:idp and m.Date between(1, :d2):d");
         qry.setParameter(0, idPlayer);
-        qry.setParameter(1, date);
-        qry.setParameter(2, date);
         int i = 0;
-        while(games==null || games.isEmpty()){
-            games = d.readQueryBasedData(qry);
-            i++;
-            Calendar dateFrom = Calendar.getInstance();
+        Calendar dateFrom = Calendar.getInstance();
             dateFrom.setTime(date.getTime());
-            Calendar dateTo = Calendar.getInstance();
-            dateTo.setTime(date.getTime());
+        Calendar dateTo = Calendar.getInstance();
+            dateTo.setTime(date.getTime());    
+        while(games==null || games.isEmpty()){
             dateFrom.add(Calendar.DAY_OF_MONTH, -i*dateTolerance);
             dateTo.add(Calendar.DAY_OF_MONTH, i* dateTolerance);
             qry.setParameter(1,dateFrom );
             qry.setParameter(2, dateTo);
+            games = d.readQueryBasedData(qry);
+            i++;
         }
                   
         if(games.size()>0){
@@ -172,6 +170,9 @@ public class Grabber {
             }
             rank = rank/games.size();
         }
+        
+        //In the range of dateFrom and dateTo we need to update the games table to set the player's rank to the
+        //calculated value. We do that only for the records that have the value empty.
         return rank;
     }
 }
