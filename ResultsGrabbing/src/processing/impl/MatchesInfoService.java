@@ -10,11 +10,7 @@ import java.util.List;
 import org.apache.log4j.Level;
 
 import data.Matches;
-import data.MatchesExt;
-import data.Players;
-import data.PlayersHelper;
 import database.DataDealer;
-import errors.DataDealerWriteException;
 
 import processing.interfaces.IInfoService;
 import processing.interfaces.IInfoServiceEventListener;
@@ -29,8 +25,8 @@ public class MatchesInfoService extends BaseInfoService implements IInfoService 
 	 */
 	@Override
 	public List getInfoList() throws InfoServiceDirectoryException {
-		List<Matches> retList = new ArrayList<Matches>();
-		DataDealer d = new DataDealer();
+		List<Matches> retList = new ArrayList<>();
+		//DataDealer d = new DataDealer();
 		if(dir==null){
 			throw new InfoServiceDirectoryException();
 		}

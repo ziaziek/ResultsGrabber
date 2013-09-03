@@ -14,6 +14,7 @@ import start.Loader;
 import data.Matches;
 import data.Players;
 import database.DataDealer;
+import org.junit.Ignore;
 
 public class LoaderTests {
 
@@ -36,7 +37,7 @@ public class LoaderTests {
 	@Before
 	public void setUp() throws Exception {
 		d = new DataDealer();
-		l = new LoaderStub("E:\\GrabberFiles\\PlayersFiles");
+		l = new LoaderStub("C:/Users/ResultsGrabber/Results");
 		l.setRetrievalServiceFactory(new DefaultInfoServiceFactory());
 	}
 
@@ -45,12 +46,12 @@ public class LoaderTests {
 		d.close();
 	}
 
-	
+	@Ignore
 	@Test
 	public void playersLoadingTest(){ 	
 		assertTrue(l.load(new Class<?>[] {Players.class})>0);
 	}
-
+//@Ignore
 	@Test
 	public void matchesLoaderTest(){
 		

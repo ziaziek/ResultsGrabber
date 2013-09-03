@@ -19,7 +19,16 @@ public class Games implements java.io.Serializable, ISample {
 	private Integer OponentRank;
 	private double AvgPointDiff;
 	private GamesResults result;
+        private Integer Rank;
 
+    public Integer getRank() {
+        return Rank;
+    }
+
+    public void setRank(Integer Rank) {
+        this.Rank = Rank;
+    }
+        
 	public Games() {
 	}
 

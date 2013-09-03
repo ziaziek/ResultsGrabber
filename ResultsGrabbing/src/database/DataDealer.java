@@ -89,13 +89,16 @@ public class DataDealer {
 						counter++;
 						notifyListeners(counter);
 						System.out.println(counter);
-//						if (counter % flushCounter == 0) {
-//							session.flush();
-//						}
+						if (counter % flushCounter == 0) {
+                                                    try{
+							session.flush();
+                                                    } catch(org.hibernate.JDBCException ex){
+                                                        System.out.println(ex.getMessage());
+                                                    }
+						}
 					} catch (org.hibernate.JDBCException ex ) {
 						System.out.println("ERROR!");
 					}
-
 				}
 			}
 			if(tx!=null && tx.isActive()){

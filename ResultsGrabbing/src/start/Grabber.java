@@ -32,8 +32,10 @@ import data.interfaces.IDataStorage;
 import data.interfaces.ISample;
 import database.DataDealer;
 import errors.DataDealerReadException;
+import errors.DataDealerWriteException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.logging.Level;
 import org.hibernate.Query;
 
 public class Grabber {
@@ -141,13 +143,13 @@ public class Grabber {
          * @return the rank of the player at the given date
          * @author Przemek
          */
-    protected Integer findPlayersRankInfo(Integer idPlayer, Calendar date) throws DataDealerReadException {
+    protected Integer findAndUpdatePlayersRankInfo(Integer idPlayer, Calendar date) throws DataDealerReadException {
         Integer rank = null;
         DataDealer d = new DataDealer();
         int dateTolerance = 7;
         Players p = (Players)d.readData(Players.class , idPlayer);
         List<Games> games = null;
-        Query qry = d.getSession().createQuery("from Games as g  join g.idmatches as m where g.idPlayers=:idp and m.Date between(1, :d2):d");
+        Query qry = d.getSession().createQuery("from Games as g  join g.idmatches as m where g.idPlayers=:idp and m.Date between(:d1, :d2)");
         qry.setParameter(0, idPlayer);
         int i = 0;
         Calendar dateFrom = Calendar.getInstance();
@@ -169,10 +171,25 @@ public class Grabber {
                 rank+=g.getOponentRank();
             }
             rank = rank/games.size();
+            for(Games g:games){
+                if(g.getRank()==null || g.getRank()==0){
+                   g.setRank(rank); 
+                } 
+            }
         }
-        
         //In the range of dateFrom and dateTo we need to update the games table to set the player's rank to the
         //calculated value. We do that only for the records that have the value empty.
+        qry = d.getSession().createQuery("from Games as g join g.IdMatches as m where g.IdPlayers=:idp and "+
+                " m.Date between(:d0, :d1) and g.Rank is null or g.Rank=0");
+        games = d.readQueryBasedData(qry);
+        for(Games g: games){
+            g.setRank(rank);
+            try {
+                d.Write(g);
+            } catch (DataDealerWriteException ex) {
+                LogPc.Pclog.error("Could not write games after rank update", ex);
+            }
+        }
         return rank;
     }
 }

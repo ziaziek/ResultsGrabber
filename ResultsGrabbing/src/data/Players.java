@@ -11,7 +11,7 @@ import data.interfaces.ISample;
  */
 public class Players implements java.io.Serializable, ISample {
 
-	private Integer id;
+	private int id;
 	private String FirstName;
 	private String LastName;
 	private Calendar Birthday;

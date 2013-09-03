@@ -7,6 +7,9 @@
     <property name="hibernate.connection.url">jdbc:firebirdsql://localhost/c:/users/resultsgrabber/tennis.fdb</property>
     <property name="hibernate.connection.username">sysdba</property>
     <property name="hibernate.connection.password">derek</property>
+    <property name="hibernate.show_sql">false</property>
+    <property name="hibernate.use_sql_comments">false</property>
+    <property name="hibernate.format_sql">false</property>
     <mapping class="data.Players" resource="data/Players.hbm.xml"/>
     <mapping class="data.Matches" resource="data/Matches.hbm.xml"/>
     <mapping class="data.Games" resource="data/Games.hbm.xml"/>

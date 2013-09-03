@@ -6,6 +6,7 @@
  <class name="data.Games" table="GAMES">
   <id name="id" type="int">
    <column name="ID"/>
+   <generator class="increment"/>
   </id>
   <property generated="never" lazy="false" name="IdMatches" type="java.lang.Integer">
    <column name="IDMATCHES"/>
@@ -24,6 +25,9 @@
   </property>
   <property generated="never" lazy="false" name="AvgPointDiff" type="double">
    <column name="AVGPOINTDIFF"/>
+  </property>
+  <property generated="never" lazy="false" name="Rank" type="java.lang.Integer">
+      <column name="RANK"/>
   </property>
   <property generated="never" lazy="false" name="result">
    <column name="RESULT"/>
