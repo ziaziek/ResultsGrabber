@@ -1,5 +1,6 @@
 package tests;
 
+import data.Games;
 import static org.junit.Assert.*;
 
 import org.apache.log4j.Level;
@@ -51,10 +52,15 @@ public class LoaderTests {
 	public void playersLoadingTest(){ 	
 		assertTrue(l.load(new Class<?>[] {Players.class})>0);
 	}
-//@Ignore
+@Ignore
 	@Test
 	public void matchesLoaderTest(){
 		
 		assertTrue(l.load(new Class<?>[] {Matches.class})>0);
 	}
+
+    @Test
+    public void gamesLoadTEst() {
+        assertTrue(l.load(new Class<?>[]{Games.class}) > 0);
+    }
 }

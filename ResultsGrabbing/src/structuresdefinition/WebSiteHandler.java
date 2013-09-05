@@ -24,11 +24,6 @@ import data.MatchesExt;
 import data.Players;
 import data.PlayersHelper;
 import data.interfaces.ISample;
-import java.io.BufferedWriter;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 
 public class WebSiteHandler {
 

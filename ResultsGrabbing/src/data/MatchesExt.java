@@ -28,8 +28,8 @@ public class MatchesExt extends Matches{
 	
 	
 	public static List<Matches> findByUniqueConstraints(DataDealer d, Calendar cdate, String city){
-		return d.getSession().createCriteria(Matches.class).add(Expression.eq("match_date", cdate.getTime())
-				).add(Expression.eq("city", city)).list();
+		return d.getSession().createCriteria(Matches.class).add(Expression.eq("Date", cdate)
+				).add(Expression.eq("City", city)).list();
 	}
 	
 	public static String toString(Matches m){

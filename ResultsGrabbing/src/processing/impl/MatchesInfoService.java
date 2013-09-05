@@ -68,7 +68,7 @@ public class MatchesInfoService extends BaseInfoService implements IInfoService 
 		int i = 0;
 		for (String s : t) {
 			if (s.equals(matchesMarker) && t.size() > i) {
-				
+				System.out.println(i);
 				String[] matchInfo = t.get(i + 1).split(
 						BaseInfoService.INFO_SEPARATOR);
 				if (matchInfo.length == 3) {

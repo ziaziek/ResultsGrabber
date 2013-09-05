@@ -15,6 +15,8 @@ import data.MatchesExt;
 import data.Players;
 import data.PlayersHelper;
 import database.DataDealer;
+import logging.LogPc;
+import org.hibernate.JDBCException;
 
 import processing.interfaces.IInfoService;
 import processing.interfaces.IMatchFoundEventListener;
@@ -44,7 +46,9 @@ public class GamesInfoService extends BaseInfoService implements IInfoService, I
 					//that is done so to avoid code repetition
 				} catch (IOException e) {
 					log.error(e.getLocalizedMessage(), e);
-				}
+				} catch(JDBCException ex){
+                                    log.error(ex.getLocalizedMessage(), ex);
+                                }
 			}
 		}
 		return gamesList;
@@ -65,7 +69,14 @@ public class GamesInfoService extends BaseInfoService implements IInfoService, I
 			g.setAvgPointDiff(Double.parseDouble(info[3]));
 			g.setIdMatches(idm);
 			g.setIdPlayers(idp);
-			g.setIdOponents(PlayersHelper.findByName(d, info[1], info[2]).get(0).getId());
+                        try {
+                            String[] pInfo = info[1].split(" ");
+                            
+                           g.setIdOponents(PlayersHelper.findByName(d, pInfo[0], pInfo[1]).get(0).getId()); 
+                        } catch(IndexOutOfBoundsException ex){
+                            LogPc.Pclog.warn("Could not find a player of the name : "+ info[1]+" "+info[2]);
+                        }
+			
 		}
 		return g;
 	}

@@ -58,7 +58,7 @@ public class PlayersHelper extends Players {
 		if(ln==null){
 			ln="%";
 		}
-		 return d.getSession().createCriteria(Players.class).add(Expression.ilike("firstname"+"%", fn)).add(Expression.like("lastname"+ "%", ln))
+		 return d.getSession().createCriteria(Players.class).add(Expression.ilike("FirstName", fn.trim())).add(Expression.like("LastName", ln.trim()))
 				 .list();
 		
 		
