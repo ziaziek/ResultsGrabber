@@ -7,6 +7,7 @@ package gui;
 import data.Players;
 import database.DataDealer;
 import gubas.forms.BaseForm;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
@@ -35,12 +36,20 @@ public class EditForm extends BaseForm implements MouseListener{
     }
     
     protected JPanel createMainPanel(){
+        JPanel ctrlPanel = EditorFactory.createPlayersControl();
+        
         if(panel==null){
-          panel = new JPanel();  
+          panel = new JPanel(new BorderLayout());  
         } else {
             panel.removeAll();
         }
         
+        panel.add(createListOfItems(), BorderLayout.WEST);
+        panel.add(ctrlPanel, BorderLayout.CENTER);
+        return panel;
+    }
+
+    protected JScrollPane createListOfItems(){
         List lp = new DataDealer().readConditionedData(editorClass, "id>0");
         lvp = new JList();
         JScrollPane listPane = new JScrollPane(lvp);
@@ -51,10 +60,10 @@ public class EditForm extends BaseForm implements MouseListener{
             lvpModel.addElement(p);
         }
         lvp.setModel(lvpModel);
-        panel.add(listPane);
-        return panel;
+        listPane.setOpaque(false);
+        return listPane;
     }
-
+    
     @Override
     public void mouseClicked(MouseEvent me) {
         if(me.getClickCount()==2 && lvp!=null){
