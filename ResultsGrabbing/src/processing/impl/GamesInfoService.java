@@ -65,7 +65,7 @@ public class GamesInfoService extends BaseInfoService implements IInfoService, I
 		String[] info = t.split(INFO_SEPARATOR);
 		if (info.length == 4) {
 			g.setAge(Integer.parseInt(info[0]));
-			g.setResult(GamesResults.translate(info[2]));
+			g.setResult(GamesResults.parse(info[2]));
 			g.setAvgPointDiff(Double.parseDouble(info[3]));
 			g.setIdMatches(idm);
 			g.setIdPlayers(idp);

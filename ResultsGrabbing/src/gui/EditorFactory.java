@@ -15,15 +15,13 @@ import javax.swing.JPanel;
  */
 public class EditorFactory {
     
-    public static JPanel createPlayersControl(){
-        JPanel ctrl = new JPanel();
-        
+    public static JPanel createPlayersControl(Players p){
+        JPanel ctrl = new playersEditPanel(p);
             return ctrl;
         }
     
-    public static JPanel createMatchesControl(){
-        JPanel ctrl = new JPanel();
-        
+    public static JPanel createMatchesControl(Matches m){
+        JPanel ctrl = new MatchesEditPanel(m);
             return ctrl;
     }
     
@@ -33,15 +31,15 @@ public class EditorFactory {
             return ctrl;
     }
     
-    public static JPanel createControl(Class<?> c){
+    public static JPanel createControl(Class<?> c, Object o){
         if(c.equals(Players.class)){
-            return createPlayersControl();
+            return createPlayersControl((Players)o);
         }
         if(c.equals(Games.class)){
             return createGamesControl();
         }
         if(c.equals(Matches.class)){
-            return createMatchesControl();
+            return createMatchesControl((Matches)o);
         }
         return null;
     }

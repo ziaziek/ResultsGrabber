@@ -4,6 +4,7 @@
  */
 package gui;
 
+import data.Matches;
 import data.Players;
 import database.DataDealer;
 import gubas.forms.BaseForm;
@@ -12,6 +13,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
@@ -36,7 +38,7 @@ public class EditForm extends BaseForm implements MouseListener{
     }
     
     protected JPanel createMainPanel(){
-        JPanel ctrlPanel = EditorFactory.createPlayersControl();
+        
         
         if(panel==null){
           panel = new JPanel(new BorderLayout());  
@@ -45,7 +47,7 @@ public class EditForm extends BaseForm implements MouseListener{
         }
         
         panel.add(createListOfItems(), BorderLayout.WEST);
-        panel.add(ctrlPanel, BorderLayout.CENTER);
+        
         return panel;
     }
 
@@ -55,7 +57,7 @@ public class EditForm extends BaseForm implements MouseListener{
         JScrollPane listPane = new JScrollPane(lvp);
         DefaultListModel lvpModel = new DefaultListModel();
         lvp.addMouseListener(this);
-        lvp.setCellRenderer(new PlayersListRenderer());
+        lvp.setCellRenderer(new ListRendererFactory().createListRendererFactory(editorClass));
         for(Object p: lp){
             lvpModel.addElement(p);
         }
@@ -68,8 +70,12 @@ public class EditForm extends BaseForm implements MouseListener{
     public void mouseClicked(MouseEvent me) {
         if(me.getClickCount()==2 && lvp!=null){
             int ix = lvp.locationToIndex(me.getPoint());
-            System.out.println("Selected item is "+ ((Players)(lvp.getModel().getElementAt(ix))).getId());
-
+            JPanel ctrlPanel = EditorFactory.createControl(editorClass, (lvp.getModel().getElementAt(ix)));
+            if(panel.getComponentCount()>1){
+              panel.remove(panel.getComponentCount()-1);  
+            }
+            panel.add(ctrlPanel, BorderLayout.CENTER);
+            panel.revalidate();
         }
     }
 
@@ -89,22 +95,35 @@ public class EditForm extends BaseForm implements MouseListener{
     public void mouseExited(MouseEvent me) {
     }
     
-    /**
-     * Renders the list item displayed value, which is First name + Last Name
-     */
-    protected class PlayersListRenderer extends JLabel implements ListCellRenderer{
+    
+    protected class ListRendererFactory {
         
-       @Override
+        protected  AbstractListItemsRenderer createListRendererFactory(Class<?> classType){
+            if(classType.equals(Players.class)){
+                return new PlayersListRenderer();
+            } else if(classType.equals(Matches.class)){
+                return new MatchesListRenderer();
+            } else {
+                return null;
+            }
+        }
+        
+    }
+    /**
+     * Abstract class for list items rendering
+     */
+     abstract class AbstractListItemsRenderer extends JLabel implements ListCellRenderer{
+
+        protected abstract String renderTextItem(Object o);
+        
+        @Override
         public Component getListCellRendererComponent(JList list,
                                      Object value,
                                      int index,
                                      boolean isSelected,
-                                     boolean cellHasFocus){
+                                     boolean cellHasFocus) {
+            setText(renderTextItem(value));
 
-            if (value instanceof Players){
-                Players p = (Players)value;
-                setText(p.getFirstName() + " "+ p.getLastName());
-            }
             if(isSelected){
                 setBackground(list.getSelectionBackground());
                 setForeground(list.getSelectionForeground());
@@ -115,7 +134,36 @@ public class EditForm extends BaseForm implements MouseListener{
             setFont(list.getFont());
             setOpaque(true);
             return this;
-            
         }
+        
+    }
+    /**
+     * Renders the list item displayed value, which is First name + Last Name
+     */
+     class PlayersListRenderer extends AbstractListItemsRenderer{
+
+        @Override
+        protected String renderTextItem(Object o) {
+            if (o instanceof Players){
+                Players p = (Players)o;
+                return (p.getFirstName() + " "+ p.getLastName());
+            } else {
+                return null;
+            }
+        }
+    }
+    
+    protected class MatchesListRenderer extends AbstractListItemsRenderer{
+
+        @Override
+        protected String renderTextItem(Object o) {
+            if( o instanceof Matches){
+                Matches m = (Matches)o;
+                return m.getCity()+", "+m.getCountry()+", "+ SimpleDateFormat.getInstance().format(m.getDate().getTime());
+            } else{
+                return null;
+            }
+        }
+        
     }
 }

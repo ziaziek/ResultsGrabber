@@ -206,7 +206,7 @@ public class WebSiteHandler {
 					String result = tds.get(3).text();
 					GamesExtendedHelper g = new GamesExtendedHelper();
                                         g.setOponentRank(Integer.parseInt(tds.get(2).text()));
-					g.setResult(GamesResults.translate(result));
+					g.setResult(GamesResults.parse(result));
 					g.setIdMatches(whatMatch.getId());
 					g.setAvgPointDiff(GamesExtendedHelper
 							.translateAverageDiffInPoints(result));

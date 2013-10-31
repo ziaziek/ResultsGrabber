@@ -7,8 +7,8 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import data.impl.FileStorage;
 import data.interfaces.IDataStorage;
-import gubas.forms.*;
 import gubas.javaapplication1.FormsCaller;
+import gui.LogsReaderWindow;
 import gui.MainWindow;
 
 public class ResultsGrabber {
@@ -24,13 +24,10 @@ public class ResultsGrabber {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
 		logConfigure();
 		log.info("Starting...");
-		FormsCaller.callNewWindow("Tennis Analyzer", new MainWindow());
-
+		FormsCaller.callNewMainWindow("Tennis Analyzer", new MainWindow());
 	}
-
         
         private static void loadData(){
             IDataStorage storage = new FileStorage();
@@ -69,10 +66,9 @@ public class ResultsGrabber {
 		// g.processDownload();
 		// g.writeData(storage);
         }
-	private static void logConfigure(){
-URL ul = ResultsGrabber.class.getResource("../log4j.properties");
-		
-		PropertyConfigurator.configure(ul);
-
-	}
+        
+    private static void logConfigure() {
+        URL ul = ResultsGrabber.class.getResource("../log4j.properties");
+        PropertyConfigurator.configure(ul);
+    }
 }

@@ -3,48 +3,64 @@
  * and open the template in the editor.
  */
 package gui;
+import data.Games;
+import data.Matches;
 import data.Players;
 import gubas.forms.*;
 import gubas.javaapplication1.FormsCaller;
 import java.awt.event.ActionEvent;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import logsreader.LogsReader;
 /**
  *
  * @author Przemo
  */
 public class MainWindow extends MenuContainingForm {
     
-    private static final String refreshDataActionCommands ="refreshData", exitActionCommand = "exit";
+    private static final String refreshDataActionCommands ="refreshData", showLogActionCommand="showLog", exitActionCommand = "exit";
     private static final String statisticsActionCommand = "statistics";
     
-    private static final String[] editMenuItemNames = new String[]{"Players", "Matches", "Games"};
-    private static final String[] editCommands = new String[]{"editPlayers", "editMatches", "editGames"};
+    private static final Map<String, Class<?>> editStringClassMap = new HashMap<String, Class<?>>(){
+        {put("Players", Players.class);
+        put("Matches", Matches.class);
+        put("Games", Games.class);
+        }
+    };
+    
     private static final String helpActionCommand="help";
     
     @Override
     protected JMenuBar createMenuBar(){
-        // File->Refresh Data, Exit, Edit->Players,Matches,Games, Statistics, Help
+        // File->Refresh Data, Show Log, Exit, Edit->Players,Matches,Games, Statistics, Help
         super.myMenuBar = new JMenuBar();
         
         JMenu file = new JMenu("File");
         JMenuItem refreshData = new JMenuItem("Refresh Data");
+        JMenuItem showLog = new JMenuItem("Show log");
         refreshData.setActionCommand(refreshDataActionCommands);
         refreshData.addActionListener(this);
+        showLog.setActionCommand(showLogActionCommand);
+        showLog.addActionListener(this);
         JMenuItem exit = new JMenuItem("Exit");
         exit.setActionCommand(exitActionCommand);
         exit.addActionListener(this);
         file.add(refreshData);
+        file.add(showLog);
         file.add(exit);
         
         //Edit
         JMenu edit = new JMenu("Edit");
-        for(int i=0; i<editMenuItemNames.length; i++){
-            JMenuItem p = new JMenuItem(editMenuItemNames[i]);
-            p.setActionCommand(editCommands[i]);
+        int i = 0;
+        for(String comm: editStringClassMap.keySet()){
+            JMenuItem p = new JMenuItem(comm);
+            p.setActionCommand(comm);
             p.addActionListener(this);
             edit.add(p);
+            i++;
         }
         
         //Statistics
@@ -70,8 +86,10 @@ public class MainWindow extends MenuContainingForm {
         
         if(e.getActionCommand().equals(exitActionCommand)){
             this.dispose();
-        } else if(e.getActionCommand().equals(editCommands[0])) {
-            FormsCaller.callNewWindow("Edit", new EditForm(Players.class));
+        } else if( editStringClassMap.containsKey(e.getActionCommand())) {
+            FormsCaller.callNewWindow("Edit", new EditForm(editStringClassMap.get(e.getActionCommand())));
+        } else if(e.getActionCommand().equals(showLogActionCommand)){
+            LogsReader.start("test.log");
         }
         
     }
