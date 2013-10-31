@@ -32,6 +32,14 @@ public class PlayersHelper extends Players {
 
 	}
 
+        public static String toFullName(Players p){
+            if(p!=null){
+                return p.getFirstName()+" "+p.getLastName();
+            } else {
+                return null;
+            }
+        }
+        
 	public static String toString(Players p) {
 		StringBuilder retStr = new StringBuilder();
 		retStr.append(p.getFirstName());

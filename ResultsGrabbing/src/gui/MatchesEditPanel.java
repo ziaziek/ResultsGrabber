@@ -7,14 +7,17 @@ package gui;
 import data.Games;
 import data.GamesResults;
 import data.Matches;
-import data.PlayersHelper;
+import data.MatchesExt;
 import database.DataDealer;
+import errors.DataDealerReadException;
 import gubas.components.NonEditableTableModel;
 import gubas.components.TableComponent;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -172,25 +175,21 @@ public class MatchesEditPanel extends javax.swing.JPanel {
     }
     
     private void loadGamesData(){
-        String[] colNames = new String[]{"Player 1", "Player 2", "Result"};
-        int columns = colNames.length;
-        List<Games> games =new DataDealer().readConditionedData(Games.class, "idMatches="+m.getId());
-        Object[][] data = new Object[1][columns];
-
-        int i=0;
-        for(Games g: games){
-            data[i][0] = g.getIdPlayers();
-            data[i][1] = g.getIdOponents();
-            data[i][2]= GamesResults.translate(g.getResult());
+        try {
+            if(panGamesTable.getComponents().length>0){
+                panGamesTable.removeAll();
+            }
+            String[] colNames = new String[]{"Match ID", "Player 1", "Player 2", "Result"};
+            DefaultTableModel tm = new NonEditableTableModel(MatchesExt.getGamesForMatch(m.getId()), colNames);
+            TableComponent tc = new TableComponent(tm);
+            tc.setSize(new Dimension(550,100));
+            tc.getTable().setAutoResizeMode(JTable.AUTO_RESIZE_NEXT_COLUMN);
+            panGamesTable.setLayout(new BorderLayout());
+            panGamesTable.add(tc, BorderLayout.CENTER);
+            panGamesTable.add(new JLabel("Games Table"), BorderLayout.NORTH);
+            panGamesTable.repaint();
+        } catch (DataDealerReadException ex) {
+            Logger.getLogger(MatchesEditPanel.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        DefaultTableModel tm = new NonEditableTableModel(data, colNames);
-        TableComponent tc = new TableComponent(tm);
-        tc.setSize(new Dimension(550,100));
-        tc.getTable().setAutoResizeMode(JTable.AUTO_RESIZE_NEXT_COLUMN);
-        panGamesTable.setLayout(new BorderLayout());
-        panGamesTable.add(tc, BorderLayout.CENTER);
-        panGamesTable.add(new JLabel("Games Table"), BorderLayout.NORTH);
-        panGamesTable.repaint();
     }
 }

@@ -69,14 +69,15 @@ public class GamesInfoService extends BaseInfoService implements IInfoService, I
 			g.setAvgPointDiff(Double.parseDouble(info[3]));
 			g.setIdMatches(idm);
 			g.setIdPlayers(idp);
+                        //Try to find the opponent's data and find their id
                         try {
+                            LogPc.Pclog.info("Opponent's data: "+ info[1]);
                             String[] pInfo = info[1].split(" ");
                             
                            g.setIdOponents(PlayersHelper.findByName(d, pInfo[0], pInfo[1]).get(0).getId()); 
                         } catch(IndexOutOfBoundsException ex){
                             LogPc.Pclog.warn("Could not find a player of the name : "+ info[1]+" "+info[2]);
                         }
-			
 		}
 		return g;
 	}

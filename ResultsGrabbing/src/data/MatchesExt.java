@@ -8,6 +8,7 @@ import java.util.List;
 import org.hibernate.criterion.Expression;
 
 import database.DataDealer;
+import errors.DataDealerReadException;
 
 public class MatchesExt extends Matches{
 
@@ -43,4 +44,26 @@ public class MatchesExt extends Matches{
 		return str.toString();
 		
 	}
+        
+        /**
+         * Produces an array of data of games for the given match id. This function contains implementation
+         * of building the data matrix
+         * @param mid id of the match
+         * @param columns number of columns
+         * @return an array of data
+         */
+        public static Object[][] getGamesForMatch(int mid) throws DataDealerReadException{
+            List<Games> games =new DataDealer().readConditionedData(Games.class, "idMatches="+mid);
+        Object[][] data = new Object[games.size()][4];
+
+        int i=0;
+        for(Games g: games){
+            data[i][0]=g.getIdMatches();
+            data[i][1] = PlayersHelper.toFullName((Players)(new DataDealer().readData(Players.class, g.getIdPlayers())));
+            data[i][2] = PlayersHelper.toFullName((Players)(new DataDealer().readData(Players.class, g.getIdOponents())));
+            data[i][3]= GamesResults.translate(g.getResult());
+            i++;
+        }
+        return data;
+        }
 }

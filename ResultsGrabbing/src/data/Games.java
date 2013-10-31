@@ -70,7 +70,12 @@ public class Games implements java.io.Serializable, ISample {
 	}
 
 	public void setIdPlayers(Integer IdPlayers) {
-		this.IdPlayers = IdPlayers;
+            if(IdPlayers!=null){
+                this.IdPlayers = IdPlayers;
+            } else {
+                this.IdPlayers = -1;
+            }
+		
 	}
 
 	public Integer getIdOponents() {
@@ -78,7 +83,12 @@ public class Games implements java.io.Serializable, ISample {
 	}
 
 	public void setIdOponents(Integer IdOponents) {
-		this.IdOponents = IdOponents;
+            if(IdOponents!=null){
+                this.IdOponents = IdOponents;
+            } else {
+                this.IdOponents = -1;
+            }
+		
 	}
 
 	public Integer getAge() {
