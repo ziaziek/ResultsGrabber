@@ -46,7 +46,10 @@ public class Players implements java.io.Serializable, ISample {
 	}
 
 	public void setFirstName(String FirstName) {
+            if(FirstName!=null)
 		this.FirstName = FirstName;
+            else
+                this.FirstName = "";
 	}
 
 	public String getLastName() {
@@ -54,7 +57,10 @@ public class Players implements java.io.Serializable, ISample {
 	}
 
 	public void setLastName(String LastName) {
+            if(LastName!=null)
 		this.LastName = LastName;
+            else
+                this.LastName="";
 	}
 
 	public Calendar getBirthday() {

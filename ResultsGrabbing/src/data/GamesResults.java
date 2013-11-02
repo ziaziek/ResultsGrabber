@@ -7,9 +7,9 @@ public enum GamesResults {
 	WIN, LOOSE, DRAW;
 	
         protected static Map<GamesResults, String> resultsMap = new HashMap<GamesResults, String>(){
-            {put(WIN, "W");}
-            {put(LOOSE, "L");}
-            {put(DRAW, "D");}
+            {put(WIN, "WIN");}
+            {put(LOOSE, "LOOSE");}
+            {put(DRAW, "DRAW");}
         };
         
 	public static  GamesResults parse(String inStr){

@@ -4,18 +4,14 @@
  */
 package gui;
 
-import data.Games;
-import data.GamesResults;
 import data.Matches;
 import data.MatchesExt;
-import database.DataDealer;
 import errors.DataDealerReadException;
 import gubas.components.NonEditableTableModel;
 import gubas.components.TableComponent;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.text.SimpleDateFormat;
-import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
@@ -179,7 +175,7 @@ public class MatchesEditPanel extends javax.swing.JPanel {
             if(panGamesTable.getComponents().length>0){
                 panGamesTable.removeAll();
             }
-            String[] colNames = new String[]{"Match ID", "Player 1", "Player 2", "Result"};
+            String[] colNames = new String[]{"Match ID", "Player 1", "Player 2", "Result", "Avg. Points"};
             DefaultTableModel tm = new NonEditableTableModel(MatchesExt.getGamesForMatch(m.getId()), colNames);
             TableComponent tc = new TableComponent(tm);
             tc.setSize(new Dimension(550,100));

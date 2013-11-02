@@ -70,11 +70,12 @@ public class GamesInfoService extends BaseInfoService implements IInfoService, I
 			g.setIdMatches(idm);
 			g.setIdPlayers(idp);
                         //Try to find the opponent's data and find their id
+                        LogPc.Pclog.info("Opponent's data: "+ info[1]);
                         try {
-                            LogPc.Pclog.info("Opponent's data: "+ info[1]);
                             String[] pInfo = info[1].split(" ");
                             
                            g.setIdOponents(PlayersHelper.findByName(d, pInfo[0], pInfo[1]).get(0).getId()); 
+                           LogPc.Pclog.info("Oponent's id = "+ g.getIdOponents());
                         } catch(IndexOutOfBoundsException ex){
                             LogPc.Pclog.warn("Could not find a player of the name : "+ info[1]+" "+info[2]);
                         }
@@ -89,12 +90,17 @@ public class GamesInfoService extends BaseInfoService implements IInfoService, I
 			return;
 		}
 		if(gamesList==null){
-			gamesList = new ArrayList<Games>();
+			gamesList = new ArrayList<>();
 		}
 		if(fstr.size()>itemNumber+1){
 			int i = itemNumber+2;
 			while(i<fstr.size() && fstr.get(i).equals(gamesMarker)){
-				gamesList.add(extractGamesInfo(fstr.get(i+1), d, currentPlayerId, MatchesExt.findByUniqueConstraints(d, m.getDate(), m.getCity()).get(0).getId()));
+                               try{
+                                   gamesList.add(extractGamesInfo(fstr.get(i+1), d, currentPlayerId, MatchesExt.findByUniqueConstraints(d, m.getDate(), m.getCity()).get(0).getId()));
+                               } catch(IndexOutOfBoundsException ex){
+                                   LogPc.Pclog.warn(ex.getMessage() + " : "+fstr.get(i+1));
+                               }
+				
 				i+=2;
 			}
 		}
