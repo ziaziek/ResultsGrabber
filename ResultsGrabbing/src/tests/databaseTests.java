@@ -1,10 +1,8 @@
 package tests;
 
-import data.Matches;
 import data.HibernateUtil;
 import static org.junit.Assert.*;
 
-import java.io.File;
 import java.util.Calendar;
 import java.util.List;
 
@@ -13,7 +11,6 @@ import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.hibernate.*;
-import org.hibernate.cfg.Configuration;
 
 import data.Players;
 import database.DataDealer;

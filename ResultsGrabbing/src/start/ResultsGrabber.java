@@ -1,5 +1,6 @@
 package start;
 
+import data.Games;
 import java.io.IOException;
 import java.net.URL;
 import logging.LogPc;
@@ -7,9 +8,11 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import data.impl.FileStorage;
 import data.interfaces.IDataStorage;
+import database.DataDealer;
 import gubas.javaapplication1.FormsCaller;
-import gui.LogsReaderWindow;
 import gui.MainWindow;
+import processing.impl.DefaultInfoServiceFactory;
+import tests.LoaderTests;
 
 public class ResultsGrabber {
 
@@ -26,6 +29,8 @@ public class ResultsGrabber {
 	public static void main(String[] args) {
 		logConfigure();
 		log.info("Starting...");
+                //Remove and uncomment calling the window
+                //loadGames();
 		FormsCaller.callNewMainWindow("Tennis Analyzer", new MainWindow());
 	}
         
@@ -70,5 +75,14 @@ public class ResultsGrabber {
     private static void logConfigure() {
         URL ul = ResultsGrabber.class.getResource("../log4j.properties");
         PropertyConfigurator.configure(ul);
+    }
+    
+    
+    private static void loadGames(){
+        DataDealer d = new DataDealer();
+		Loader l = new Loader("C:/Users/ResultsGrabber/Results");
+		l.setRetrievalServiceFactory(new DefaultInfoServiceFactory());
+                l.load(new Class<?>[]{Games.class});
+                d.close();
     }
 }

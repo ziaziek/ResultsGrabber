@@ -14,7 +14,7 @@ import java.util.Map;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import logsreader.LogsReader;
+import logsreader.logsreader.LogsReader;
 /**
  *
  * @author Przemo
@@ -22,12 +22,18 @@ import logsreader.LogsReader;
 public class MainWindow extends MenuContainingForm {
     
     private static final String refreshDataActionCommands ="refreshData", showLogActionCommand="showLog", exitActionCommand = "exit";
-    private static final String statisticsActionCommand = "statistics";
+    private static final String statisticsPlayerActionCommand = "playerStats";
     
     private static final Map<String, Class<?>> editStringClassMap = new HashMap<String, Class<?>>(){
         {put("Players", Players.class);
         put("Matches", Matches.class);
         put("Games", Games.class);
+        }
+    };
+    
+    private static final Map<String, String> statisticsMenuMap = new HashMap<String, String>(){
+        {put("Player", statisticsPlayerActionCommand);
+        put("Player vs Player", "playerVsPlayerStats");
         }
     };
     
@@ -54,19 +60,21 @@ public class MainWindow extends MenuContainingForm {
         
         //Edit
         JMenu edit = new JMenu("Edit");
-        int i = 0;
         for(String comm: editStringClassMap.keySet()){
             JMenuItem p = new JMenuItem(comm);
             p.setActionCommand(comm);
             p.addActionListener(this);
             edit.add(p);
-            i++;
         }
         
         //Statistics
         JMenu statistics = new JMenu("Statistics");
-        statistics.setActionCommand(statisticsActionCommand);
-        statistics.addActionListener(this);
+        for(String comm: statisticsMenuMap.keySet()){
+            JMenuItem p = new JMenuItem(comm);
+            p.setActionCommand(statisticsMenuMap.get(comm));
+            p.addActionListener(this);
+            statistics.add(p);
+        }
         
         //Help
         JMenu help = new JMenu("Help");
@@ -90,6 +98,8 @@ public class MainWindow extends MenuContainingForm {
             FormsCaller.callNewWindow("Edit", new EditForm(editStringClassMap.get(e.getActionCommand())));
         } else if(e.getActionCommand().equals(showLogActionCommand)){
             LogsReader.start("test.log");
+        } else if(e.getActionCommand().equals(statisticsPlayerActionCommand)){
+            FormsCaller.callNewWindow("Player's statistics", new PlayersStatsForm());
         }
         
     }

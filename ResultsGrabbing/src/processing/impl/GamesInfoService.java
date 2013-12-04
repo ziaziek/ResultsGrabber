@@ -15,6 +15,7 @@ import data.MatchesExt;
 import data.Players;
 import data.PlayersHelper;
 import database.DataDealer;
+import java.beans.Encoder;
 import logging.LogPc;
 import org.hibernate.JDBCException;
 
@@ -39,7 +40,7 @@ public class GamesInfoService extends BaseInfoService implements IInfoService, I
 			}
 			for(File f : dir.listFiles()){
 				try {
-					fstr = Files.readAllLines(f.toPath(), Charset.forName("utf-8"));
+					fstr = Files.readAllLines(f.toPath(), Charset.forName("iso-8859-1"));
 					Players curP = PlayersInfoService.extractPlayers(fstr);
 					currentPlayerId = PlayersHelper.findByName(d, curP.getFirstName(), curP.getLastName()).get(0).getId();
 					List<Matches> m = MatchesInfoService.extractMatchesInfo(fstr, this); //this method will call another method which will fill the list with data.
@@ -72,7 +73,7 @@ public class GamesInfoService extends BaseInfoService implements IInfoService, I
                         //Try to find the opponent's data and find their id
                         LogPc.Pclog.info("Opponent's data: "+ info[1]);
                         try {
-                            String[] pInfo = info[1].split(" ");
+                            String[] pInfo = info[1].split("Â ");
                             
                            g.setIdOponents(PlayersHelper.findByName(d, pInfo[0], pInfo[1]).get(0).getId()); 
                            LogPc.Pclog.info("Oponent's id = "+ g.getIdOponents());
