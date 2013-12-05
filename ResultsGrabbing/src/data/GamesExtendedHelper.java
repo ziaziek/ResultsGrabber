@@ -1,5 +1,10 @@
 package data;
 
+import database.DataDealer;
+import errors.DataDealerReadException;
+import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import logging.LogPc;
 
 public class GamesExtendedHelper extends Games {
@@ -15,6 +20,15 @@ public class GamesExtendedHelper extends Games {
 		this.oponentName = oponentName;
 	}
 
+        public static Calendar getGameDate(Games g){
+            try {
+                return ((Matches)(new DataDealer().readData(Matches.class, g.getIdMatches()))).getDate();
+            } catch (DataDealerReadException ex) {
+                Logger.getLogger(GamesExtendedHelper.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            return null;
+        }
+        
 	public static String toString(Games g){
 		StringBuilder str = new StringBuilder();
 		str.append(g.getAge());

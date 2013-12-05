@@ -46,7 +46,7 @@ public class PlayersStatsForm extends javax.swing.JFrame implements MouseListene
         panStats.removeAll();
         panStats.setLayout(new BorderLayout());
         panStats.add(new PlayerStatsPanel(new PlayerStats(p)), BorderLayout.CENTER);
-        panStats.repaint();
+        this.revalidate();
     }
     /**
      * This method is called from within the constructor to initialize the form.

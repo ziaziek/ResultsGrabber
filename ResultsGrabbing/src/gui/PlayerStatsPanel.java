@@ -5,13 +5,19 @@
 package gui;
 
 import data.stats.PlayerStats;
+import java.util.Calendar;
+import javax.swing.JSlider;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 /**
  *
  * @author Przemo
  */
-public class PlayerStatsPanel extends javax.swing.JPanel {
+public class PlayerStatsPanel extends javax.swing.JPanel implements ChangeListener {
 
+    PlayerStats statistics;
+    Calendar initialDateRange = null;
     /**
      * Creates new form playerStats
      */
@@ -21,11 +27,21 @@ public class PlayerStatsPanel extends javax.swing.JPanel {
 
     public PlayerStatsPanel(PlayerStats stat){
         this();
-        labAvgPoints.setText(String.format("%.4f", stat.getAveragePoints()));
-        labPercLost.setText(String.format("%.2f", stat.getPercentageOfGamesLost()));
-        labPercWon.setText(String.format("%.2f", stat.getPercentageOfGamesWon()));
-        labPlayer.setText(stat.getPlayersName());
+        statistics = stat;
+        initialDateRange = Calendar.getInstance();
+        initialDateRange.setTimeInMillis(statistics.getLastDate().getTimeInMillis()-statistics.getFirstDate().getTimeInMillis());
+        setDisplayedValues();
+        sldTime.setValue(sldTime.getMaximum());
+        sldTime.addChangeListener(this);
     }
+    
+    private void setDisplayedValues(){
+        labAvgPoints.setText(String.format("%.4f", statistics.getAveragePoints()));
+        labPercLost.setText(String.format("%.2f", statistics.getPercentageOfGamesLost()));
+        labPercWon.setText(String.format("%.2f", statistics.getPercentageOfGamesWon()));
+        labPlayer.setText(statistics.getPlayersName());
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,7 +60,7 @@ public class PlayerStatsPanel extends javax.swing.JPanel {
         labPercLost = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         labAvgPoints = new javax.swing.JLabel();
-        jSlider1 = new javax.swing.JSlider();
+        sldTime = new javax.swing.JSlider();
         jLabel3 = new javax.swing.JLabel();
 
         jLabel1.setText("Player : ");
@@ -95,7 +111,7 @@ public class PlayerStatsPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, generalStatsPaneLayout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(sldTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
         generalStatsPaneLayout.setVerticalGroup(
@@ -113,7 +129,7 @@ public class PlayerStatsPanel extends javax.swing.JPanel {
                     .addComponent(labPercLost))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(generalStatsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sldTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
@@ -151,10 +167,20 @@ public class PlayerStatsPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JSlider jSlider1;
     private javax.swing.JLabel labAvgPoints;
     private javax.swing.JLabel labPercLost;
     private javax.swing.JLabel labPercWon;
     private javax.swing.JLabel labPlayer;
+    private javax.swing.JSlider sldTime;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void stateChanged(ChangeEvent ce) {
+        if (ce.getSource().equals(sldTime)){ //time on the slider has changed
+            Calendar dt = Calendar.getInstance();
+            dt.setTimeInMillis(statistics.getFirstDate().getTimeInMillis()+(100-sldTime.getValue())* initialDateRange.getTimeInMillis());
+            statistics.setFromDate(dt);
+            setDisplayedValues();
+        }
+    }
 }

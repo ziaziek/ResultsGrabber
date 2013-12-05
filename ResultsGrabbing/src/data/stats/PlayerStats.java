@@ -5,13 +5,16 @@
 package data.stats;
 
 import data.Games;
+import data.GamesExtendedHelper;
 import data.GamesResults;
 import data.Players;
 import data.PlayersHelper;
+import data.filters.GamesFilters;
 import database.DataDealer;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
-import logsreader.misc.Filter;
 
 /**
  *
@@ -22,6 +25,48 @@ public class PlayerStats {
     private Players p = null;
     
     private List<Games> games =null;
+    
+    private Calendar fromDate = null;
+
+    public Calendar getFromDate() {
+        return fromDate;
+    }
+
+    /**
+     * Sets Date to which the results should be filtered. This method changes the inner games list on which all other operations are done.
+     * To set it back to original list of all games, call @see reset
+     * @param toDate 
+     */
+    public void setFromDate(Calendar fromDate) {
+        this.fromDate = fromDate;
+        List<Games> tempG = new ArrayList<>();
+        for(Iterator<Games> it =  GamesFilters.filterFromDate(fromDate).filter(games.iterator());
+                it.hasNext();){
+            tempG.add(it.next());
+        }
+        games=tempG;
+    }
+    
+    
+    public Calendar getFirstDate(){
+        if(games!=null && !games.isEmpty()){
+            return GamesExtendedHelper.getGameDate(games.get(0));
+        } else {
+            return null;
+        }
+    }
+    
+    public Calendar getLastDate(){
+        if(games!=null && !games.isEmpty()){
+            return GamesExtendedHelper.getGameDate(games.get(games.size()-1));
+        } else {
+            return null;
+        }
+    }
+   
+    public void reset(){
+       buildGames();
+    }
     
     public PlayerStats(Players p){
         this.p=p;
@@ -77,7 +122,7 @@ public class PlayerStats {
     
     private int getNumberOfFilteredGames(GamesResults gr){
         int q = 0;
-        for(Iterator<Games> it = new GamesFilter(gr).filter(games.iterator());
+        for(Iterator<Games> it =  GamesFilters.filterByResults(gr).filter(games.iterator());
                 it.hasNext();){
             q++;
             it.next();
@@ -89,19 +134,5 @@ public class PlayerStats {
         List<Games> ret = new DataDealer().readConditionedData(Games.class, "idPlayers="+p.getId());
         return ret;
     } 
-    
-    private class GamesFilter extends Filter<Games>{
 
-        private GamesResults result;
-        
-        public  GamesFilter(GamesResults gr){
-            result =  gr;
-        }
-        
-        @Override
-        public boolean passes(Games g) {
-            return g.getResult()==result;
-        }
-        
-    }
 }
