@@ -7,14 +7,18 @@ package data.stats;
 import data.Games;
 import data.GamesExtendedHelper;
 import data.GamesResults;
+import data.Matches;
 import data.Players;
 import data.PlayersHelper;
 import data.filters.GamesFilters;
 import database.DataDealer;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
+import org.apache.commons.collections.ComparatorUtils;
 
 /**
  *
@@ -24,7 +28,7 @@ public class PlayerStats {
     
     private Players p = null;
     
-    private List<Games> games =null;
+    private List<Games> games =null, calcGamesList=null;
     
     private Calendar fromDate = null;
 
@@ -44,33 +48,34 @@ public class PlayerStats {
                 it.hasNext();){
             tempG.add(it.next());
         }
-        games=tempG;
+        calcGamesList=tempG;
     }
     
     
-    public Calendar getFirstDate(){
-        if(games!=null && !games.isEmpty()){
-            return GamesExtendedHelper.getGameDate(games.get(0));
+    public Calendar getFirstDate(){ //TODO: sort the collection of games as these functions work wrongly
+        if(calcGamesList!=null && !calcGamesList.isEmpty()){
+            return GamesExtendedHelper.getGameDate(calcGamesList.get(0));
         } else {
             return null;
         }
     }
     
     public Calendar getLastDate(){
-        if(games!=null && !games.isEmpty()){
-            return GamesExtendedHelper.getGameDate(games.get(games.size()-1));
+        if(calcGamesList!=null && !calcGamesList.isEmpty()){
+            return GamesExtendedHelper.getGameDate(calcGamesList.get(calcGamesList.size()-1));
         } else {
             return null;
         }
     }
    
     public void reset(){
-       buildGames();
+       calcGamesList=games;
     }
     
     public PlayerStats(Players p){
         this.p=p;
         games = buildGames();
+        calcGamesList=games;
     }
     
     public String getPlayersName(){
@@ -78,7 +83,7 @@ public class PlayerStats {
     }
     
     public int getNumberOfGames(){
-        return games.size();
+        return calcGamesList.size();
     }
     
     public int getNumberOfGamesWon(){
@@ -109,12 +114,12 @@ public class PlayerStats {
     }
     
     public double getAveragePoints(){
-        if (!games.isEmpty()) {
+        if (!calcGamesList.isEmpty()) {
             double savg = 0;
-            for (Games g : games) {
+            for (Games g : calcGamesList) {
                 savg += g.getAvgPointDiff();
             }
-            return savg / games.size();
+            return savg / calcGamesList.size();
         } else {
             return 0;
         }     
@@ -122,7 +127,7 @@ public class PlayerStats {
     
     private int getNumberOfFilteredGames(GamesResults gr){
         int q = 0;
-        for(Iterator<Games> it =  GamesFilters.filterByResults(gr).filter(games.iterator());
+        for(Iterator<Games> it =  GamesFilters.filterByResults(gr).filter(calcGamesList.iterator());
                 it.hasNext();){
             q++;
             it.next();
@@ -131,8 +136,51 @@ public class PlayerStats {
     }
     
     private List<Games> buildGames(){
-        List<Games> ret = new DataDealer().readConditionedData(Games.class, "idPlayers="+p.getId());
+        DataDealer d = new DataDealer();
+        List<Matches> matches = d.readConditionedData(Matches.class, "id>0");
+        List<Games> ret = d.readConditionedData(Games.class, "idPlayers="+p.getId());
+        Collections.sort(ret, new GamesByIdMatchesComparator(matches));
         return ret;
     } 
+
+    private Matches findMatchById(List<Matches> MatchList, int id){
+        int i = 0;
+        while(i<MatchList.size() && MatchList.get(i).getId()!=id){
+            i++;
+        }
+        if(i>=MatchList.size()){
+            return null;
+        } else {
+            return MatchList.get(i);
+        }
+    }
+    
+    private class GamesByIdMatchesComparator implements Comparator<Games>{
+
+        private List<Matches> matches = null;
+        
+        public GamesByIdMatchesComparator(List<Matches> m){
+            matches = m;
+        }
+        
+        @Override
+        public int compare(Games t, Games t1) {
+            if(matches!=null){
+                return findMatchById(matches, t.getIdMatches()).getDate().compareTo(findMatchById(matches, t1.getIdMatches()).getDate());
+            }
+            return 0;
+        }
+    }
+    
+    private class MatchesByDateComparator implements Comparator<Matches> {
+
+        public MatchesByDateComparator() {
+        }
+
+        @Override
+        public int compare(Matches t, Matches t1) {
+            return t.getDate().compareTo(t1.getDate());
+        }
+    }
 
 }

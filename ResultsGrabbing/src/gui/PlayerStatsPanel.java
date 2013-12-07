@@ -5,6 +5,8 @@
 package gui;
 
 import data.stats.PlayerStats;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.Calendar;
 import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
@@ -14,10 +16,10 @@ import javax.swing.event.ChangeListener;
  *
  * @author Przemo
  */
-public class PlayerStatsPanel extends javax.swing.JPanel implements ChangeListener {
+public class PlayerStatsPanel extends javax.swing.JPanel implements MouseListener {
 
     PlayerStats statistics;
-    Calendar initialDateRange = null;
+    Calendar initialDateRange = null, initialStartDate=null;
     /**
      * Creates new form playerStats
      */
@@ -29,10 +31,11 @@ public class PlayerStatsPanel extends javax.swing.JPanel implements ChangeListen
         this();
         statistics = stat;
         initialDateRange = Calendar.getInstance();
+        initialStartDate = statistics.getFirstDate();
         initialDateRange.setTimeInMillis(statistics.getLastDate().getTimeInMillis()-statistics.getFirstDate().getTimeInMillis());
         setDisplayedValues();
         sldTime.setValue(sldTime.getMaximum());
-        sldTime.addChangeListener(this);
+        sldTime.addMouseListener(this);
     }
     
     private void setDisplayedValues(){
@@ -174,13 +177,43 @@ public class PlayerStatsPanel extends javax.swing.JPanel implements ChangeListen
     private javax.swing.JSlider sldTime;
     // End of variables declaration//GEN-END:variables
 
+
     @Override
-    public void stateChanged(ChangeEvent ce) {
-        if (ce.getSource().equals(sldTime)){ //time on the slider has changed
-            Calendar dt = Calendar.getInstance();
-            dt.setTimeInMillis(statistics.getFirstDate().getTimeInMillis()+(100-sldTime.getValue())* initialDateRange.getTimeInMillis());
-            statistics.setFromDate(dt);
+    public void mouseClicked(MouseEvent me) {
+        
+    }
+
+    @Override
+    public void mousePressed(MouseEvent me) {
+        
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent me) {
+        if (me.getSource().equals(sldTime)) { //time on the slider has changed          
+            Calendar c1 = statistics.getFirstDate();
+            Calendar c2 = statistics.getLastDate();
+            if (c1 == null) {
+                statistics.reset();
+            } else {
+                Calendar dt = Calendar.getInstance();
+            double p = ((double) (sldTime.getMaximum() - sldTime.getValue()) / (double) (sldTime.getMaximum() - sldTime.getMinimum()));
+                dt.setTimeInMillis(initialStartDate.getTimeInMillis() + (long) (p * initialDateRange.getTimeInMillis()));
+                statistics.setFromDate(dt);
+            }
+
             setDisplayedValues();
+            statistics.reset();
         }
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent me) {
+        
+    }
+
+    @Override
+    public void mouseExited(MouseEvent me) {
+        
     }
 }
