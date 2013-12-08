@@ -18,8 +18,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
-import org.apache.commons.collections.ComparatorUtils;
-
 /**
  *
  * @author Przemo
@@ -36,6 +34,7 @@ public class PlayerStats {
         return fromDate;
     }
 
+    
     /**
      * Sets Date to which the results should be filtered. This method changes the inner games list on which all other operations are done.
      * To set it back to original list of all games, call @see reset
@@ -72,9 +71,16 @@ public class PlayerStats {
        calcGamesList=games;
     }
     
-    public PlayerStats(Players p){
-        this.p=p;
-        games = buildGames();
+    public PlayerStats(Players p) throws Exception{
+        this(p, null);
+    }
+    
+    public PlayerStats(Players p1, Players p2) throws Exception{
+        if(p1!=null && p2!=null && p1.getId()==p2.getId()){
+            throw new Exception("Players must be different. The same player provided for cross reference statistics");
+        }
+        this.p=p1;
+        games = buildGames(p1, p2);
         calcGamesList=games;
     }
     
@@ -134,11 +140,16 @@ public class PlayerStats {
         }
         return q;
     }
+
     
-    private List<Games> buildGames(){
+    protected List<Games> buildGames(Players p1, Players p2){
         DataDealer d = new DataDealer();
         List<Matches> matches = d.readConditionedData(Matches.class, "id>0");
-        List<Games> ret = d.readConditionedData(Games.class, "idPlayers="+p.getId());
+        String condition = "idPlayers="+p1.getId();
+        if(p2!=null){
+            condition += " and idOponents="+p2.getId();
+        }
+        List<Games> ret = d.readConditionedData(Games.class, condition);
         Collections.sort(ret, new GamesByIdMatchesComparator(matches));
         return ret;
     } 

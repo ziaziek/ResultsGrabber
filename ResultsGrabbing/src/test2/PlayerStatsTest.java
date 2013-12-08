@@ -42,7 +42,11 @@ public class PlayerStatsTest {
         Players p;
         try {
             p = (Players)(new DataDealer().readData(Players.class , 1));
-            stat= new PlayerStats(p);
+            try {
+                stat= new PlayerStats(p);
+            } catch (Exception ex) {
+                Logger.getLogger(PlayerStatsTest.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } catch (DataDealerReadException ex) {
             Logger.getLogger(PlayerStatsTest.class.getName()).log(Level.SEVERE, null, ex);
         }

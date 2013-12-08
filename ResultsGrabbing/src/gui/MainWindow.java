@@ -22,7 +22,7 @@ import logsreader.logsreader.LogsReader;
 public class MainWindow extends MenuContainingForm {
     
     private static final String refreshDataActionCommands ="refreshData", showLogActionCommand="showLog", exitActionCommand = "exit";
-    private static final String statisticsPlayerActionCommand = "playerStats";
+    private static final String statisticsPlayerActionCommand = "playerStats", statisticsPlayerVsPlayerActionCommand = "pvp";
     
     private static final Map<String, Class<?>> editStringClassMap = new HashMap<String, Class<?>>(){
         {put("Players", Players.class);
@@ -33,7 +33,7 @@ public class MainWindow extends MenuContainingForm {
     
     private static final Map<String, String> statisticsMenuMap = new HashMap<String, String>(){
         {put("Player", statisticsPlayerActionCommand);
-        put("Player vs Player", "playerVsPlayerStats");
+        put("Player vs Player", statisticsPlayerVsPlayerActionCommand);
         }
     };
     
@@ -100,6 +100,8 @@ public class MainWindow extends MenuContainingForm {
             LogsReader.start("test.log");
         } else if(e.getActionCommand().equals(statisticsPlayerActionCommand)){
             FormsCaller.callNewWindow("Player's statistics", new PlayersStatsForm());
+        } else if(e.getActionCommand().equals(statisticsPlayerVsPlayerActionCommand)){
+            FormsCaller.callNewWindow("Player vs Player Statistics", new PlayerVsPlayerStatsForm());
         }
         
     }

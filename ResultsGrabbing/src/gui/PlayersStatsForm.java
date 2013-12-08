@@ -12,6 +12,8 @@ import java.awt.BorderLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 
 /**
@@ -45,7 +47,11 @@ public class PlayersStatsForm extends javax.swing.JFrame implements MouseListene
     private void refreshStatsPanel(Players p){     
         panStats.removeAll();
         panStats.setLayout(new BorderLayout());
-        panStats.add(new PlayerStatsPanel(new PlayerStats(p)), BorderLayout.CENTER);
+        try {
+            panStats.add(new PlayerStatsPanel(new PlayerStats(p)), BorderLayout.CENTER);
+        } catch (Exception ex) {
+            Logger.getLogger(PlayersStatsForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.revalidate();
     }
     /**
