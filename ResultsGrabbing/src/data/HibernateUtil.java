@@ -4,7 +4,6 @@
  */
 package data;
 
-import java.io.File;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.SessionFactory;
 

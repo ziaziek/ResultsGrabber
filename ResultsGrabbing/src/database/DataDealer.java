@@ -1,17 +1,12 @@
 package database;
 
 import data.HibernateUtil;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
-
-import data.Matches;
-import data.Players;
 
 import errors.DataDealerReadException;
 import errors.DataDealerWriteException;
