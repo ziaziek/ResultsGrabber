@@ -89,6 +89,8 @@ public class MainWindow extends MenuContainingForm {
         return myMenuBar;
     }
 
+
+         
     @Override
     public void actionPerformed(ActionEvent e) {
         
@@ -102,6 +104,8 @@ public class MainWindow extends MenuContainingForm {
             FormsCaller.callNewWindow("Player's statistics", new PlayersStatsForm());
         } else if(e.getActionCommand().equals(statisticsPlayerVsPlayerActionCommand)){
             FormsCaller.callNewWindow("Player vs Player Statistics", new PlayerVsPlayerStatsForm());
+        } else if(e.getActionCommand().equals(refreshDataActionCommands)){
+            FormsCaller.callNewWindow("Updates checker", new UpdateChecker());
         }
         
     }

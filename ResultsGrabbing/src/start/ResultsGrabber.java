@@ -1,6 +1,7 @@
 package start;
 
 import data.Games;
+import data.Players;
 import java.io.IOException;
 import java.net.URL;
 import logging.LogPc;
@@ -31,8 +32,7 @@ public class ResultsGrabber {
 		log.info("Starting...");
                 //Remove and uncomment calling the window
                 //loadGames();
-                
-		//FormsCaller.callNewMainWindow("Tennis Analyzer", new MainWindow());
+		FormsCaller.callNewMainWindow("Tennis Analyzer", new MainWindow());
 	}
         
         private static void loadData(){
@@ -87,10 +87,5 @@ public class ResultsGrabber {
                 d.close();
     }
 
-    private static String checkUpdates(String lastDate, int noOfRecords) {
-        start.DataUpdate_Service service = new start.DataUpdate_Service();
-        start.DataUpdate port = service.getDataUpdatePort();
-        System.out.println(port.checkUpdates(lastDate, noOfRecords));
-        return port.checkUpdates(lastDate, noOfRecords);
-    }
+
 }
