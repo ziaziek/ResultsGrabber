@@ -11,6 +11,7 @@ import gubas.forms.DialogForm;
 import gubas.javaapplication1.FormsCaller;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.net.ConnectException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JLabel;
@@ -31,12 +32,21 @@ public class UpdateChecker extends DialogForm {
 
                 @Override
                 public void run() {
-                    up = checkUpdates("", (int) new DataDealer().rowsCount(Players.class)).equals("OK");//The class name parameter should be extended, so that every table should be checked
-                    me.updateCallback();
+                    try {
+                        up = checkUpdates("", (int) new DataDealer().rowsCount(Players.class)).equals("OK");//The class name parameter should be extended, so that every table should be checked
+                        me.updateCallback();
+                    } catch (ConnectException ex) {
+                        //Logger.getLogger(UpdateChecker.class.getName()).log(Level.SEVERE, null, ex);
+                        me.setErrorMessage(ex.getMessage());
+                    }
                 }
         
             }).start();
 
+    }
+    
+    void setErrorMessage(String mssg){
+        this.addMessage(mssg);
     }
     
     void updateCallback(){
@@ -49,10 +59,9 @@ public class UpdateChecker extends DialogForm {
         me.revalidate();
     }
     
-    private static String checkUpdates(String lastDate, int noOfRecords) {
+    private static String checkUpdates(String lastDate, int noOfRecords) throws java.net.ConnectException {
         start.DataUpdate_Service service = new start.DataUpdate_Service();
         start.DataUpdate port = service.getDataUpdatePort();
-        System.out.println(port.checkUpdates(lastDate, noOfRecords));
         return port.checkUpdates(lastDate, noOfRecords);
     }
 }

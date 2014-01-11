@@ -5,12 +5,12 @@
 package gui;
 
 import data.stats.PlayerStats;
+import gubas.forms.Dialog;
+import gubas.forms.DialogForm;
+import gubas.javaapplication1.FormsCaller;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Calendar;
-import javax.swing.JSlider;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 
 /**
  *
@@ -28,14 +28,20 @@ public class PlayerStatsPanel extends javax.swing.JPanel implements MouseListene
     }
 
     public PlayerStatsPanel(PlayerStats stat){
-        this();
         statistics = stat;
         initialDateRange = Calendar.getInstance();
         initialStartDate = statistics.getFirstDate();
-        initialDateRange.setTimeInMillis(statistics.getLastDate().getTimeInMillis()-statistics.getFirstDate().getTimeInMillis());
-        setDisplayedValues();
-        sldTime.setValue(sldTime.getMaximum());
-        sldTime.addMouseListener(this);
+        Calendar ldate = statistics.getLastDate();
+        if (initialStartDate != null && ldate != null) {
+            initComponents();
+            initialDateRange.setTimeInMillis(ldate.getTimeInMillis() - initialStartDate.getTimeInMillis());
+            setDisplayedValues();
+            sldTime.setValue(sldTime.getMaximum());
+            sldTime.addMouseListener(this);
+        } else {
+            FormsCaller.callNewWindow("No data available", new DialogForm(Dialog.OK, "No data available for this combination of players"));
+        }
+        
     }
     
     private void setDisplayedValues(){

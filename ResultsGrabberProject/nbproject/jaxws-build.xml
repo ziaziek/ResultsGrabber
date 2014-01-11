@@ -19,7 +19,7 @@
     <target name="wsimport-client-DataUpdate" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/DataUpdate"/>
         <property name="wsdl-DataUpdate" location="xml-resources/web-service-references/DataUpdate/wsdl/localhost_8084/TennisUpdater/DataUpdate.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/DataUpdate" destdir="${build.generated.dir}/jax-wsCache/DataUpdate" wsdl="${wsdl-DataUpdate}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" wsdlLocation="http://localhost:8084/TennisUpdater/DataUpdate?wsdl" xnocompile="true" xendorsed="true" package="start">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/DataUpdate" destdir="${build.generated.dir}/jax-wsCache/DataUpdate" wsdl="${wsdl-DataUpdate}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" wsdlLocation="http://localhost:8080/TennisUpdater/DataUpdate?wsdl" xnocompile="true" xendorsed="true" package="start">
             <depends file="${wsdl-DataUpdate}"/>
             <produces dir="${build.generated.dir}/jax-wsCache/DataUpdate"/>
         </wsimport>
