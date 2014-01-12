@@ -48,7 +48,10 @@ public class PlayersStatsForm extends javax.swing.JFrame implements MouseListene
         panStats.removeAll();
         panStats.setLayout(new BorderLayout());
         try {
-            panStats.add(new PlayerStatsPanel(new PlayerStats(p)), BorderLayout.CENTER);
+            PlayerStatsPanel panSt = new PlayerStatsPanel(new PlayerStats(p));
+            panStats.add(panSt, BorderLayout.CENTER);
+            // need to divide by 100 to get the decimal passed on to the OddsAssesor
+            panStats.add(new OddsAssesorPanel(0.01*panSt.statistics.getPercentageOfGamesWon()), BorderLayout.SOUTH);
         } catch (Exception ex) {
             Logger.getLogger(PlayersStatsForm.class.getName()).log(Level.SEVERE, null, ex);
         }

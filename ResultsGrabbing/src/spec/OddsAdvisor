@@ -1,0 +1,16 @@
+
+Functionality:
+Odds Advisor - assess whether the given odds are worth taking a risk and how much they are profitable or loss likely.
+
+control - OddsAdvisorPanel on the PlayerVsPlayer and PlayerStats forms
+
+PlayerVsPlayer form:
+
+after picking the players, enter the values of odds for each player. Click 'Assess' -> the application finds probabilities for either of the players and
+recalculates them to the given odds. It also tells what are the deviations of the bookmaker's odds to the calculated odds.
+
+PlayerStats form:
+
+after picking the player, enter the value of the odds. Click 'Assess' -> the application will do similar calculations to the above.
+
+OddsAssecor class will take care of the calculations.
