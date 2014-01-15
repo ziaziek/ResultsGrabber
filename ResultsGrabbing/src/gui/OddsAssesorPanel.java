@@ -5,14 +5,17 @@
 package gui;
 
 import data.stats.OddsAssecor;
+import data.stats.PlayerStats;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 /**
  *
  * @author Przemo
  */
-public class OddsAssesorPanel extends javax.swing.JPanel implements KeyListener {
+public class OddsAssesorPanel extends javax.swing.JPanel implements KeyListener, ChangeListener {
 
     private double winProbability=0;
     /**
@@ -23,10 +26,15 @@ public class OddsAssesorPanel extends javax.swing.JPanel implements KeyListener 
     }
 
     public OddsAssesorPanel(double winProbability){
-        this();
+        this();      
+        updateData(winProbability);
+        txtGivenOdds.addKeyListener(this);
+    }
+    
+    private void updateData(double winProbability){
         this.winProbability = winProbability;
         lblCalculatedOddsResult.setText(String.format("%.2f", OddsAssecor.getProperOdds(winProbability)));
-        txtGivenOdds.addKeyListener(this);
+        this.revalidate();
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,6 +61,7 @@ public class OddsAssesorPanel extends javax.swing.JPanel implements KeyListener 
         lblCalculatedOdds.setText("CalculatedOdds");
 
         lblCalculatedOddsResult.setText("0.00");
+        lblCalculatedOddsResult.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
 
         lblDeviation.setText("Deviation");
 
@@ -67,21 +76,17 @@ public class OddsAssesorPanel extends javax.swing.JPanel implements KeyListener 
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblGivenOdds)
-                                .addGap(48, 48, 48)
-                                .addComponent(txtGivenOdds, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblCalculatedOdds)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblCalculatedOddsResult)))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(lblDeviation)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblDeviationResult)))
+                        .addComponent(lblDeviationResult))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblGivenOdds)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtGivenOdds, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblCalculatedOdds)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblCalculatedOddsResult, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -94,14 +99,14 @@ public class OddsAssesorPanel extends javax.swing.JPanel implements KeyListener 
                 .addGap(4, 4, 4)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblCalculatedOdds, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCalculatedOdds)
                     .addComponent(lblCalculatedOddsResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDeviation)
                     .addComponent(lblDeviationResult))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -132,6 +137,13 @@ public class OddsAssesorPanel extends javax.swing.JPanel implements KeyListener 
             lblDeviationResult.setText(OddsAssecor.getOddsDeviationAsString(p, winProbability));
         } catch(Exception ex){
             //do nothing
+        }
+    }
+
+    @Override
+    public void stateChanged(ChangeEvent ce) {
+        if( ce.getSource() instanceof PlayerStats){
+            updateData(0.01*((PlayerStats)ce.getSource()).getPercentageOfGamesWon());
         }
     }
 }

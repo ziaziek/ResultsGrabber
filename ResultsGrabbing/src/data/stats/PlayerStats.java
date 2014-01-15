@@ -18,6 +18,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 /**
  *
  * @author Przemo
@@ -29,6 +31,8 @@ public class PlayerStats {
     private List<Games> games =null, calcGamesList=null;
     
     private Calendar fromDate = null;
+    
+    List<ChangeListener> changeListeners = null;
 
     public Calendar getFromDate() {
         return fromDate;
@@ -47,7 +51,7 @@ public class PlayerStats {
                 it.hasNext();){
             tempG.add(it.next());
         }
-        calcGamesList=tempG;
+        setCalcGames(tempG);
     }
     
     
@@ -68,7 +72,8 @@ public class PlayerStats {
     }
    
     public void reset(){
-       calcGamesList=games;
+        //calcGamesList=games;
+       setCalcGames(games);
     }
     
     public PlayerStats(Players p) throws Exception{
@@ -81,8 +86,14 @@ public class PlayerStats {
         }
         this.p=p1;
         games = buildGames(p1, p2);
-        calcGamesList=games;
+        changeListeners = new ArrayList<>();
+        setCalcGames(games);
     }
+    
+    public void addChangeListener(ChangeListener l){
+       changeListeners.add(l);
+    }
+    
     
     public String getPlayersName(){
         return PlayersHelper.toFullName(p);
@@ -141,7 +152,17 @@ public class PlayerStats {
         return q;
     }
 
-    
+    protected void setCalcGames(List<Games> glist){
+        calcGamesList = glist;
+        notifyListeners();
+    }
+    protected void notifyListeners(){
+        if(changeListeners!=null && ! changeListeners.isEmpty()){
+           for(ChangeListener lst: changeListeners){
+            lst.stateChanged(new ChangeEvent(this));
+        } 
+        }
+    }
     protected List<Games> buildGames(Players p1, Players p2){
         DataDealer d = new DataDealer();
         List<Matches> matches = d.readConditionedData(Matches.class, "id>0");

@@ -9,6 +9,7 @@ import data.stats.PlayerStats;
 import database.DataDealer;
 import gui.listRenderers.ListRendererFactory;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.List;
@@ -49,11 +50,17 @@ public class PlayerVsPlayerStatsForm extends javax.swing.JFrame implements Mouse
             panResults.removeAll();
             panResults.setLayout(new BorderLayout());
         try {
-            panResults.add(new PlayerStatsPanel(new PlayerStats((Players)lstPlayers1.getSelectedValue(), (Players)lstPlayers2.getSelectedValue())));
+            PlayerStatsPanel pp = new PlayerStatsPanel(new PlayerStats((Players)lstPlayers1.getSelectedValue(), (Players)lstPlayers2.getSelectedValue()));
+            OddsAssesorPanel oddsPan = new OddsAssesorPanel(.01*pp.statistics.getPercentageOfGamesWon());
+            pp.statistics.addChangeListener(oddsPan);
+            panResults.add(pp, BorderLayout.CENTER);
+            panResults.add(oddsPan, BorderLayout.SOUTH);
+            panResults.revalidate();
+            this.setSize(new Dimension(this.getWidth(), this.getHeight()+ oddsPan.getHeight()));
         } catch (Exception ex) {
             Logger.getLogger(PlayerVsPlayerStatsForm.class.getName()).log(Level.SEVERE, null, ex);
         }
-            panResults.revalidate();
+            
         }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -115,14 +122,11 @@ public class PlayerVsPlayerStatsForm extends javax.swing.JFrame implements Mouse
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(labPlayers1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(labPlayers1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panResults, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(panResults, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -150,7 +154,7 @@ public class PlayerVsPlayerStatsForm extends javax.swing.JFrame implements Mouse
                     .addComponent(jScrollPane2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnShow)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
 
         pack();

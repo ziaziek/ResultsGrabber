@@ -10,7 +10,11 @@ import gubas.forms.DialogForm;
 import gubas.javaapplication1.FormsCaller;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 /**
  *
@@ -18,6 +22,7 @@ import java.util.Calendar;
  */
 public class PlayerStatsPanel extends javax.swing.JPanel implements MouseListener {
 
+    
     PlayerStats statistics;
     Calendar initialDateRange = null, initialStartDate=null;
     /**
@@ -31,6 +36,7 @@ public class PlayerStatsPanel extends javax.swing.JPanel implements MouseListene
         statistics = stat;
         initialDateRange = Calendar.getInstance();
         initialStartDate = statistics.getFirstDate();
+        
         Calendar ldate = statistics.getLastDate();
         if (initialStartDate != null && ldate != null) {
             initComponents();
@@ -44,6 +50,8 @@ public class PlayerStatsPanel extends javax.swing.JPanel implements MouseListene
         
     }
     
+    
+    
     private void setDisplayedValues(){
         labAvgPoints.setText(String.format("%.4f", statistics.getAveragePoints()));
         labPercLost.setText(String.format("%.2f", statistics.getPercentageOfGamesLost()));
@@ -51,6 +59,10 @@ public class PlayerStatsPanel extends javax.swing.JPanel implements MouseListene
         labPlayer.setText(statistics.getPlayersName());
     }
     
+    
+    private double calculateTimeDistance(){
+        return ((double) (sldTime.getMaximum() - sldTime.getValue()) / (double) (sldTime.getMaximum() - sldTime.getMinimum()));
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -196,20 +208,19 @@ public class PlayerStatsPanel extends javax.swing.JPanel implements MouseListene
 
     @Override
     public void mouseReleased(MouseEvent me) {
-        if (me.getSource().equals(sldTime)) { //time on the slider has changed          
+        
+        if (me.getSource().equals(sldTime)) { //time on the slider has changed   
+            statistics.reset();
             Calendar c1 = statistics.getFirstDate();
             Calendar c2 = statistics.getLastDate();
-            if (c1 == null) {
-                statistics.reset();
-            } else {
+            if (c1 != null) {
                 Calendar dt = Calendar.getInstance();
-            double p = ((double) (sldTime.getMaximum() - sldTime.getValue()) / (double) (sldTime.getMaximum() - sldTime.getMinimum()));
+            double p = calculateTimeDistance();
                 dt.setTimeInMillis(initialStartDate.getTimeInMillis() + (long) (p * initialDateRange.getTimeInMillis()));
                 statistics.setFromDate(dt);
             }
-
             setDisplayedValues();
-            statistics.reset();
+            
         }
     }
 
