@@ -6,6 +6,8 @@ package gui;
 
 import data.stats.OddsAssecor;
 import data.stats.PlayerStats;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.event.ChangeEvent;
@@ -33,8 +35,19 @@ public class OddsAssesorPanel extends javax.swing.JPanel implements KeyListener,
     
     private void updateData(double winProbability){
         this.winProbability = winProbability;
-        lblCalculatedOddsResult.setText(String.format("%.2f", OddsAssecor.getProperOdds(winProbability)));
+        lblCalculatedOddsResult.setText(String.format("%.2f",OddsAssecor.getProperOdds(winProbability )));
         this.revalidate();
+    }
+    
+    private void updateDeviation(double p){
+        lblDeviationResult.setText(String.format("%.2f", p)+" %");
+        Color c = Color.black;
+        if(p<0){
+            c = Color.RED;
+        } else if(p>0){
+            c = Color.GREEN;
+        }
+        lblDeviationResult.setForeground(c);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -134,7 +147,7 @@ public class OddsAssesorPanel extends javax.swing.JPanel implements KeyListener,
     public void keyReleased(KeyEvent ke) {
         try {
             double p= Double.parseDouble(txtGivenOdds.getText().replace(",", "."));
-            lblDeviationResult.setText(OddsAssecor.getOddsDeviationAsString(p, winProbability));
+            updateDeviation(OddsAssecor.getOddsDeviation(p, winProbability));
         } catch(Exception ex){
             //do nothing
         }
