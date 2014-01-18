@@ -55,7 +55,7 @@ public class PlayerStats {
     }
     
     
-    public Calendar getFirstDate(){ //TODO: sort the collection of games as these functions work wrongly
+    public Calendar getFirstDate(){ 
         if(calcGamesList!=null && !calcGamesList.isEmpty()){
             return GamesExtendedHelper.getGameDate(calcGamesList.get(0));
         } else {
@@ -91,7 +91,9 @@ public class PlayerStats {
     }
     
     public void addChangeListener(ChangeListener l){
-       changeListeners.add(l);
+        if(l!=null && changeListeners!=null && ! changeListeners.contains(l)){
+            changeListeners.add(l);
+        }
     }
     
     

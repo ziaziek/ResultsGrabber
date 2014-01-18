@@ -20,7 +20,7 @@ import javax.swing.event.ChangeListener;
  *
  * @author Przemo
  */
-public class PlayerStatsPanel extends javax.swing.JPanel implements MouseListener {
+public class PlayerStatsPanel extends javax.swing.JPanel implements MouseListener, ChangeListener {
 
     
     PlayerStats statistics;
@@ -38,8 +38,9 @@ public class PlayerStatsPanel extends javax.swing.JPanel implements MouseListene
         initialStartDate = statistics.getFirstDate();
         
         Calendar ldate = statistics.getLastDate();
+        initComponents();
         if (initialStartDate != null && ldate != null) {
-            initComponents();
+            
             initialDateRange.setTimeInMillis(ldate.getTimeInMillis() - initialStartDate.getTimeInMillis());
             setDisplayedValues();
             sldTime.setValue(sldTime.getMaximum());
@@ -96,13 +97,13 @@ public class PlayerStatsPanel extends javax.swing.JPanel implements MouseListene
         jLabel5.setText("% of LOST");
         jLabel5.setToolTipText("");
 
-        labPercWon.setText("jLabel6");
+        labPercWon.setText("-");
 
-        labPercLost.setText("jLabel7");
+        labPercLost.setText("-");
 
         jLabel8.setText("Avg. points");
 
-        labAvgPoints.setText("jLabel9");
+        labAvgPoints.setText("-");
 
         jLabel3.setText("Time frame:");
         jLabel3.setToolTipText("");
@@ -114,26 +115,24 @@ public class PlayerStatsPanel extends javax.swing.JPanel implements MouseListene
             .addGroup(generalStatsPaneLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(generalStatsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addGroup(generalStatsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(generalStatsPaneLayout.createSequentialGroup()
+                            .addComponent(jLabel4)
+                            .addGap(32, 32, 32)
+                            .addComponent(labPercWon))
+                        .addGroup(generalStatsPaneLayout.createSequentialGroup()
+                            .addComponent(jLabel5)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(labPercLost))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(generalStatsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(generalStatsPaneLayout.createSequentialGroup()
-                        .addGroup(generalStatsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(generalStatsPaneLayout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(32, 32, 32)
-                                .addComponent(labPercWon))
-                            .addGroup(generalStatsPaneLayout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(labPercLost)))
-                        .addGap(40, 40, 40)
                         .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
-                        .addComponent(labAvgPoints)
-                        .addGap(51, 51, 51))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, generalStatsPaneLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(sldTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addGap(100, 100, 100)
+                        .addComponent(labAvgPoints))
+                    .addComponent(sldTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
         generalStatsPaneLayout.setVerticalGroup(
             generalStatsPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,13 +159,14 @@ public class PlayerStatsPanel extends javax.swing.JPanel implements MouseListene
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(labPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(generalStatsPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(70, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(labPlayer, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(97, 97, 97))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(generalStatsPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -232,5 +232,12 @@ public class PlayerStatsPanel extends javax.swing.JPanel implements MouseListene
     @Override
     public void mouseExited(MouseEvent me) {
         
+    }
+
+    @Override
+    public void stateChanged(ChangeEvent ce) {
+        if(ce.getSource()!=null && ce.getSource() instanceof PlayerStats){
+            //TODO: Implement if neseccary
+        }
     }
 }
